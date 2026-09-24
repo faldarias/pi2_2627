@@ -47,7 +47,7 @@ El ciclo de vida de un proyecto suele incluir las siguientes fases:
 5. Cierre: entrega del resultado, valoración y documentación final.
 
 
-<-- ![Ciclo de vida del proyecto](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80) -->
+![Ciclo de vida del proyecto](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80)
 
 *Imagen ilustrativa de planificación y ejecución de un proyecto.*
 
@@ -93,7 +93,7 @@ En ASIR, el TaskFlow no es solo una lista de tareas: es una estructura de trabaj
 
 Un TaskFlow bien definido permite evitar bloqueos técnicos, reducir errores de coordinación y favorecer la trazabilidad del proyecto.
 
-[Create a manual dispatch workflow in GitHub](https://www.youtube.com/shorts/0_cxKeShJro)
+[Video: Create a manual dispatch workflow in GitHub](https://www.youtube.com/shorts/0_cxKeShJro)
 
 ### 4.2. Lean Canvas
 
@@ -102,7 +102,7 @@ El Lean Canvas es una herramienta muy útil para estructurar una idea de proyect
 ![Lean Canvas y planificación de negocio](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80)
 
 
-[¿NO SABES LO QUE ES EL LEAN CANVAS? Te lo explicamos.](https://www.youtube.com/shorts/CxS01y1sYt4)
+[Video: ¿NO SABES LO QUE ES EL LEAN CANVAS? Te lo explicamos.](https://www.youtube.com/shorts/CxS01y1sYt4)
 
 *Imagen visual relacionada con la planificación estratégica y el análisis de ideas.*
 
@@ -259,7 +259,7 @@ El método MoSCoW es una técnica de priorización de requisitos. Se usa para de
 - Could Have (Podría tener): mejoras deseables, agradables de incluir si el tiempo y los recursos lo permiten.
 - Won't Have (No tendrá): elementos descartados para la fase actual o para esta versión.
 
-[Priorizar Funcionalidades: Método MoSCoW Explicado](https://www.youtube.com/shorts/QMz9olO1qLE)
+[Video:  Priorizar Funcionalidades: Método MoSCoW Explicado](https://www.youtube.com/shorts/QMz9olO1qLE)
 
 ### Aplicación de MoSCoW en ASIR
 
