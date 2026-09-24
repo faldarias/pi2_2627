@@ -150,6 +150,9 @@ Para PI2, se recomienda:
 - Mantener registro del avance.
 - Revisar periódicamente riesgos y ajustes.
 
+
+[Video: Lienzo de negocio (Modelo Canvas)]() bloques y utilidadhttps://www.youtube.com/watch?v=XTRoUnWL57Q)
+
 ---
 
 ## 5. Trabajo en equipo y roles básicos
