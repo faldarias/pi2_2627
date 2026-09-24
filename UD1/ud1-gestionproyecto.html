@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ud1-gestionproyecto</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1 id="ud1-gestión-de-proyectos">UD1. Gestión de proyectos</h1>
+<p>| <strong>UD1</strong> | <strong>Gestión de proyectos</strong> |
+Teórico-Práctica | Organización del ciclo de vida del proyecto,
+definición de objetivos, alcance, planificación inicial y seguimiento
+del trabajo en equipo. |</p>
+<h2 id="1-presentación-del-tema">1. Presentación del tema</h2>
+<p>Este tema forma parte del módulo de Proyecto Intermodular II (PI2)
+para alumnos de ASIR 2. Su objetivo es introducir la gestión de
+proyectos como base para planificar, ejecutar y controlar soluciones
+técnicas en entornos de sistemas y redes. La gestión de proyectos no se
+limita a la organización del trabajo: también implica definir
+requisitos, priorizar tareas, coordinar recursos y supervisar el
+progreso para garantizar que el resultado final cumpla las expectativas
+del cliente o del centro educativo.</p>
+<p>La unidad está diseñada para un enfoque práctico y aplicado, con una
+duración estimada de 10 horas de trabajo equivalente a A4. Esta carga
+permite combinar teoría, análisis y actividad práctica para que el
+alumnado comprenda el valor del trabajo en equipo y la importancia de
+documentar adecuadamente cada fase.</p>
+<hr />
+<h2 id="2-objetivos-de-la-unidad">2. Objetivos de la unidad</h2>
+<h3 id="objetivos-generales">Objetivos generales</h3>
+<ul>
+<li>Comprender el concepto de proyecto y su ciclo de vida.</li>
+<li>Definir objetivos, alcance y entregables de un proyecto
+técnico.</li>
+<li>Planificar tareas, tiempos y responsabilidades.</li>
+<li>Establecer mecanismos de seguimiento y control.</li>
+<li>Fomentar la organización del trabajo en equipo.</li>
+</ul>
+<h3 id="objetivos-específicos-para-asir-2">Objetivos específicos para
+ASIR 2</h3>
+<ul>
+<li>Interpretar un problema real o documental para transformarlo en un
+proyecto viable.</li>
+<li>Identificar requisitos funcionales y no funcionales.</li>
+<li>Elaborar una planificación inicial con tareas y tiempos.</li>
+<li>Usar herramientas de gestión básica (listas de tareas, calendario,
+tablero, seguimiento).</li>
+<li>Documentar de forma clara el proceso de organización del
+proyecto.</li>
+</ul>
+<hr />
+<h2 id="3-conceptos-clave">3. Conceptos clave</h2>
+<h3 id="31-qué-es-un-proyecto">3.1. ¿Qué es un proyecto?</h3>
+<p>Un proyecto es un conjunto de actividades coordinadas con un objetivo
+concreto, una fecha de inicio y final, unos recursos limitados y un
+resultado final esperable. En el contexto de ASIR, un proyecto puede
+estar relacionado con redes, servidores, seguridad, automatización,
+despliegue o infraestructura.</p>
+<h3 id="32-ciclo-de-vida-del-proyecto">3.2. Ciclo de vida del
+proyecto</h3>
+<p>El ciclo de vida de un proyecto suele incluir las siguientes
+fases:</p>
+<ol type="1">
+<li>Inicio: identificación del problema o necesidad.</li>
+<li>Planificación: definición del alcance, objetivos y recursos.</li>
+<li>Ejecución: desarrollo y puesta en marcha de la solución.</li>
+<li>Seguimiento y control: revisión del progreso, ajustes y corrección
+de desviaciones.</li>
+<li>Cierre: entrega del resultado, valoración y documentación
+final.</li>
+</ol>
+<p>&lt;-- <img
+src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+alt="Ciclo de vida del proyecto" /> --&gt;</p>
+<p><img src="img/img1.jpg" alt="Ciclo de vida del proyecto" /></p>
+<p><em>Imagen ilustrativa de planificación y ejecución de un
+proyecto.</em></p>
+<h3 id="33-objetivos-alcance-y-entregables">3.3. Objetivos, alcance y
+entregables</h3>
+<ul>
+<li>Objetivo: meta final que se pretende conseguir.</li>
+<li>Alcance: límites y contenido del proyecto.</li>
+<li>Entregables: resultados concretos que se deben producir en cada
+fase.</li>
+</ul>
+<p>Un error frecuente es confundir el alcance con la idea general del
+proyecto. La correcta definición del alcance evita sobrecostes, retrasos
+y falta de claridad en la ejecución.</p>
+<h3 id="34-planificación-inicial">3.4. Planificación inicial</h3>
+<p>La planificación inicial debe responder a preguntas como:</p>
+<ul>
+<li>¿Qué se quiere conseguir?</li>
+<li>¿Qué actividades son necesarias?</li>
+<li>¿Quién realiza cada tarea?</li>
+<li>¿Cuánto tiempo necesita cada tarea?</li>
+<li>¿Qué recursos son necesarios?</li>
+<li>¿Qué riesgos pueden afectar al proyecto?</li>
+</ul>
+<hr />
+<h2 id="4-metodología-y-herramientas-para-la-gestión">4. Metodología y
+herramientas para la gestión</h2>
+<p>En el entorno académico y profesional, la gestión de proyectos puede
+apoyarse en diversas herramientas y metodologías.</p>
+<h3 id="41-software-taskflow">4.1. Software TaskFlow</h3>
+<p>El concepto de Software TaskFlow se refiere a la forma en que se
+organiza el trabajo técnico en un proyecto mediante tareas,
+dependencias, orden lógico de ejecución y control del flujo de
+actividad. En un proyecto de infraestructura, esto implica convertir la
+solución en una secuencia clara de actividades: análisis, diseño,
+configuración, despliegue, pruebas y validación.</p>
+<p><img
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+alt="Diagrama de flujo de trabajo y tareas" /></p>
+<p><em>Ilustración de un flujo de trabajo técnico y coordinación de
+tareas.</em></p>
+<p>En ASIR, el TaskFlow no es solo una lista de tareas: es una
+estructura de trabajo que ayuda a responder preguntas como:</p>
+<ul>
+<li>¿Qué se necesita hacer antes?</li>
+<li>¿Qué depende de otra tarea?</li>
+<li>¿Qué se debe entregar en cada fase?</li>
+<li>¿Qué elementos son obligatorios y cuáles son opcionales?</li>
+</ul>
+<p>Un TaskFlow bien definido permite evitar bloqueos técnicos, reducir
+errores de coordinación y favorecer la trazabilidad del proyecto.</p>
+<h3 id="42-lean-canvas">4.2. Lean Canvas</h3>
+<p>El Lean Canvas es una herramienta muy útil para estructurar una idea
+de proyecto de forma rápida y visual. Se centra en responder de forma
+concreta:</p>
+<p><img
+src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+alt="Lean Canvas y planificación de negocio" /></p>
+<p><em>Imagen visual relacionada con la planificación estratégica y el
+análisis de ideas.</em></p>
+<ul>
+<li>¿Qué problema resuelve la solución?</li>
+<li>¿A quién va dirigida?</li>
+<li>¿Qué valor aporta?</li>
+<li>¿Qué recursos o infraestructura necesitamos?</li>
+<li>¿Qué hipótesis estamos validando?</li>
+<li>¿Qué métricas o indicadores nos permiten saber si funciona?</li>
+</ul>
+<p>En el contexto de ASIR, el Lean Canvas puede aplicarse a un proyecto
+de infraestructura para describir, por ejemplo, una red de servicios, un
+entorno de virtualización, un despliegue automatizado o un sistema de
+monitorización. Permite pasar de una idea general a una propuesta más
+concreta antes de comenzar la implementación.</p>
+<h3 id="43-producto-mínimo-viable-mvp-en-asir">4.3. Producto Mínimo
+Viable (MVP) en ASIR</h3>
+<p>En proyectos de infraestructura, el MVP no significa “solución
+incompleta” ni “una versión pobre”. Significa una versión funcional
+mínima que resuelve la necesidad principal con los elementos esenciales.
+En ASIR, un MVP puede estar compuesto por una infraestructura básica
+capaz de:</p>
+<ul>
+<li>ofrecer un servicio funcional,</li>
+<li>cumplir la misión principal del proyecto,</li>
+<li>estar desplegada con un mínimo de seguridad,</li>
+<li>poder validarse con pruebas sencillas,</li>
+<li>documentarse y demostrarse.</li>
+</ul>
+<p>Por ejemplo, si el proyecto consiste en desplegar una infraestructura
+con servidor web, DNS y seguridad básica, el MVP no necesita incluir
+todas las mejoras de escalabilidad, automatización avanzada o
+monitorización sofisticada. Lo esencial es que el servicio funcione y
+cumpla la finalidad propuesta.</p>
+<h3 id="44-qué-no-es-el-mvp-y-qué-sí-lo-es">4.4. ¿Qué no es el MVP y qué
+sí lo es?</h3>
+<p>Es importante distinguir entre lo que forma parte del MVP y lo que se
+deja para fases posteriores. El MVP incluye solo los elementos
+necesarios para validar la idea y demostrar que la solución cumple su
+función básica.</p>
+<h3 id="herramientas-habituales">Herramientas habituales</h3>
+<ul>
+<li>Listas de tareas: Google Tasks, Trello, Notion, Microsoft To
+Do.</li>
+<li>Planificación temporal: calendario, diagrama de Gantt, tablas de
+tiempos.</li>
+<li>Documentación: fichas técnicas, plan de proyecto y memoria de
+seguimiento.</li>
+<li>Colaboración: repositorios, foros, reuniones y control de
+avances.</li>
+</ul>
+<h3 id="enfoque-recomendado-para-pi2">Enfoque recomendado para PI2</h3>
+<p>Para PI2, se recomienda:</p>
+<ul>
+<li>Definir un objetivo claro y medible.</li>
+<li>Dividir el proyecto en fases pequeñas.</li>
+<li>Establecer hitos y fechas de revisión.</li>
+<li>Mantener registro del avance.</li>
+<li>Revisar periódicamente riesgos y ajustes.</li>
+</ul>
+<hr />
+<h2 id="5-trabajo-en-equipo-y-roles-básicos">5. Trabajo en equipo y
+roles básicos</h2>
+<p>La gestión de proyectos requiere coordinar personas con distintos
+papeles. En un proyecto de ASIR, algunos roles frecuentes pueden
+ser:</p>
+<ul>
+<li>Responsable del proyecto: coordina, revisa y toma decisiones
+clave.</li>
+<li>Analista: recoge requisitos y redacta documentación.</li>
+<li>Técnico de infraestructura: diseña o implementa la solución.</li>
+<li>Administrador/operador: configura servicios, despliegues y
+pruebas.</li>
+<li>Documentador: registra avances, decisiones y entregables.</li>
+</ul>
+<p>El trabajo en equipo funciona mejor cuando cada miembro conoce sus
+responsabilidades, se comunica con claridad y comparte avances con
+regularidad.</p>
+<hr />
+<h2 id="6-seguimiento-y-control-del-proyecto">6. Seguimiento y control
+del proyecto</h2>
+<p>El seguimiento del proyecto permite comprobar si se está avanzando
+según lo previsto. Para ello es necesario:</p>
+<ul>
+<li>Revisar si se cumplen los plazos.</li>
+<li>Comprobar si se están consiguiendo los objetivos parciales.</li>
+<li>Identificar retrasos o cambios de alcance.</li>
+<li>Ajustar la planificación si aparece una dificultad técnica o
+organizativa.</li>
+</ul>
+<h3 id="indicadores-básicos-de-seguimiento">Indicadores básicos de
+seguimiento</h3>
+<ul>
+<li>% de tareas completadas.</li>
+<li>Número de tareas retrasadas.</li>
+<li>Estado de los entregables.</li>
+<li>Riesgos activos.</li>
+<li>Comentarios de revisión del profesor o del equipo.</li>
+</ul>
+<hr />
+<h2 id="7-riesgos-y-buenas-prácticas">7. Riesgos y buenas prácticas</h2>
+<h3 id="riesgos-frecuentes">Riesgos frecuentes</h3>
+<ul>
+<li>Definición insuficiente del alcance.</li>
+<li>Falta de coordinación entre componentes del equipo.</li>
+<li>Desconocimiento de requisitos técnicos.</li>
+<li>Retrasos por tareas mal estimadas.</li>
+<li>Poca documentación del progreso.</li>
+</ul>
+<h3 id="buenas-prácticas">Buenas prácticas</h3>
+<ul>
+<li>Documentar desde el inicio del proyecto.</li>
+<li>Revisar objetivos y alcance con frecuencia.</li>
+<li>Priorizar tareas críticas.</li>
+<li>Mantener un registro claro de decisiones.</li>
+<li>Comunicar incidencias con rapidez.</li>
+</ul>
+<hr />
+<h2 id="8-aplicación-práctica-para-pi2">8. Aplicación práctica para
+PI2</h2>
+<p>En el módulo PI2, la gestión de proyectos se aplica al desarrollo de
+una solución técnica orientada a infraestructura, servicios, redes y
+sistemas. Esto implica que el alumno debe ser capaz de:</p>
+<ul>
+<li>Identificar la necesidad que resuelve su proyecto.</li>
+<li>Definir objetivos concretos y medibles.</li>
+<li>Estructurar el proyecto en fases.</li>
+<li>Establecer un plan inicial de trabajo.</li>
+<li>Realizar seguimiento y ajustar al progreso.</li>
+<li>Preparar la documentación necesaria para la entrega final.</li>
+</ul>
+<p>Esta unidad sirve como base para posteriores temas del módulo,
+especialmente aquellos relacionados con el análisis de requisitos, la
+planificación temporal, el despliegue, la seguridad y la presentación
+final del producto.</p>
+<hr />
+<h2
+id="9-taskflow-infrastructure-la-base-del-ecosistema-del-proyecto">9.
+TaskFlow Infrastructure: La Base del Ecosistema del Proyecto</h2>
+<p>La base de cualquier proyecto de infraestructura no es solo el MVP,
+sino el conjunto de tareas, dependencias y elementos necesarios para que
+la solución funcione de forma sostenida.</p>
+<h3 id="tabla-taskflow-infrastructure---la-base-del-ecosistema">Tabla:
+TaskFlow Infrastructure - La Base del Ecosistema</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: left;">¿Forma parte del MVP?</th>
+<th style="text-align: left;">¿Qué aporta?</th>
+<th style="text-align: left;">¿Es una base del ecosistema?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Requisitos funcionales de la
+infraestructura</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Define qué debe hacer el sistema</td>
+<td style="text-align: left;">Sí</td>
+</tr>
+<tr>
+<td style="text-align: left;">Topología básica de red y servicios</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Da la estructura de la solución</td>
+<td style="text-align: left;">Sí</td>
+</tr>
+<tr>
+<td style="text-align: left;">Instalación y configuración de servicios
+esenciales</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Permite que la solución funcione</td>
+<td style="text-align: left;">Sí</td>
+</tr>
+<tr>
+<td style="text-align: left;">Seguridad mínima (usuarios, permisos,
+firewall básico)</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Evita errores de acceso y
+vulnerabilidades</td>
+<td style="text-align: left;">Sí</td>
+</tr>
+<tr>
+<td style="text-align: left;">Despliegue inicial automatizado</td>
+<td style="text-align: left;">Sí</td>
+<td style="text-align: left;">Facilita la puesta en marcha</td>
+<td style="text-align: left;">Sí</td>
+</tr>
+<tr>
+<td style="text-align: left;">Monitorización básica</td>
+<td style="text-align: left;">No siempre</td>
+<td style="text-align: left;">Permite supervisar el sistema, pero no es
+imprescindible en la primera validación</td>
+<td style="text-align: left;">Sí, como evolución</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alta disponibilidad / redundancia</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Mejora la robustez, pero no es esencial
+para un primer MVP</td>
+<td style="text-align: left;">Sí, como mejora</td>
+</tr>
+<tr>
+<td style="text-align: left;">Escalabilidad avanzada</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Es una evolución para crecimiento
+futuro</td>
+<td style="text-align: left;">Sí, como expansión</td>
+</tr>
+<tr>
+<td style="text-align: left;">Seguridad reforzada extra</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Añade capas adicionales de protección</td>
+<td style="text-align: left;">Sí, como mejora</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dashboard completo de análisis</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Es útil en fases avanzadas, pero no define
+la utilidad base</td>
+<td style="text-align: left;">Sí, como soporte</td>
+</tr>
+<tr>
+<td style="text-align: left;">Automatización extendida y pipelines
+complejos</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Puede mejorar el flujo, pero no siempre
+pertenece al MVP</td>
+<td style="text-align: left;">Sí, como extensión</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conclusión-sobre-la-tabla">Conclusión sobre la tabla</h3>
+<p>El MVP está compuesto exclusivamente por los elementos mínimos que
+permiten validar la necesidad del proyecto y demostrar su
+funcionamiento. Todo lo demás, aunque sea útil, se considera ampliación
+o evolución del ecosistema, no parte esencial del primer entregable
+funcional.</p>
+<hr />
+<h2 id="10-moscow-y-sus-categorías-para-asir">10. MoSCoW y sus
+categorías para ASIR</h2>
+<p>El método MoSCoW es una técnica de priorización de requisitos. Se usa
+para decidir qué es imprescindible y qué puede dejarse para más
+adelante. Sus categorías son:</p>
+<p><img
+src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+alt="Priorización de requisitos" /></p>
+<p><em>Imagen relacionada con la priorización de tareas y requisitos en
+proyectos.</em></p>
+<ul>
+<li>Must Have (Debe tener): requisitos imprescindibles. Si no están, el
+proyecto no cumple la función principal.</li>
+<li>Should Have (Debería tener): importantes, pero no críticos para la
+primera entrega.</li>
+<li>Could Have (Podría tener): mejoras deseables, agradables de incluir
+si el tiempo y los recursos lo permiten.</li>
+<li>Won't Have (No tendrá): elementos descartados para la fase actual o
+para esta versión.</li>
+</ul>
+<h3 id="aplicación-de-moscow-en-asir">Aplicación de MoSCoW en ASIR</h3>
+<p>En proyectos de infraestructura, un requisitos tipo Must Have puede
+ser:</p>
+<ul>
+<li>configuración básica de un servidor,</li>
+<li>servicio funcional en red,</li>
+<li>acceso seguro mínimo,</li>
+<li>despliegue que permita probar la solución,</li>
+<li>documentación imprescindible del proyecto.</li>
+</ul>
+<p>Un Should Have podría ser:</p>
+<ul>
+<li>monitorización avanzada,</li>
+<li>copias de seguridad automatizadas,</li>
+<li>pruebas de carga más exhaustivas.</li>
+</ul>
+<p>Un Could Have podría ser:</p>
+<ul>
+<li>panel visual sofisticado,</li>
+<li>integración con IA para gestión,</li>
+<li>automatización más completa.</li>
+</ul>
+<p>Un Won't Have para esta fase podría ser:</p>
+<ul>
+<li>alta disponibilidad con redundancia completa,</li>
+<li>balanceadores avanzados,</li>
+<li>entorno multinodo complejo.</li>
+</ul>
+<h3 id="importante">Importante</h3>
+<p>El MVP está compuesto exclusivamente por los "Must Have".</p>
+<p>Esto significa que el Producto Mínimo Viable debe cubrir únicamente
+los requisitos imprescindibles para que la solución sea útil, funcional
+y verificable en la fase de validación. Todo lo demás se considera un
+incremento futuro o una mejora posterior.</p>
+<hr />
+<h2 id="11-criterios-de-evaluación-sugeridos">11. Criterios de
+evaluación sugeridos</h2>
+<p>Se puede valorar si el alumnado es capaz de:</p>
+<ul>
+<li>Definir correctamente el objetivo del proyecto.</li>
+<li>Delimitar el alcance y los entregables.</li>
+<li>Elaborar una planificación inicial coherente.</li>
+<li>Organizar tareas y responsabilidades.</li>
+<li>Dar seguimiento a los avances del trabajo.</li>
+<li>Documentar adecuadamente la gestión del proyecto.</li>
+</ul>
+<hr />
+<h2 id="12-resumen">12. Resumen</h2>
+<p>La gestión de proyectos es una competencia esencial para ASIR 2 y
+para el módulo PI2. Permite transformar una idea técnica en una solución
+organizada, realista y evaluable. A través de la planificación,
+seguimiento y documentación, el alumnado aprende a trabajar de manera
+profesional y a preparar un proyecto con criterio técnico y
+organizativo.</p>
+<p>Este tema aporta la base necesaria para afrontar con éxito el resto
+de la unidad didáctica y preparar la entrega final del proyecto.</p>
+<hr />
+<h2 id="13-bibliografía-recomendada">13. Bibliografía recomendada</h2>
+<ul>
+<li>Pressman, R. S. (2010). Ingeniería del software.</li>
+<li>Sommerville, I. (2011). Ingeniería del software.</li>
+<li>Material docente de PI2 y contenidos de gestión de proyectos.</li>
+<li>Recursos de metodología ágil y planificación de proyectos.</li>
+</ul>
+<h2 id="14-duración-orientativa">14. Duración orientativa</h2>
+<ul>
+<li>10 horas presenciales / de trabajo equivalente.</li>
+<li>Distribución recomendada:
+<ul>
+<li>2 horas: conceptos y ciclo de vida.</li>
+<li>2 horas: objetivos, alcance y entregables.</li>
+<li>3 horas: planificación y trabajo en equipo.</li>
+<li>2 horas: seguimiento, riesgos y buenas prácticas.</li>
+<li>1 hora: actividad práctica y cierre.</li>
+</ul></li>
+</ul>
+</body>
+</html>

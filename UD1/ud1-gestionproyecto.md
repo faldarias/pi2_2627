@@ -46,7 +46,8 @@ El ciclo de vida de un proyecto suele incluir las siguientes fases:
 4. Seguimiento y control: revisión del progreso, ajustes y corrección de desviaciones.
 5. Cierre: entrega del resultado, valoración y documentación final.
 
-![Ciclo de vida del proyecto](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80)
+
+<-- ![Ciclo de vida del proyecto](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80) -->
 
 *Imagen ilustrativa de planificación y ejecución de un proyecto.*
 
