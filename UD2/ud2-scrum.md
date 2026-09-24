@@ -19,7 +19,7 @@ A lo largo de la historia, dos grandes enfoques han predominado:
 
 Además, en la actualidad muchas organizaciones utilizan modelos híbridos que combinan elementos de ambos enfoques para equilibrar planificación, flexibilidad y control.
 
-![Equipo trabajando en la gestión de proyectos](images/proyecto-equipo.jpg)
+![Comparativa tradicional vs àgiles](images/img1.png)
 
 ---
 
@@ -31,7 +31,7 @@ Las metodologías tradicionales, también llamadas secuenciales o predictivas, s
 
 El modelo en cascada divide el proyecto en fases consecutivas y cada etapa se encadena con la siguiente mediante una secuencia lógica y progresiva.
 
-![Modelo en cascada](images/modelo-cascada.png)
+![Modelo Cascada puro o secuencial para el desarrollo de software. User:SergioN, CC BY 2.5 <https://creativecommons.org/licenses/by/2.5>, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/9/91/Modelo_Cascada_Secuencial_02.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)
 
 1. Análisis de requisitos
 2. Diseño
