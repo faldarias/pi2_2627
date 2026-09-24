@@ -127,7 +127,7 @@ En proyectos de infraestructura, el MVP no significa “solución incompleta” 
 
 Por ejemplo, si el proyecto consiste en desplegar una infraestructura con servidor web, DNS y seguridad básica, el MVP no necesita incluir todas las mejoras de escalabilidad, automatización avanzada o monitorización sofisticada. Lo esencial es que el servicio funcione y cumpla la finalidad propuesta.
 
-[Qué es un MVP] https://www.youtube.com/shorts/JZRH4DplL3g
+[Video: Qué es un MVP] https://www.youtube.com/shorts/JZRH4DplL3g
 
 ### 4.4. ¿Qué no es el MVP y qué sí lo es?
 
