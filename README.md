@@ -6,8 +6,8 @@
 **Curso:** 2026-27  
 **Especialidad:** ASIR
 
-[![Web](https://img.shields.io/badge/Web-faldarias.github.io-1f6feb?style=for-the-badge&logo=github)](https://faldarias.github.io/pi2_2627/)  
-[![Repositorio](https://img.shields.io/badge/GitHub-Repositorio-181717?style=for-the-badge&logo=github)](https://github.com/faldarias/pi2_2627)
+- Web: <https://faldarias.github.io/pi2_2627/>
+- Repositorio: <https://github.com/faldarias/pi2_2627>
 
 ---
 
