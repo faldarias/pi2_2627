@@ -1,21 +1,38 @@
-# pi2_2627
+# PI2 2627
 
-Proyecto Intermodular II ASIR
+## Proyecto Intermodular II ASIR
 
-Por Paco Aldarias
+**Autor:** Paco Aldarias  
+**Curso:** 2026-27  
+**Especialidad:** ASIR
 
-Curso 2026-27
+[![Web](https://img.shields.io/badge/Web-faldarias.github.io-1f6feb?style=for-the-badge&logo=github)](https://faldarias.github.io/pi2_2627/)  
+[![Repositorio](https://img.shields.io/badge/GitHub-Repositorio-181717?style=for-the-badge&logo=github)](https://github.com/faldarias/pi2_2627)
 
+---
 
+## Descripción
 
-![https://faldarias.github.io/pi2_2627/](Web)
+Este repositorio recoge el material del proyecto intermodular de segundo curso de ASIR para el curso 2026-27. Incluye la documentación y recursos de las distintas unidades didácticas desarrolladas durante el proyecto.
 
-![https://github.com/faldarias/pi2_2627](Repositorio)
+## Unidades
 
+- [UD0 - Introducción y presentación](UD0/index.html)
+- [UD1 - Gestión de proyectos](UD1/index.html)
+- [UD2 - Scrum](UD2/index.html)
 
-![https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en]
-(Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International)
+## Contenido del repositorio
 
-This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+- Material docente y apuntes de cada unidad.
+- Enlaces a páginas HTML con contenido organizado.
+- Documentación complementaria y recursos del proyecto.
 
-International License (CC BY-NC-ND 4.0).
+---
+
+## Licencia
+
+[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en)
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).
+
+> El contenido de este repositorio se distribuye bajo la licencia CC BY-NC-ND 4.0.
