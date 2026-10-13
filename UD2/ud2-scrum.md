@@ -10,7 +10,9 @@
 
 La gestión de proyectos es la disciplina que permite organizar, coordinar y controlar los recursos, tiempos, riesgos y entregables necesarios para alcanzar un objetivo concreto. En la práctica, cada proyecto tiene características distintas y requiere una metodología apropiada a su contexto, complejidad, incertidumbre y urgencia.
 
-![Metodología híbrida: Agile + Tradicional](images/metodologia-hibrida.png)
+<!-- ![Metodología híbrida: Agile + Tradicional](images/metodologia-hibrida.png) -->
+
+![My figure](exalidraw/scrum1.png)
 
 A lo largo de la historia, dos grandes enfoques han predominado:
 
@@ -31,13 +33,14 @@ Las metodologías tradicionales, también llamadas secuenciales o predictivas, s
 
 El modelo en cascada divide el proyecto en fases consecutivas y cada etapa se encadena con la siguiente mediante una secuencia lógica y progresiva.
 
-![Modelo Cascada puro o secuencial para el desarrollo de software. User:SergioN, CC BY 2.5 <https://creativecommons.org/licenses/by/2.5>, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/9/91/Modelo_Cascada_Secuencial_02.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)
+![Comparativa tradicional vs àgiles](exalidraw/cascada.png)
 
 1. Análisis de requisitos
 2. Diseño
 3. Implementación
 4. Pruebas
-5. Implantación y mantenimiento
+5. Implantación 
+6. Mantenimiento
 
 Cada fase debe completarse antes de pasar a la siguiente. Es útil cuando el proyecto es estable, el alcance está bien definido y los cambios son muy costosos.
 

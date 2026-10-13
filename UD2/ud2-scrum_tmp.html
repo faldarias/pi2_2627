@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ud2-scrum.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ud2-metodologías-de-proyectos">UD2. Metodologías de proyectos</h1>
+<h2 id="teórico-práctica">Teórico-Práctica</h2>
+<h3 id="estudio-de-metodologías-de-gestión-de-proyectos-ágiles-tradicionales-y-híbridas-roles-reuniones-planificación-y-control-del-progreso">Estudio de metodologías de gestión de proyectos (ágiles, tradicionales y híbridas), roles, reuniones, planificación y control del progreso.</h3>
+<hr>
+<h2 id="1-introducción">1. Introducción</h2>
+<p>La gestión de proyectos es la disciplina que permite organizar, coordinar y controlar los recursos, tiempos, riesgos y entregables necesarios para alcanzar un objetivo concreto. En la práctica, cada proyecto tiene características distintas y requiere una metodología apropiada a su contexto, complejidad, incertidumbre y urgencia.</p>
+<!-- ![Metodología híbrida: Agile + Tradicional](images/metodologia-hibrida.png) -->
+<p><img src="file:///home/paco/OneDrive_f.aldariasraya@edu.gva.es/ceed2627/pi2/git/pi2_2627/UD2/exalidraw/scrum1.png" alt="My figure"></p>
+<p>A lo largo de la historia, dos grandes enfoques han predominado:</p>
+<ul>
+<li>Metodologías tradicionales o predictivas</li>
+<li>Metodologías ágiles o adaptativas</li>
+</ul>
+<p>Además, en la actualidad muchas organizaciones utilizan modelos híbridos que combinan elementos de ambos enfoques para equilibrar planificación, flexibilidad y control.</p>
+<p><img src="file:///home/paco/OneDrive_f.aldariasraya@edu.gva.es/ceed2627/pi2/git/pi2_2627/UD2/images/img1.png" alt="Comparativa tradicional vs àgiles"></p>
+<hr>
+<h2 id="2-metodologías-tradicionales">2. Metodologías tradicionales</h2>
+<p>Las metodologías tradicionales, también llamadas secuenciales o predictivas, se basan en una planificación inicial exhaustiva y en una ejecución ordenada de fases. Su punto fuerte es la previsibilidad y el control de alcance, coste y tiempos cuando los requisitos son conocidos desde el principio.</p>
+<h3 id="21-modelo-en-cascada">2.1. Modelo en cascada</h3>
+<p>El modelo en cascada divide el proyecto en fases consecutivas y cada etapa se encadena con la siguiente mediante una secuencia lógica y progresiva.</p>
+<p><img src="file:///home/paco/OneDrive_f.aldariasraya@edu.gva.es/ceed2627/pi2/git/pi2_2627/UD2/exalidraw/cascada.png" alt="Comparativa tradicional vs àgiles"></p>
+<ol>
+<li>Análisis de requisitos</li>
+<li>Diseño</li>
+<li>Implementación</li>
+<li>Pruebas</li>
+<li>Implantación</li>
+<li>Mantenimiento</li>
+</ol>
+<p>Cada fase debe completarse antes de pasar a la siguiente. Es útil cuando el proyecto es estable, el alcance está bien definido y los cambios son muy costosos.</p>
+<h3 id="22-ventajas-y-limitaciones">2.2. Ventajas y limitaciones</h3>
+<p>Ventajas:</p>
+<ul>
+<li>Planificación detallada desde el inicio</li>
+<li>Documentación clara y estructurada</li>
+<li>Fácil trazabilidad de decisiones</li>
+<li>Adecuado para proyectos con requisitos estables</li>
+</ul>
+<p>Limitaciones:</p>
+<ul>
+<li>Poca flexibilidad ante cambios</li>
+<li>Dificultad para responder a requisitos no previstos</li>
+<li>Riesgo alto si se detectan errores tarde</li>
+<li>El cliente ve resultados solo al final</li>
+</ul>
+<hr>
+<h2 id="3-metodologías-ágiles">3. Metodologías ágiles</h2>
+<p>Las metodologías ágiles surgieron como respuesta a entornos de cambio constante y alta incertidumbre. Priorizan la entrega incremental, la colaboración con el cliente y la posibilidad de ajustar el plan durante el proyecto.</p>
+<h3 id="31-principios-ágiles">3.1. Principios ágiles</h3>
+<p>Los principios del enfoque ágil se centran en:</p>
+<ul>
+<li>Entregar valor de forma incremental</li>
+<li>Responder a cambios en lugar de seguir un plan rígido</li>
+<li>Fomentar la comunicación continua</li>
+<li>Trabajar con equipos autoorganizados</li>
+<li>Revisar y ajustar el producto de forma frecuente</li>
+</ul>
+<h3 id="32-scrum">3.2. Scrum</h3>
+<p>Scrum es una de las metodologías ágiles más utilizadas. Se organiza en iteraciones llamadas sprints, normalmente de 1 a 4 semanas, y se centra en entregas funcionales y revisiones periódicas.</p>
+<p>En un proyecto de ASIR enfocado en DevOps y SysAdmin, Scrum puede servir para gestionar tareas como desplegar servicios, automatizar copias de seguridad, instalar servidores, documentar infraestructura, corregir incidencias o preparar entornos de pruebas. El equipo no trabaja solo con código, sino también con configuración, automatización y mantenimiento de sistemas.</p>
+<p>Las herramientas más habituales para coordinar este tipo de trabajo son Trello y Jira:</p>
+<ul>
+<li>Trello: ayuda a visualizar tareas en tableros tipo Kanban, ideal para asignar trabajos rápidos, incidencias y seguimiento de tareas diarias.</li>
+<li>Jira: es muy útil para gestionar historias de usuario, sprints, backlog, incidencias y métricas de entrega en equipos con más estructura de proyecto.</li>
+</ul>
+<p><img src="file:///home/paco/OneDrive_f.aldariasraya@edu.gva.es/ceed2627/pi2/git/pi2_2627/UD2/images/scrum-equipo.jpg" alt="Trabajo colaborativo en una metodología Scrum"></p>
+<h4 id="roles-clave-en-scrum-y-su-función-principal">Roles clave en Scrum y su función principal</h4>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Función principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product Owner</td>
+<td>Define la prioridad del producto y representa las necesidades del cliente o del usuario final.</td>
+</tr>
+<tr>
+<td>Scrum Master</td>
+<td>Facilita el proceso, elimina bloqueos y ayuda al equipo a seguir la metodología sin perder calidad ni ritmo.</td>
+</tr>
+<tr>
+<td>Development Team</td>
+<td>Diseña, implementa, prueba y entrega la solución, incluyendo automatización, despliegues y configuración.</td>
+</tr>
+</tbody>
+</table>
+<p>En un proyecto de DevOps/SysAdmin, el Development Team puede incluir roles concretos como administrador de sistemas, analista de redes, desarrollador de automatización, responsable de despliegue y soporte técnico. Aunque la responsabilidad es compartida, cada miembro aporta especialización distinta al servicio.</p>
+<p><img src="file:///home/paco/OneDrive_f.aldariasraya@edu.gva.es/ceed2627/pi2/git/pi2_2627/UD2/images/agil-vs-tradicional.png" alt="Modelo ágil frente a modelo tradicional"></p>
+<h4 id="artefactos-principales">Artefactos principales</h4>
+<ul>
+<li>Product Backlog: lista priorizada de requisitos y mejoras.</li>
+<li>Sprint Backlog: trabajo seleccionado para el sprint.</li>
+<li>Increment: resultado usable al final del sprint.</li>
+</ul>
+<h4 id="reuniones-clave-en-scrum">Reuniones clave en Scrum</h4>
+<ul>
+<li>Sprint Planning: planifica el trabajo del siguiente sprint.</li>
+<li>Daily Scrum: reunión breve diaria para sincronizar el equipo.</li>
+<li>Sprint Review: se presenta el trabajo realizado y se recibe feedback.</li>
+<li>Sprint Retrospective: análisis de lo que ha funcionado y cómo mejorar.</li>
+</ul>
+<h3 id="33-kanban">3.3. Kanban</h3>
+<p>Kanban se basa en visualizar el flujo de trabajo mediante un tablero con columnas como “Por hacer”, “En proceso” y “Hecho”. Se centra en limitar el trabajo en curso y mejorar el flujo continuo de entrega.</p>
+<h3 id="34-ventajas-y-limitaciones-de-agile">3.4. Ventajas y limitaciones de Agile</h3>
+<p>Ventajas:</p>
+<ul>
+<li>Flexibilidad ante cambios</li>
+<li>Mayor colaboración y adaptabilidad</li>
+<li>Entregas frecuentes de valor</li>
+<li>Mejora continua</li>
+</ul>
+<p>Limitaciones:</p>
+<ul>
+<li>Requiere implicación constante del cliente</li>
+<li>Puede resultar caótico sin disciplina y gobernanza</li>
+<li>No siempre es adecuado para proyectos altamente regulados</li>
+</ul>
+<hr>
+<h2 id="4-metodologías-híbridas">4. Metodologías híbridas</h2>
+<p>Las metodologías híbridas mezclan elementos de planificación tradicional y enfoques ágiles. Se utilizan cuando el proyecto tiene parte de requisitos estables y otra parte cambiante, o cuando la organización necesita control documental junto a entregas iterativas.</p>
+<h3 id="41-cuándo-conviene-una-metodología-híbrida">4.1. ¿Cuándo conviene una metodología híbrida?</h3>
+<p>Es recomendable en proyectos donde:</p>
+<ul>
+<li>Hay regulación o auditoría externa</li>
+<li>Existen requisitos fijos y otros emergentes</li>
+<li>Se requiere documentación formal, pero también rapidez de entrega</li>
+<li>El equipo necesita combinar gobernanza con innovación</li>
+</ul>
+<h3 id="42-ejemplo-de-enfoque-híbrido">4.2. Ejemplo de enfoque híbrido</h3>
+<p>Un proyecto puede usar:</p>
+<ul>
+<li>una planificación inicial del alcance y presupuesto,</li>
+<li>entregas iterativas por sprints,</li>
+<li>reuniones de revisión periódicas,</li>
+<li>control de riesgos y documentación formal,</li>
+<li>y adaptación continua según el feedback del cliente.</li>
+</ul>
+<hr>
+<h2 id="5-roles-en-la-gestión-de-proyectos">5. Roles en la gestión de proyectos</h2>
+<p>Aunque cada metodología define roles distintos, algunas funciones son comunes en casi cualquier proyecto.</p>
+<h3 id="51-roles-principales">5.1. Roles principales</h3>
+<ul>
+<li>Director/a de proyecto: supervisa objetivos, alcance, cronograma y riesgos.</li>
+<li>Jefe de equipo / coordinador: organiza tareas y recursos del equipo.</li>
+<li>Analista / responsable de requisitos: recoge necesidades y prioriza funcionalidad.</li>
+<li>Desarrollador/a: diseña y construye la solución.</li>
+<li>Tester / QA: valida la calidad y la corrección del producto.</li>
+<li>Cliente / stakeholder: aporta necesidades, validación y feedback.</li>
+<li>DevOps / SysAdmin: automatiza despliegues, gestiona infraestructura, monitorización, seguridad y mantenimiento del entorno.</li>
+</ul>
+<p>En un proyecto de ASIR con enfoque DevOps y administración de sistemas, el rol de SysAdmin no es solo “instalar servicios”, sino también garantizar disponibilidad, escalabilidad, seguridad, copias de seguridad y recuperación ante fallos. El rol de DevOps conecta desarrollo e infraestructura para automatizar despliegues y reducir errores manuales.</p>
+<h3 id="52-importancia-del-papel-del-equipo">5.2. Importancia del papel del equipo</h3>
+<p>El éxito de un proyecto depende no solo de la planificación, sino también de la comunicación, la motivación y la colaboración dentro del equipo. Los roles deben estar definidos, pero también es necesario fomentar la cooperación y la responsabilidad compartida.</p>
+<hr>
+<h2 id="6-reuniones-y-comunicación">6. Reuniones y comunicación</h2>
+<p>Las reuniones son un elemento clave para la coordinación del proyecto. Su objetivo es facilitar la toma de decisiones, compartir avances y detectar riesgos a tiempo.</p>
+<h3 id="61-tipos-de-reuniones">6.1. Tipos de reuniones</h3>
+<ul>
+<li>Reunión inicial o kickoff: presenta objetivos, alcance, responsabilidades y cronograma.</li>
+<li>Reunión de seguimiento: revisa avances, bloqueos y próximos pasos.</li>
+<li>Reunión de planificación: define tareas, prioridades y plazos.</li>
+<li>Reunión de revisión: valida el progreso con el cliente o stakeholders.</li>
+<li>Reunión de retrospectiva: identifica mejoras para el próximo ciclo.</li>
+</ul>
+<h3 id="62-buenas-prácticas">6.2. Buenas prácticas</h3>
+<ul>
+<li>Mantener reuniones con objetivos claros</li>
+<li>Limitar la duración y el número de asistentes</li>
+<li>Registrar decisiones y compromisos</li>
+<li>Asegurar la participación de todos los implicados</li>
+<li>Documentar riesgos y acciones pendientes</li>
+</ul>
+<hr>
+<h2 id="7-planificación-del-proyecto">7. Planificación del proyecto</h2>
+<p>La planificación es la base de la gestión de proyectos. Consiste en definir qué se hará, quién lo hará, cuándo y con qué recursos.</p>
+<h3 id="71-elementos-clave-de-la-planificación">7.1. Elementos clave de la planificación</h3>
+<ul>
+<li>Objetivos y alcance</li>
+<li>Tareas y dependencias</li>
+<li>Duración estimada</li>
+<li>Recursos humanos y materiales</li>
+<li>Presupuesto</li>
+<li>Riesgos</li>
+<li>Calendario y hitos</li>
+</ul>
+<h3 id="72-técnicas-de-planificación">7.2. Técnicas de planificación</h3>
+<p>Algunas técnicas habituales son:</p>
+<ul>
+<li>Diagrama de Gantt</li>
+<li>Diagrama de precedencias o PERT</li>
+<li>WBS (Work Breakdown Structure)</li>
+<li>Historias de usuario y backlog en metodologías ágiles</li>
+<li>Estimaciones por puntos de historia o por tiempos</li>
+</ul>
+<p>La planificación debe adaptarse al tipo de proyecto. En entornos estables, un plan detallado puede ser más útil; en entornos inciertos, conviene una planificación adaptable y revisable.</p>
+<p><img src="file:///home/paco/OneDrive_f.aldariasraya@edu.gva.es/ceed2627/pi2/git/pi2_2627/UD2/images/planificacion-proyecto.jpg" alt="Planificación y seguimiento del progreso en un proyecto"></p>
+<hr>
+<h2 id="8-control-del-progreso">8. Control del progreso</h2>
+<p>El control del progreso consiste en comparar el plan previsto con la ejecución real y detectar desviaciones. Es fundamental para corregir problemas antes de que se conviertan en riesgos graves.</p>
+<h3 id="81-indicadores-de-seguimiento">8.1. Indicadores de seguimiento</h3>
+<ul>
+<li>Avance frente al plan</li>
+<li>Tiempo gastado y tiempo previsto</li>
+<li>Coste real y coste estimado</li>
+<li>Calidad de entregables</li>
+<li>Riesgos activos y mitigados</li>
+<li>Cumplimiento de hitos</li>
+</ul>
+<h3 id="82-herramientas-de-control">8.2. Herramientas de control</h3>
+<ul>
+<li>Tableros de seguimiento</li>
+<li>Informes de estado</li>
+<li>Métricas de productividad</li>
+<li>Gráficos de avance</li>
+<li>Revisión de riesgos y dependencias</li>
+</ul>
+<h3 id="83-corrección-de-desviaciones">8.3. Corrección de desviaciones</h3>
+<p>Cuando el proyecto se desvía, es necesario actuar con rapidez:</p>
+<ul>
+<li>Repriorizar tareas</li>
+<li>Redefinir alcance o tiempos</li>
+<li>Asignar más recursos</li>
+<li>Reducir riesgos</li>
+<li>Comunicar cambios a los stakeholders</li>
+</ul>
+<hr>
+<h2 id="9-comparativa-entre-metodologías">9. Comparativa entre metodologías</h2>
+<table>
+<thead>
+<tr>
+<th>Enfoque</th>
+<th>Características principales</th>
+<th>Cuándo conviene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tradicional</td>
+<td>Planificación previa, fases secuenciales, control fuerte</td>
+<td>Requisitos estables y poco cambio</td>
+</tr>
+<tr>
+<td>Ágil</td>
+<td>Iteraciones, entrega incremental, colaboración continua</td>
+<td>Entornos dinámicos y cambiantes</td>
+</tr>
+<tr>
+<td>Híbrida</td>
+<td>Mezcla de planificación y flexibilidad</td>
+<td>Proyectos con requisitos mixtos</td>
+</tr>
+</tbody>
+</table>
+<p>La elección de la metodología depende del contexto, del nivel de incertidumbre, de la necesidad de control y de la forma en que el cliente quiere participar en el proyecto.</p>
+<hr>
+<h2 id="10-conclusión">10. Conclusión</h2>
+<p>La gestión de proyectos no se basa en una única fórmula válida para todos los casos. Cada metodología ofrece ventajas y limitaciones en función de la naturaleza del trabajo, la complejidad del producto y el grado de incertidumbre.</p>
+<ul>
+<li>Las metodologías tradicionales destacan por su control y previsibilidad.</li>
+<li>Las metodologías ágiles se adaptan mejor a entornos cambiantes.</li>
+<li>Las metodologías híbridas buscan equilibrar estructura y flexibilidad.</li>
+</ul>
+<p>En cualquier caso, el éxito del proyecto depende de una buena comunicación, una planificación adecuada, un liderazgo claro y un seguimiento constante del progreso. La capacidad de adaptar la metodología al proyecto es, hoy en día, una competencia esencial para cualquier profesional de la gestión.</p>
+<hr>
+<h2 id="11-bibliografía-recomendada">11. Bibliografía recomendada</h2>
+<ul>
+<li>Agile Manifesto. (2001).</li>
+<li>Schwaber, K. y Sutherland, J. (2017). El Guía Scrum.</li>
+<li>PMI. (2021). Guía del PMBOK.</li>
+<li>Pressman, R. S. (2010). Ingeniería del Software.</li>
+<li>Kerzner, H. (2017). Project Management: A Systems Approach to Planning, Scheduling, and Controlling.</li>
+</ul>
+<hr>
+<h2 id="12-actividad-de-reflexión">12. Actividad de reflexión</h2>
+<ol>
+<li>Compara una metodología tradicional y una ágil en un caso práctico de desarrollo de software.</li>
+<li>Explica qué papel tiene el Product Owner y el Scrum Master en un proyecto Scrum.</li>
+<li>Describe cómo se planifica un sprint y qué indicadores permiten controlar su progreso.</li>
+<li>Analiza cuándo es más adecuado un enfoque híbrido en lugar de uno puro.</li>
+</ol>
+
+</body>
+</html>

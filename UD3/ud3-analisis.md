@@ -11,6 +11,8 @@ Este documento presenta una propuesta de análisis de requisitos para el módulo
 
 El alcance concreto de la infraestructura deberá acordarse con el equipo y las personas interesadas. Por ello, las necesidades y ejemplos de este documento son una base de trabajo que se podrá revisar cuando se conozcan el entorno, las restricciones y los objetivos definitivos.
 
+![Conceptos de requisitos ágiles, estimación y priorización aplicados a redes](ud3-Infografia-Gestión_Ágil_de_Requisitos.png){width=100%}
+
 ## 2. ¿Qué es un requisito?
 
 Un **requisito** expresa algo que el sistema debe hacer o una característica que debe tener. Describe una necesidad que el proyecto debe satisfacer y permite orientar el diseño, la implementación y las pruebas.
