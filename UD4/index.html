@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Guía del proyecto de Intermodular II del ciclo formativo de ASIR</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Guía del proyecto de Intermodular II del ciclo
+formativo de ASIR</h1>
+</header>
+<h1
+id="guía-del-proyecto-de-intermodular-ii-del-ciclo-formativo-de-asir">Guía
+del proyecto de Intermodular II del ciclo formativo de ASIR</h1>
+<h2 id="introducción-y-propósito">1. Introducción y propósito</h2>
+<p>El Proyecto Intermodular II integra las competencias técnicas
+adquiridas durante el ciclo formativo de Administración de Sistemas
+Informáticos en Red (ASIR). A través de un proyecto global y
+transversal, el alumnado planifica, diseña, implanta, configura,
+documenta y despliega una infraestructura real o simulada.</p>
+<p>El trabajo puede combinar conocimientos de sistemas operativos,
+redes, servicios, bases de datos, seguridad y administración avanzada de
+sistemas. Además de obtener una solución funcional, se espera un
+resultado profesional, automatizado y documentado, en el que las
+decisiones técnicas estén justificadas.</p>
+<p>Esta guía establece una base de trabajo y puede recibir aclaraciones
+antes del inicio formal del proyecto. Cualquier actualización se
+comunicará por los canales oficiales del módulo.</p>
+<h2 id="alcance-y-temática">2. Alcance y temática</h2>
+<p>La temática del proyecto es libre: se recomienda elegir una propuesta
+que resulte motivadora y permita demostrar iniciativa y creatividad.
+Algunos ejemplos posibles son:</p>
+<ul>
+<li>Implantar un entorno corporativo virtualizado con servicios de
+red.</li>
+<li>Desplegar una infraestructura segura para una pequeña empresa.</li>
+<li>Migrar sistemas y servicios a contenedores o a la nube.</li>
+<li>Configurar una solución de alta disponibilidad y
+monitorización.</li>
+<li>Automatizar el despliegue de servicios mediante scripts y
+herramientas DevOps.</li>
+</ul>
+<p>La libertad de elección no exime de cumplir los resultados de
+aprendizaje mínimos ni de aplicar una arquitectura coherente y prácticas
+profesionales. Un proyecto demasiado simple o limitado a cubrir los
+mínimos podrá considerarse no apto.</p>
+<h2 id="resultados-de-aprendizaje-mínimos">3. Resultados de aprendizaje
+mínimos</h2>
+<p>El proyecto debe abarcar, como mínimo, los siguientes resultados de
+aprendizaje (RA) de los módulos de ASIR:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>RA mínimos</th>
+<th>Aplicación en el proyecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0369 – Implantación de sistemas operativos</td>
+<td>RA1, RA2</td>
+<td>Instalar y configurar el sistema operativo y su software base.</td>
+</tr>
+<tr>
+<td>0370 – Planificación y administración de redes</td>
+<td>RA2</td>
+<td>Integrar y configurar equipos y periféricos en redes cableadas o
+inalámbricas.</td>
+</tr>
+<tr>
+<td>0372 – Gestión de bases de datos</td>
+<td>RA5</td>
+<td>Manipular información mediante asistentes o lenguaje SQL.</td>
+</tr>
+<tr>
+<td>0374 – Administración de sistemas operativos</td>
+<td>RA3</td>
+<td>Crear interfaces naturales de usuario con herramientas
+visuales.</td>
+</tr>
+<tr>
+<td>0375 – Servicios de red e internet</td>
+<td>RA1, RA2</td>
+<td>Administrar servicios DNS y DHCP, garantizando su seguridad y la
+asignación correcta de parámetros.</td>
+</tr>
+<tr>
+<td>0377 – Administración de sistemas gestores de bases de datos</td>
+<td>RA2, RA3</td>
+<td>Configurar el SGBD y gestionar accesos y permisos.</td>
+</tr>
+<tr>
+<td>0378 – Seguridad y alta disponibilidad</td>
+<td>RA2</td>
+<td>Implantar mecanismos de seguridad activa y contramedidas ante
+amenazas.</td>
+</tr>
+</tbody>
+</table>
+<p>Cada propuesta puede ampliar estos mínimos según su alcance. La
+memoria debe explicar qué partes del proyecto evidencian cada RA.</p>
+<h2 id="estructura-recomendada">4. Estructura recomendada</h2>
+<p>Organiza el trabajo en fases. Adapta el nivel de detalle a la
+temática y documenta las decisiones tomadas en cada una.</p>
+<h3 id="planificación-inicial">4.1. Planificación inicial</h3>
+<ul>
+<li>Analiza las necesidades y define los requisitos.</li>
+<li>Elabora un diagrama inicial de red o de arquitectura.</li>
+<li>Define el plan de trabajo y las tareas principales.</li>
+</ul>
+<h3 id="diseño-técnico-detallado">4.2. Diseño técnico detallado</h3>
+<ul>
+<li>Describe la topología de red.</li>
+<li>Especifica servidores, sistemas operativos y servicios.</li>
+<li>Define las políticas de seguridad y las copias de respaldo.</li>
+</ul>
+<h3 id="implantación-práctica">4.3. Implantación práctica</h3>
+<ul>
+<li>Instala y configura los sistemas previstos.</li>
+<li>Documenta los servicios implantados y sus configuraciones
+relevantes.</li>
+<li>Realiza pruebas de funcionamiento y conectividad y conserva sus
+evidencias.</li>
+</ul>
+<h3 id="automatización-y-control-profesional">4.4. Automatización y
+control profesional</h3>
+<ul>
+<li>Utiliza Git para mantener el control de versiones del proyecto.</li>
+<li>Incluye scripts de automatización o herramientas de orquestación
+cuando corresponda.</li>
+<li>Documenta los procedimientos para que puedan comprenderse y
+reproducirse.</li>
+</ul>
+<h3 id="despliegue-y-monitorización">4.5. Despliegue y
+monitorización</h3>
+<ul>
+<li>Despliega el entorno y comprueba su funcionamiento.</li>
+<li>Verifica la seguridad y el rendimiento de la solución.</li>
+<li>Aporta evidencias de la monitorización activa del entorno.</li>
+</ul>
+<h2 id="integración-de-recursos-externos">5. Integración de recursos
+externos</h2>
+<p>Se pueden aprovechar recursos desarrollados en otros módulos, siempre
+que su procedencia y su función queden claras en la documentación:</p>
+<ul>
+<li><strong>Documentación:</strong> identifica los recursos externos, el
+módulo del que proceden y cómo se utilizan.</li>
+<li><strong>Adaptación:</strong> integra esos recursos de forma
+coherente con la arquitectura general del proyecto.</li>
+<li><strong>Independencia:</strong> gestiona correctamente las
+dependencias y comprueba que la solución puede funcionar con los
+recursos integrados.</li>
+</ul>
+<p>La integración debe contribuir a una solución global comprensible, y
+no ocultar el diseño, la implantación ni las decisiones técnicas del
+proyecto.</p>
+<h2 id="entregables">6. Entregables</h2>
+<p>Cada alumno o grupo debe preparar:</p>
+<ol type="1">
+<li><strong>Memoria técnica completa</strong>, con la descripción del
+proyecto, la justificación técnica, capturas y evidencias, y la
+documentación de los RA cubiertos.</li>
+<li><strong>Repositorio Git público</strong>, que incluya la estructura
+del proyecto, scripts, configuraciones y documentación técnica.</li>
+<li><strong>Demostración funcional</strong> del resultado.</li>
+</ol>
+<p>Comprueba antes de entregar que la memoria, el repositorio y la
+demostración describen la misma solución y permiten verificar el trabajo
+realizado.</p>
+<h2 id="criterio-general-de-calidad">7. Criterio general de calidad</h2>
+<p>El resultado debe mostrar comprensión de los conceptos aplicados.
+Justifica las decisiones técnicas, presenta una arquitectura coherente,
+aplica controles de seguridad y disponibilidad, y aporta documentación y
+evidencias suficientes para evaluar la solución.</p>
+<p><a href="Guiapi2.pdf">Descargar esta guía en PDF</a></p>
+</body>
+</html>
