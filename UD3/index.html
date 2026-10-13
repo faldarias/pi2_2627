@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Análisis de requisitos - UD3 ASIR</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Análisis de requisitos - UD3 ASIR</h1>
+</header>
+<h1
+id="análisis-de-requisitos-para-el-módulo-de-asir-del-proyecto-pi2">Análisis
+de requisitos para el módulo de ASIR del proyecto PI2</h1>
+<h2 id="introducción">1. Introducción</h2>
+<p>Este documento presenta una propuesta de análisis de requisitos para
+el módulo de <strong>Administración de Sistemas Informáticos en Red
+(ASIR)</strong> del <strong>Proyecto Intermodular II (PI2)</strong>.
+Sigue los conceptos de la sesión sobre análisis de requisitos e
+historias de usuario y los aplica a un proyecto de infraestructura de
+redes.</p>
+<p>El alcance concreto de la infraestructura deberá acordarse con el
+equipo y las personas interesadas. Por ello, las necesidades y ejemplos
+de este documento son una base de trabajo que se podrá revisar cuando se
+conozcan el entorno, las restricciones y los objetivos definitivos.</p>
+<h2 id="qué-es-un-requisito">2. ¿Qué es un requisito?</h2>
+<p>Un <strong>requisito</strong> expresa algo que el sistema debe hacer
+o una característica que debe tener. Describe una necesidad que el
+proyecto debe satisfacer y permite orientar el diseño, la implementación
+y las pruebas.</p>
+<p>Los requisitos se suelen clasificar en:</p>
+<ul>
+<li><strong>Funcionales:</strong> describen servicios, tareas o
+comportamientos que la solución debe proporcionar. Por ejemplo, permitir
+que los equipos de dos departamentos se comuniquen a través de una
+política de red definida.</li>
+<li><strong>No funcionales:</strong> describen condiciones de calidad o
+restricciones de la solución, como seguridad, disponibilidad,
+rendimiento, capacidad de crecimiento, facilidad de mantenimiento o
+documentación.</li>
+</ul>
+<p>Los requisitos pueden documentarse como enunciados o como
+<strong>historias de usuario</strong>. Una historia resume una necesidad
+desde el punto de vista de quien obtiene el beneficio:</p>
+<blockquote>
+<p>Como <code>&lt;tipo de usuario&gt;</code>, quiero
+<code>&lt;acción o capacidad&gt;</code> para
+<code>&lt;beneficio&gt;</code>.</p>
+</blockquote>
+<p>Las historias deben ser comprensibles, negociables, estimables y
+verificables. El acrónimo <strong>INVEST</strong> recuerda que conviene
+que sean independientes, negociables, valiosas, estimables, pequeñas y
+testeables.</p>
+<h2 id="qué-realizará-el-proyecto-de-infraestructura-de-redes">3. ¿Qué
+realizará el proyecto de infraestructura de redes?</h2>
+<p>El proyecto de ASIR analizará, diseñará, desplegará y verificará una
+infraestructura de red que responda a las necesidades acordadas para el
+PI2. La solución puede incluir, según el alcance final:</p>
+<ol type="1">
+<li><strong>Análisis del entorno y de las necesidades:</strong>
+identificar usuarios, equipos, servicios, restricciones y riesgos;
+documentar los requisitos y las decisiones pendientes.</li>
+<li><strong>Diseño lógico y físico:</strong> representar la topología,
+los segmentos de red, los direccionamientos y las conexiones
+necesarias.</li>
+<li><strong>Configuración de la conectividad:</strong> preparar los
+equipos y servicios de red necesarios, por ejemplo, conmutación,
+encaminamiento, asignación de direcciones o resolución de nombres,
+cuando formen parte del alcance.</li>
+<li><strong>Seguridad y administración:</strong> proponer controles de
+acceso y segmentación, proteger la administración de los dispositivos y
+definir cómo se supervisará y mantendrá la infraestructura.</li>
+<li><strong>Pruebas y documentación:</strong> comprobar conectividad y
+funcionamiento, registrar resultados e incidencias, y entregar
+diagramas, inventario y procedimientos de operación y recuperación.</li>
+</ol>
+<p>El objetivo no es solamente que los dispositivos estén conectados: la
+infraestructura debe cumplir las necesidades acordadas, ser segura y
+administrable, y poder verificarse mediante pruebas.</p>
+<h2 id="historias-de-usuario-y-requisitos-de-ejemplo">4. Historias de
+usuario y requisitos de ejemplo</h2>
+<p>Los siguientes ejemplos son candidatos iniciales; no implican que una
+tecnología concreta o todos los servicios enumerados estén ya
+aprobados.</p>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 50%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Historia de usuario</th>
+<th style="text-align: left;">Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ASIR-01</td>
+<td style="text-align: left;">Como administrador de sistemas, quiero
+disponer de un esquema de la topología y del direccionamiento para
+comprender y mantener la infraestructura.</td>
+<td style="text-align: left;">Funcional</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASIR-02</td>
+<td style="text-align: left;">Como responsable de red, quiero separar
+los segmentos de usuarios y servicios mediante las medidas de
+segmentación acordadas para limitar comunicaciones no autorizadas.</td>
+<td style="text-align: left;">Funcional</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASIR-03</td>
+<td style="text-align: left;">Como administrador, quiero verificar la
+conectividad entre los equipos y servicios incluidos en el alcance para
+confirmar que la red satisface los casos de uso definidos.</td>
+<td style="text-align: left;">Funcional</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASIR-04</td>
+<td style="text-align: left;">Como responsable de seguridad, quiero que
+el acceso de administración a los dispositivos esté restringido a los
+perfiles autorizados para reducir el riesgo de cambios no
+aprobados.</td>
+<td style="text-align: left;">Funcional y de seguridad</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASIR-05</td>
+<td style="text-align: left;">Como equipo de mantenimiento, quiero
+recibir documentación de configuración, inventario y procedimientos para
+poder operar y recuperar la infraestructura.</td>
+<td style="text-align: left;">Funcional</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASIR-06</td>
+<td style="text-align: left;">Como usuario de la infraestructura, quiero
+que la red cumpla los objetivos de disponibilidad y rendimiento
+acordados para poder utilizar los servicios previstos.</td>
+<td style="text-align: left;">No funcional</td>
+</tr>
+</tbody>
+</table>
+<p>Los valores concretos de disponibilidad, rendimiento, retención de
+registros o recuperación deben acordarse antes de considerar cerrados
+esos requisitos. No se deben inventar umbrales: cuando sean necesarios,
+el equipo debe definirlos y expresarlos de forma medible.</p>
+<h2 id="criterios-de-aceptación">5. Criterios de aceptación</h2>
+<p>Los <strong>criterios de aceptación</strong> son condiciones claras,
+observables y comprobables que una historia debe cumplir para que la
+persona interesada pueda aceptarla. Evitan interpretaciones ambiguas y
+sirven para diseñar pruebas.</p>
+<p>Ejemplo para <strong>ASIR-03</strong>:</p>
+<ul>
+<li>Se ejecutan las pruebas de conectividad acordadas entre los equipos
+y servicios incluidos en el alcance.</li>
+<li>Cada prueba registra origen, destino, resultado esperado y resultado
+obtenido.</li>
+<li>Las comunicaciones que deban estar permitidas funcionan según la
+matriz de conectividad aprobada.</li>
+<li>Las comunicaciones que deban estar bloqueadas no se establecen y el
+resultado queda documentado.</li>
+<li>Los fallos detectados se registran como incidencias; la historia no
+se da por aceptada si queda sin resolver un fallo que impida satisfacer
+los criterios.</li>
+</ul>
+<p>Los criterios deben reflejar el alcance aprobado. Por ejemplo, si
+todavía no se ha decidido qué segmentos pueden comunicarse, esa matriz
+es una decisión pendiente y no un criterio que se pueda probar
+correctamente.</p>
+<h3 id="definition-of-ready-y-definition-of-done">Definition of Ready y
+Definition of Done</h3>
+<ul>
+<li><p><strong>Definition of Ready (DoR, definición de
+preparado):</strong> conjunto compartido de condiciones que una historia
+debe cumplir antes de incorporarla a una planificación. Su propósito es
+que el equipo entienda qué necesidad va a resolver y pueda empezar a
+trabajar sin depender de decisiones esenciales todavía pendientes. Una
+historia puede considerarse preparada cuando:</p>
+<ul>
+<li>expresa quién necesita algo, qué necesita y para qué;</li>
+<li>tiene un alcance comprensible, sin mezclar varios objetivos
+independientes;</li>
+<li>incluye criterios de aceptación observables y las decisiones
+necesarias para verificarlos;</li>
+<li>identifica dependencias, restricciones, riesgos y recursos o
+entornos necesarios;</li>
+<li>tiene dudas importantes resueltas o registradas y, si procede, una
+estimación inicial.</li>
+</ul>
+<p>La DoR es una ayuda para conversar y detectar trabajo de análisis
+pendiente, no una autorización para retrasar indefinidamente una
+historia ni una lista burocrática que haya que rellenar sin criterio.
+Por ejemplo, antes de planificar la segmentación de la red, el equipo
+debería conocer qué áreas se separan, qué comunicaciones deben
+permitirse y qué equipos se usarán para probarlas. Si falta acordar esa
+matriz de comunicaciones, la historia aún necesita preparación.</p></li>
+<li><p><strong>Definition of Done (DoD, definición de
+terminado):</strong> conjunto compartido de condiciones de calidad que
+se aplica al trabajo para poder afirmar que está completo y listo para
+su entrega o revisión. En este proyecto puede incluir:</p>
+<ul>
+<li>configuración aplicada en el entorno acordado y coherente con el
+diseño aprobado;</li>
+<li>pruebas pertinentes ejecutadas con resultados satisfactorios y
+evidencias registradas;</li>
+<li>controles de seguridad y accesos revisados según el alcance;</li>
+<li>diagramas, inventario y procedimientos afectados actualizados;</li>
+<li>cambios revisados por otra persona del equipo y sin incidencias
+conocidas que impidan cumplir los criterios de aceptación.</li>
+</ul>
+<p>La DoD debe ser concreta y común al equipo, y puede adaptarse cuando
+cambien las necesidades de calidad del proyecto. Por ejemplo, una
+historia de conectividad no está terminada solo porque un equipo
+responda a una prueba: también deben comprobarse los casos acordados,
+registrar sus resultados y actualizar la documentación
+relacionada.</p></li>
+</ul>
+<p>La DoR determina si se puede empezar a trabajar con suficiente
+claridad; la DoD establece qué significa haber terminado. Ninguna de las
+dos sustituye a los criterios de aceptación específicos de cada
+historia.</p>
+<h2 id="técnicas-de-estimación-y-priorización">6. Técnicas de estimación
+y priorización</h2>
+<p>Las estimaciones son relativas: ayudan al equipo a comparar trabajo y
+planificar, pero no garantizan una duración exacta. Se deben realizar de
+forma colaborativa, teniendo en cuenta esfuerzo, complejidad,
+incertidumbre y dependencias.</p>
+<h3 id="planning-poker">Planning Poker</h3>
+<p>Planning Poker es una técnica colaborativa para estimar el tamaño
+relativo de las historias, sobre todo en esfuerzo, complejidad,
+incertidumbre y trabajo asociado. No convierte los puntos en horas ni
+promete una duración concreta. Antes de empezar, el equipo acuerda el
+significado de la escala y elige una historia conocida como referencia
+para comparar las demás. Puede utilizar una secuencia creciente, por
+ejemplo <strong>1, 2, 3, 5, 8 y 13</strong>: cuanto mayor es el valor,
+mayor suele ser el trabajo o la incertidumbre. Si una historia parece
+superar el límite acordado —por ejemplo, 13— conviene investigarla o
+dividirla en historias más pequeñas.</p>
+<p>Una ronda habitual se desarrolla así:</p>
+<ol type="1">
+<li>El equipo lee la historia y sus criterios de aceptación; quien la
+propone aclara el objetivo y responde preguntas.</li>
+<li>Cada persona elige en privado una tarjeta o valor, de acuerdo con la
+escala, y todos muestran la estimación a la vez. La votación simultánea
+reduce la influencia de la primera cifra que se diga.</li>
+<li>Si las estimaciones coinciden o son próximas, el equipo comprueba
+que comparte los mismos supuestos y registra el valor acordado.</li>
+<li>Si hay diferencias grandes, quienes han estimado más alto y más bajo
+explican qué trabajo, riesgo o dependencia han tenido en cuenta. Tras
+aclarar los supuestos, se realiza otra ronda.</li>
+</ol>
+<p>El objetivo no es promediar los números ni forzar una unanimidad
+artificial: es compartir el entendimiento del trabajo. Si siguen
+existiendo dudas, se puede registrar un intervalo, anotar la
+incertidumbre o crear una tarea de investigación antes de volver a
+estimar.</p>
+<p><strong>Ejemplo:</strong> para segmentar la red, una persona puede
+considerar que basta con configurar una VLAN conocida, mientras otra
+detecta que faltan definir reglas de comunicación y validar equipos. La
+conversación permite aclarar el alcance antes de cerrar la
+estimación.</p>
+<h3 id="t-shirt-sizes">T-shirt sizes</h3>
+<p>T-shirt sizes clasifica historias en tallas relativas, como
+<strong>XS, S, M, L y XL</strong>, en lugar de asignarles puntos desde
+el principio. Es útil para una primera revisión de muchas necesidades,
+cuando se busca distinguir rápidamente su tamaño aproximado o aún hay
+incertidumbre. La talla puede considerar conjuntamente esfuerzo,
+complejidad, dependencias y riesgo; no equivale a una cantidad fija de
+horas ni sirve para comparar equipos con escalas diferentes.</p>
+<p>Para que la clasificación sea consistente, el equipo acuerda qué
+significa cada talla con ejemplos de referencia. Por ejemplo,
+<strong>XS</strong> puede ser un cambio pequeño y conocido;
+<strong>S</strong>, una tarea acotada con pocas dependencias;
+<strong>M</strong>, trabajo que requiere coordinación o varias
+comprobaciones; <strong>L</strong>, una historia con varias partes,
+dependencias o incertidumbre; y <strong>XL</strong>, algo demasiado
+grande o poco claro para planificar como una sola unidad. Las tallas
+sirven para comparar las historias entre sí, no para afirmar que todas
+las tareas M durarán lo mismo.</p>
+<p>El equipo puede clasificar cada historia en una conversación breve y
+anotar las razones de los desacuerdos. Si una historia resulta XL,
+conviene dividirla por resultados valiosos o realizar primero una
+investigación que reduzca la incertidumbre; no basta con dejarle una
+talla grande y posponer su análisis. Una vez aclarado el alcance, se
+puede estimar con mayor detalle usando Planning Poker.</p>
+<p><strong>Ejemplo orientativo:</strong> actualizar un diagrama conocido
+podría ser S; diseñar y probar la segmentación de varias áreas podría
+ser L. La talla depende del alcance y la experiencia del equipo, no es
+una medida universal de horas.</p>
+<h3 id="dot-voting">Dot Voting</h3>
+<p>Dot Voting (votación por puntos) es una técnica sencilla para hacer
+visibles las preferencias del grupo cuando hay varias opciones que
+priorizar, por ejemplo, necesidades, historias o temas que deben
+debatirse primero. El equipo acuerda las opciones, explica brevemente
+cada una y entrega a cada participante el mismo número limitado de
+votos. Cada persona coloca sus votos en las opciones que considera más
+importantes; puede concentrarlos en una opción o repartirlos, según las
+reglas acordadas. Después se cuentan los votos y se conversa sobre el
+resultado.</p>
+<p>La votación ayuda a ordenar una conversación y a detectar acuerdos o
+diferencias, pero no sustituye la decisión responsable del equipo. Los
+votos reflejan preferencias, no demuestran por sí solos el valor real,
+el coste ni la viabilidad de una tarea. Antes de fijar el orden final,
+también hay que considerar requisitos obligatorios, dependencias,
+riesgos y esfuerzo; además, un empate o una opción con pocos votos puede
+requerir más debate.</p>
+<p><strong>Ejemplo:</strong> el equipo puede votar entre documentar la
+topología, preparar la segmentación o configurar la supervisión para
+identificar qué aporta más valor al primer incremento. Después se
+estiman las historias seleccionadas mediante Planning Poker o tallas.
+Los votos ayudan a visualizar preferencias, pero la decisión final debe
+considerar también dependencias, riesgos y requisitos obligatorios.</p>
+<h2 id="priorización-y-revisión">7. Priorización y revisión</h2>
+<p>La prioridad debe considerar el valor para las personas usuarias, el
+esfuerzo, las dependencias y el riesgo. Una matriz de <strong>valor
+frente a esfuerzo</strong> puede servir como apoyo: las historias de
+alto valor y bajo esfuerzo suelen ser buenas candidatas iniciales; las
+de alto valor y mayor esfuerzo pueden planificarse por partes; las de
+bajo valor se pueden posponer, salvo que sean necesarias por seguridad,
+cumplimiento o dependencia técnica.</p>
+<p>Ejemplos orientativos de tareas de <strong>valor alto y esfuerzo
+pequeño</strong>, que podrían recibir prioridad alta si no tienen
+dependencias pendientes:</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Ejemplo de tarea</th>
+<th style="text-align: left;">Valor</th>
+<th style="text-align: left;">Esfuerzo</th>
+<th style="text-align: left;">Prioridad</th>
+<th style="text-align: left;">Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Actualizar el diagrama de red con los
+equipos y conexiones ya conocidos.</td>
+<td style="text-align: left;">Alto</td>
+<td style="text-align: left;">Pequeño</td>
+<td style="text-align: left;">Alta</td>
+<td style="text-align: left;">Facilita que todo el equipo comprenda la
+infraestructura y ayuda a detectar errores de diseño.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Documentar el plan de direccionamiento IP
+existente y validado.</td>
+<td style="text-align: left;">Alto</td>
+<td style="text-align: left;">Pequeño</td>
+<td style="text-align: left;">Alta</td>
+<td style="text-align: left;">Evita conflictos de direcciones y permite
+configurar los equipos de forma coherente.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comprobar y registrar la conectividad
+entre dos equipos de una misma red.</td>
+<td style="text-align: left;">Alto</td>
+<td style="text-align: left;">Pequeño</td>
+<td style="text-align: left;">Alta</td>
+<td style="text-align: left;">Valida rápidamente una función básica y
+proporciona evidencia útil para el diagnóstico.</td>
+</tr>
+</tbody>
+</table>
+<p>La valoración de estos ejemplos puede cambiar según el alcance real,
+el riesgo y las dependencias del proyecto; el equipo debe revisarla
+antes de planificar el trabajo.</p>
+<p>Los requisitos e historias deben revisarse con el equipo y las
+personas interesadas. Si cambia el alcance o aparece información nueva,
+se actualizan las historias, los criterios de aceptación, las
+prioridades y las estimaciones afectadas.</p>
+<h2 id="bibliografía-recomendada">8. Bibliografía recomendada</h2>
+<ul>
+<li>Cohn, Mike. <em>User Stories Applied: For Agile Software
+Development</em>. Addison-Wesley, 2004. Referencia práctica para
+redactar, organizar y trabajar con historias de usuario.</li>
+<li>International Institute of Business Analysis (IIBA). <em>A Guide to
+the Business Analysis Body of Knowledge (BABOK Guide)</em>. Referencia
+sobre análisis de necesidades, requisitos y colaboración con las partes
+interesadas.</li>
+<li>Schwaber, Ken y Sutherland, Jeff. <em>La Guía Scrum</em>. Guía
+oficial de Scrum, disponible en <a
+href="https://scrumguides.org/">scrumguides.org</a>. Útil para entender
+el trabajo iterativo y la planificación colaborativa.</li>
+<li>Project Management Institute (PMI). <em>Agile Practice Guide</em>.
+PMI, 2017. Introducción a enfoques ágiles, planificación adaptativa y
+priorización.</li>
+<li>IEEE. <em>IEEE Std 29148-2018: Systems and software engineering —
+Life cycle processes — Requirements engineering</em>. Estándar para la
+ingeniería y especificación de requisitos.</li>
+<li>Material docente de Proyecto Intermodular II. <em>Sesión 3 -
+Análisis de requisitos. Historias de usuario</em>, proporcionado en
+<code>s3-requisitos.pdf</code>.</li>
+</ul>
+</body>
+</html>
