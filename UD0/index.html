@@ -1,26 +1,748 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UD0</title>
-    <style>
-      body { font-family: Arial, sans-serif; margin: 2rem; }
-      h1 { color: #1f2937; }
-      ul { line-height: 1.8; }
-      a { color: #0b57d0; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-    </style>
-  </head>
-  <body>
-    <h1>Unidad Didáctica 0</h1>
-    <ul>
-      <li><a href="Presentacion%20PI2%202627.pdf">Presentacion PI2 2627.pdf</a></li>
-      <li><a href="ud0-guiadidactica-asir2.md">ud0-guiadidactica-asir2.md</a></li>
-      <li><a href="ud0-guiadidactica-asir2.pdf">ud0-guiadidactica-asir2.pdf</a></li>
-      <li><a href="ud0-temporalizacion.png">ud0-temporalizacion.png</a></li>
-      <li><a href="ud0-unidades.md">ud0-unidades.md</a></li>
-      <li><a href="ud0-unidades.pdf">ud0-unidades.pdf</a></li>
-    </ul>
-  </body>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Guía Didáctica PI2: Proyecto Intermodular II</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1 id="guía-didáctica-pi2-proyecto-intermodular-ii">Guía Didáctica PI2:
+Proyecto Intermodular II</h1>
+<h2 id="información-del-curso">📋 Información del Curso</h2>
+<ul>
+<li><strong>Profesor:</strong> Paco Aldarias</li>
+<li><strong>Ciclo Formativo:</strong> Administración de Sistemas
+Informáticos en Red (ASIR)</li>
+<li><strong>Familia Profesional:</strong> Informática y
+Comunicaciones</li>
+<li><strong>Curso:</strong> Segundo</li>
+<li><strong>Horas semanales:</strong> 3 horas (modalidad online)</li>
+<li><strong>Horas totales:</strong> 100 horas (de las 2000 del ciclo
+formativo)</li>
+<li><strong>Año Académico:</strong> 2027-2028</li>
+<li><strong>Centro:</strong> Centro Específico de Educación a Distancia
+(CEED, Comunidad Valenciana)</li>
+</ul>
+<figure>
+<img src="ud0-temporalizacion.jpg"
+alt="Temporalización del módulo Proyecto Intermodular II" />
+<figcaption aria-hidden="true">Temporalización del módulo</figcaption>
+</figure>
+<hr />
+<h2 id="descripción-del-curso">🔍 Descripción del Curso</h2>
+<p>Este curso está diseñado para proporcionar al alumnado de
+<strong>Administración de Sistemas Informáticos en Red (ASIR)</strong>
+una base sólida en la gestión de proyectos tecnológicos de
+infraestructura, el diseño de arquitecturas de red y servidores, la
+automatización de procesos y las metodologías modernas de desarrollo y
+operaciones (DevOps / GitOps / IaC).</p>
+<p>A través de un enfoque eminentemente práctico y adaptado a la
+especialidad de administración de sistemas, el estudiantado aprenderá a
+planificar, desplegar, asegurar, monitorizar y gestionar proyectos
+técnicos complejos, preparándolos para los desafíos reales del sector
+socioproductivo.</p>
+<p>Aunque las líneas generales se mantendrán durante todo el curso, esta
+guía es un documento vivo que puede ir actualizándose (básicamente
+aclaraciones) a lo largo del curso. Todas las modificaciones serán
+notificadas a través del foro de <em>Novedades</em> del aula del
+módulo.</p>
+<hr />
+<h2 id="objetivos-de-aprendizaje">🎯 Objetivos de Aprendizaje</h2>
+<p>Durante el módulo se trabajarán diversas competencias profesionales y
+personales con el fin de preparar al alumnado para su futura vida
+laboral.</p>
+<h3 id="objetivos-generales-del-curso-og">Objetivos Generales del Curso
+(OG)</h3>
+<h4 id="og1-planificar-y-gestionar-el-proyecto-técnico"><strong>OG1:
+Planificar y Gestionar el Proyecto Técnico</strong> 🎯</h4>
+<p>Análisis de requisitos, diseño de alto nivel, planificación de fases,
+gestión de riesgos y documentación del proyecto de infraestructura. Se
+planifica la implantación o migración de una infraestructura de sistemas
+y redes aplicando <strong>metodologías ágiles</strong> (Scrum/Kanban) y
+herramientas de gestión profesional (Jira, Trello).</p>
+<h4
+id="og2-diseñar-y-documentar-la-arquitectura-de-la-solución"><strong>OG2:
+Diseñar y Documentar la Arquitectura de la Solución</strong> 📐</h4>
+<p>Definición y documentación detallada de la arquitectura de la
+infraestructura: topología de red lógicos y físicos, configuración de
+servidores de sistemas operativos, políticas de seguridad,
+direccionamiento y planes de virtualización o alta disponibilidad.</p>
+<h4 id="og3-implementar-y-configurar-la-solución-técnica"><strong>OG3:
+Implementar y Configurar la Solución Técnica</strong> 💻</h4>
+<p>Núcleo de la ejecución técnica: implantación de sistemas operativos
+de servidor (Linux/Windows), despliegue de servicios de red (web, DNS,
+DHCP, bases de datos), configuración de seguridad activa y
+<strong>automatización de tareas y despliegues</strong> mediante
+scripting e Infraestructura como Código (IaC).</p>
+<h4
+id="og4-aplicar-un-flujo-de-trabajo-profesional-y-automatizado-devopsgitops"><strong>OG4:
+Aplicar un Flujo de Trabajo Profesional y Automatizado
+(DevOps/GitOps)</strong> 🛠️</h4>
+<p>Uso experto de <strong>control de versiones</strong> (Git/GitHub)
+aplicado a configuraciones e infraestructura, automatización mediante
+<strong>Integración y Despliegue Continuo (CI/CD / GitOps)</strong>,
+testing de carga, seguridad y recuperación ante desastres (DRP), e
+integración de la <strong>IA</strong> como herramienta de productividad
+en operaciones.</p>
+<h4
+id="og5-desplegar-y-operar-la-solución-en-un-entorno-productivo"><strong>OG5:
+Desplegar y Operar la Solución en un Entorno Productivo</strong> ☁️</h4>
+<p>Puesta en producción y operación continua de la infraestructura:
+configuración del entorno de despliegue (servidores, contenedores),
+securización de comunicaciones, despliegue final y
+<strong>monitorización centralizada</strong> (métricas de CPU, RAM,
+uptime, latencia, logs y alertas) para garantizar el rendimiento y la
+disponibilidad.</p>
+<hr />
+<h2 id="competencias-a-desarrollar">🏆 Competencias a Desarrollar</h2>
+<p>La formación del módulo contribuye a alcanzar un conjunto de
+competencias clave divididas en transversales y técnicas específicas de
+ASIR:</p>
+<h3 id="competencias-transversales">🤝 Competencias Transversales</h3>
+<ul>
+<li><strong>Análisis y Resolución de Problemas Complejos:</strong>
+Evaluar requisitos de sistemas y redes, identificar cuellos de botella y
+diseñar e implementar soluciones de infraestructura funcionales,
+robustas, seguras y escalables.</li>
+<li><strong>Trabajo en Equipo y Comunicación Profesional
+(DevOps):</strong> Colaborar eficazmente en entornos técnicos,
+automatizando tareas, respetando la autonomía del equipo y comunicando
+decisiones arquitectónicas con claridad.</li>
+<li><strong>Adaptación y Aprendizaje Continuo:</strong> Demostrar
+iniciativa para asimilar nuevas tecnologías de sistemas (Contenedores,
+Cloud, IaC, GitOps) y herramientas de gestión y monitorización.</li>
+<li><strong>Autonomía, Iniciativa y Gestión de Proyectos:</strong>
+Planificar tareas, gestionar tiempos y resolver contingencias
+proactivamente para cumplir los hitos del proyecto con espíritu de
+mejora continua.</li>
+</ul>
+<h3 id="competencias-técnicas-específicas-asir">💻 Competencias Técnicas
+Específicas (ASIR)</h3>
+<ul>
+<li><strong>Administración de sistemas y servicios de red:</strong>
+Instalar, configurar y mantener sistemas operativos de servidor y
+servicios de red esenciales (DNS, DHCP, web, correo, BD), garantizando
+calidad y rendimiento.</li>
+<li><strong>Implantación y gestión de infraestructura:</strong>
+Determinar la arquitectura de red lógicos/físicos, integrar equipos,
+automatizar despliegues y optimizar los recursos del sistema.</li>
+<li><strong>Implementación de soluciones de seguridad y alta
+disponibilidad:</strong> Asegurar la integridad de los datos,
+administrar accesos, implementar contramedidas de seguridad activa y
+desplegar sistemas redundantes o con tolerancia a fallos.</li>
+</ul>
+<hr />
+<h2 id="resultados-de-aprendizaje-y-módulos-implicados">🏅 Resultados de
+Aprendizaje y Módulos Implicados</h2>
+<h3
+id="resultados-de-aprendizaje-generales-del-módulo-proyecto-intermodular-ii-0379-asir">Resultados
+de Aprendizaje Generales del Módulo Proyecto Intermodular II (0379
+ASIR)</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Módulo</th>
+<th style="text-align: left;">Resultado de Aprendizaje (RA)</th>
+<th style="text-align: left;">Criterios de Evaluación (CE)</th>
+<th style="text-align: left;">Objetivos Asociados (OG)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>0379 - Proyecto Intermodular II
+(ASIR)</strong></td>
+<td style="text-align: left;"><strong>RA1:</strong> Identifica
+necesidades del sector productivo, relacionándolas con proyectos tipo
+que las puedan satisfacer.</td>
+<td style="text-align: left;">c, f</td>
+<td style="text-align: left;">OG1</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>RA2:</strong> Diseña proyectos
+relacionados con las competencias expresadas en el título, incluyendo y
+desarrollando las fases que lo componen.</td>
+<td style="text-align: left;">b, c, d, h, i</td>
+<td style="text-align: left;">OG1, OG2</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>RA3:</strong> Planifica la
+ejecución del proyecto, determinando el plan de intervención y la
+documentación asociada.</td>
+<td style="text-align: left;">a, e, f</td>
+<td style="text-align: left;">OG1</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>RA4:</strong> Define los
+procedimientos para el seguimiento y control en la ejecución del
+proyecto, justificando la selección de variables e instrumentos
+empleados.</td>
+<td style="text-align: left;">b, c</td>
+<td style="text-align: left;">OG1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3
+id="resultados-de-aprendizaje-específicos-de-módulos-de-asir-evaluados-en-el-proyecto">Resultados
+de Aprendizaje Específicos de Módulos de ASIR Evaluados en el
+Proyecto</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Módulo de ASIR</th>
+<th style="text-align: left;">Resultado de Aprendizaje (RA)</th>
+<th style="text-align: left;">Criterios de Evaluación (CE)</th>
+<th style="text-align: left;">Objetivos (OG)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>0369 – Implantación de sistemas
+operativos</strong></td>
+<td style="text-align: left;"><strong>RA1:</strong> Instala sistemas
+operativos, analizando sus características e interpretando la
+documentación técnica.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG3, OG5</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>RA2:</strong> Configura el
+software de base, analizando las necesidades de explotación del sistema
+informático.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0370 – Planificación y
+administración de redes</strong></td>
+<td style="text-align: left;"><strong>RA2:</strong> Integra ordenadores
+y periféricos en redes cableadas e inalámbricas, evaluando su
+funcionamiento y prestaciones.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG1, OG2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0372 – Gestión de base de
+datos</strong></td>
+<td style="text-align: left;"><strong>RA5:</strong> Modifica la
+información almacenada utilizando asistentes, herramientas gráficas y el
+lenguaje de manipulación de datos.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0374 – Administración de sistemas
+operativos</strong></td>
+<td style="text-align: left;"><strong>RA3:</strong> Genera interfaces
+naturales de usuario / scripts utilizando herramientas visuales y
+administrativas.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG2, OG4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0375 – Servicios de red e
+internet</strong></td>
+<td style="text-align: left;"><strong>RA1:</strong> Administra servicios
+de resolución de nombres, analizándolos y garantizando la seguridad del
+servicio.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG3</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>RA2:</strong> Administra servicios
+de configuración automática, identificándolos y verificando la correcta
+asignación de los parámetros.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG1, OG3, OG4, OG5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0377 – Administración de sistemas
+gestores de base de datos</strong></td>
+<td style="text-align: left;"><strong>RA2:</strong> Configura el sistema
+gestor de bases de datos interpretando las especificaciones técnicas y
+los requisitos de explotación.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG3, OG5</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>RA3:</strong> Implanta métodos de
+control de acceso utilizando asistentes, herramientas gráficas y
+comandos del lenguaje del sistema gestor.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG2, OG3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0378 – Seguridad y alta
+disponibilidad</strong></td>
+<td style="text-align: left;"><strong>RA2:</strong> Implanta mecanismos
+de seguridad activa, seleccionando y ejecutando contramedidas ante
+amenazas o ataques al sistema.</td>
+<td style="text-align: left;">Todos</td>
+<td style="text-align: left;">OG4, OG5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="estructura-del-temario-y-contenidos">📚 Estructura del Temario y
+Contenidos</h2>
+<p>El módulo está estructurado en 6 unidades formativas fundamentales
+para la especialidad de ASIR, divididas en dos fases principales:</p>
+<h3
+id="fase-1-formación-básica-y-definición-técnica-unidades-temáticas-sesiones">FASE
+1: Formación Básica y Definición Técnica (Unidades Temáticas /
+Sesiones)</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Unidad</th>
+<th style="text-align: left;">Título de la Unidad / Sesión</th>
+<th style="text-align: center;">Tipo</th>
+<th style="text-align: left;">Contenidos Clave para ASIR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>UD1</strong></td>
+<td style="text-align: left;"><strong>Gestión de proyectos</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Organización del ciclo de vida del
+proyecto, definición de objetivos, alcance, planificación inicial y
+seguimiento del trabajo en equipo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD2</strong></td>
+<td style="text-align: left;"><strong>Metodologías de
+proyectos</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Estudio de metodologías de gestión de
+proyectos (ágiles, tradicionales y híbridas), roles, reuniones,
+planificación y control del progreso.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD3</strong></td>
+<td style="text-align: left;"><strong>Análisis de requisitos. Entregable
+1</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Recogida de requisitos del cliente,
+análisis funcional, priorización, documentación inicial y elaboración
+del primer entregable del proyecto.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD4</strong></td>
+<td style="text-align: left;"><strong>Diagramas de
+topologías</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Diseño de topologías lógicas y físicas de
+red, representaciones gráficas de infraestructura, servicios y
+conexiones entre elementos.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD5</strong></td>
+<td style="text-align: left;"><strong>Aplicación de la IA</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Uso responsable de herramientas de
+inteligencia artificial para análisis, documentación, automatización de
+tareas y apoyo a la toma de decisiones técnicas.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD6</strong></td>
+<td style="text-align: left;"><strong>Control de versiones</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Gestión de repositorios, Git, ramas,
+commits, trabajo colaborativo y trazabilidad del desarrollo del
+proyecto.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD7</strong></td>
+<td style="text-align: left;"><strong>Despliegue automatizado.
+Devnet.</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Automatización de despliegues, entorno de
+trabajo DevNet, configuración de servicios, pruebas de integración y
+mejora del flujo de entrega.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD8</strong></td>
+<td style="text-align: left;"><strong>Pruebas y Seguridad</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Validación funcional, análisis de riesgos,
+seguridad de la infraestructura, pruebas de calidad y medidas
+preventivas frente a amenazas.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD9</strong></td>
+<td style="text-align: left;"><strong>Planificación
+temporal</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Definición de cronogramas, estimación de
+tareas, reparto temporal, seguimiento del progreso e identificación de
+hitos.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>UD10</strong></td>
+<td style="text-align: left;"><strong>Producto Final. Entregable
+2</strong></td>
+<td style="text-align: center;">Teórico-Práctica</td>
+<td style="text-align: left;">Cierre del proyecto, presentación del
+producto final, documentación del entregable final y valoración global
+del resultado.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fase-2-desarrollo-tutorización-y-prueba-final">FASE 2:
+Desarrollo, Tutorización y Prueba Final</h3>
+<p>Sesiones individuales y colectivas dedicadas a la tutorización
+personalizada del proyecto, resolución de incidencias de despliegue y
+preparación de la prueba final presencial.</p>
+<hr />
+<h2 id="metodología">🚀 Metodología</h2>
+<ul>
+<li>🧠 <strong>Aprendizaje Basado en Proyectos (ABP):</strong> El curso
+se centra en el diseño, despliegue y documentación de una
+infraestructura de red y sistemas completa para un entorno real.</li>
+<li>🤖 <strong>IA como Copiloto de Operaciones:</strong> Se fomenta el
+uso responsable de herramientas de Inteligencia Artificial para la
+generación de scripts, diagnóstico de errores y optimización de
+configuraciones.</li>
+<li>🤝 <strong>Enfoque Colaborativo y Profesional:</strong> Simulación
+de flujos de trabajo profesionales de administración de sistemas y
+DevOps.</li>
+<li>💬 <strong>Tutorías:</strong> Sesiones colectivas de orientación e
+individuales previa cita con el profesorado.</li>
+</ul>
+<hr />
+<h2 id="entregas-y-seguimiento-del-proyecto">📝 Entregas y Seguimiento
+del Proyecto</h2>
+<ol type="1">
+<li><strong>Propuesta de Proyecto (Obligatoria):</strong>
+<ul>
+<li>Entrega dentro del plazo en el aula virtual según plantilla
+oficial.</li>
+<li>Requiere la aprobación explícita del profesor para continuar.</li>
+<li>Requisito indispensable para superar el módulo.</li>
+</ul></li>
+<li><strong>Hitos de Revisión (Voluntarios):</strong>
+<ul>
+<li>Dos plazos opcionales para revisión parcial de la documentación e
+infraestructura.</li>
+<li>Sin calificación directa, orientados a proporcionar feedback
+constructivo.</li>
+</ul></li>
+<li><strong>Entrega Final (Obligatoria):</strong>
+<ul>
+<li>Entrega de la documentación técnica completa y del repositorio del
+proyecto en la fecha límite inamovible fijada en el aula virtual.</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="evaluación-y-calificación">✅ Evaluación y Calificación</h2>
+<p>La evaluación es <strong>continua, formativa e
+integradora</strong>.</p>
+<h3 id="principios-y-condiciones">Principios y Condiciones</h3>
+<ul>
+<li><strong>Aprobado de Módulos Previos:</strong> Recomendable tener
+superados los módulos de ASIR involucrados en el proyecto.</li>
+<li><strong>Entrega Final:</strong> Fecha estricta e inamovible.</li>
+<li><strong>Uso ético y Fraude:</strong> La copia o el uso
+inadecuado/abusivo de IA implicará un 0 en el instrumento
+correspondiente.</li>
+</ul>
+<h3 id="tabla-de-instrumentos-de-calificación">Tabla de Instrumentos de
+Calificación</h3>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Instrumento</th>
+<th style="text-align: left;">Descripción</th>
+<th style="text-align: center;">Peso</th>
+<th style="text-align: center;">Nota Mínima</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Proyecto Intermodular
+I</strong></td>
+<td style="text-align: left;">Nota obtenida en el módulo previo de
+Proyecto Intermodular I</td>
+<td style="text-align: center;"><strong>10%</strong></td>
+<td style="text-align: center;">&gt;= 5.0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Documentación</strong></td>
+<td style="text-align: left;">Elaboración y entrega de la documentación
+técnica y arquitectónica ([Reto 2])</td>
+<td style="text-align: center;"><strong>20%</strong></td>
+<td style="text-align: center;">&gt;= 5.0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proyecto</strong></td>
+<td style="text-align: left;">Implantación técnica del proyecto de
+infraestructura y repositorio GitHub</td>
+<td style="text-align: center;"><strong>40%</strong></td>
+<td style="text-align: center;">&gt;= 5.0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Defensa</strong></td>
+<td style="text-align: left;">Exposición oral presencial (PechaKucha +
+Vídeo) y Mesa Redonda</td>
+<td style="text-align: center;"><strong>20%</strong></td>
+<td style="text-align: center;">&gt;= 5.0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Participación</strong></td>
+<td style="text-align: left;">Intervención activa en foros, debate y
+aportaciones en la mesa redonda</td>
+<td style="text-align: center;"><strong>10%</strong></td>
+<td style="text-align: center;">No exige mín.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="desglose-de-instrumentos-de-evaluación">Desglose de Instrumentos
+de Evaluación</h3>
+<ul>
+<li><strong>Documentación (20%):</strong> Tarea base ([Reto 2]). Incluye
+memoria técnica, diagramas de topología, plan de riesgos y manuales de
+administración. Requiere superar todos los CE asociados a los RAs
+obligatorios.</li>
+<li><strong>Proyecto (40%):</strong> Desarrollo técnico completo. Debe
+publicarse en repositorio web (GitHub) con licencia libre, cubriendo los
+RAs obligatorios de ASIR.</li>
+<li><strong>Defensa (20%):</strong> Prueba presencial obligatoria
+compuesta por:
+<ol type="1">
+<li><strong>Exposición oral individual (PechaKucha):</strong> 20
+diapositivasx20segundos + vídeo de 4 min demostrativo sin audio
+comentado en directo.</li>
+<li><strong>Mesa Redonda grupal:</strong> Debate técnico colaborativo
+sobre los proyectos del turno.</li>
+</ol></li>
+<li><strong>Participación (10%):</strong> Implicación activa en el aula
+virtual y calidad de las preguntas/feedback en la mesa redonda.</li>
+<li><strong>Recuperación:</strong> Convocatoria extraordinaria a finales
+de junio con la misma estructura y exigencias.</li>
+</ul>
+<hr />
+<h2 id="recursos-y-herramientas">🛠️ Recursos y Herramientas</h2>
+<ul>
+<li><strong>Gestión de Proyectos:</strong> Jira, Trello.</li>
+<li><strong>Diseño y Diagramación de Redes:</strong> Draw.io,
+Lucidchart.</li>
+<li><strong>Control de Versiones y GitOps:</strong> Git, GitHub.</li>
+<li><strong>Comunicación y Aula Virtual:</strong> Aules, Microsoft
+Teams, Correo institucional.</li>
+<li><strong>Entorno de Trabajo:</strong> Visual Studio Code, Shell /
+Bash scripts, PowerShell.</li>
+<li><strong>Monitorización y Operaciones:</strong> Prometheus,
+Grafana.</li>
+<li><strong>Herramientas de IA:</strong> GitHub Copilot, LLMs.</li>
+</ul>
+<hr />
+<h2 id="material-complementario">Material complementario</h2>
+<ul>
+<li><a href="Presentacion%20PI2%202627.pdf">Presentación PI2 2627</a></li>
+<li><a href="ud0-guiadidactica-asir2.md">Guía didáctica en Markdown</a></li>
+<li><a href="ud0-guiadidactica-asir2.pdf">Guía didáctica en PDF</a></li>
+<li><a href="ud0-unidades.md">Unidades en Markdown</a></li>
+<li><a href="ud0-unidades.pdf">Unidades en PDF</a></li>
+</ul>
+</body>
 </html>

@@ -1,5 +1,7 @@
 # UD1. Gestión de proyectos
 
+![Infografía de la unidad didáctica 1 sobre gestión de proyectos](Infografia-ud1-Gestión_de_proyectos.png)
+
 | **UD1** | **Gestión de proyectos** | Teórico-Práctica | Organización del ciclo de vida del proyecto, definición de objetivos, alcance, planificación inicial y seguimiento del trabajo en equipo. |
 
 ## 1. Presentación del tema
