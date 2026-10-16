@@ -1,8 +1,3 @@
----
-papersize: a4
-geometry: margin=1.5cm
----
-
 # Análisis de requisitos para el módulo de ASIR del proyecto PI2
 
 ## 1. Introducción
