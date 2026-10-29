@@ -20,7 +20,9 @@ El Lean Canvas sustituye los extensos planes de negocio por un esquema visual de
 8. **Métricas Clave**: Indicadores técnicos y de servicio para medir la eficiencia y disponibilidad (SLA, RTO, RPO, latencia, uso de CPU/RAM).
 9. **Ventaja Injusta**: Elemento diferenciador difícil de replicar (automatización propia mediante scripts/Ansible, know-how especializado).
 
----
+![Lean Canvas con los 9 bloques y el contenido de cada elemento](img/lean-canvas-9-bloques.png)
+
+*Figura 1. Los 9 bloques del Lean Canvas con el contenido que debe incluir cada uno.*
 
 ## 2. Herramientas Gráficas para Elaborar el Esquema
 
