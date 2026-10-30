@@ -5,173 +5,8 @@
   <meta name="generator" content="pandoc 3.11" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Análisis de requisitos - UD3 ASIR</title>
-  <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
+  
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -192,8 +27,7 @@ equipo y las personas interesadas. Por ello, las necesidades y ejemplos
 de este documento son una base de trabajo que se podrá revisar cuando se
 conozcan el entorno, las restricciones y los objetivos definitivos.</p>
 <figure>
-<img src="ud3-Infografia-Gestión_Ágil_de_Requisitos.png"
-style="width:100.0%"
+<img src="ud3-Infografia-Gestión_Ágil_de_Requisitos.png" class="inline-width-100-0"
 alt="Conceptos de requisitos ágiles, estimación y priorización aplicados a redes" />
 <figcaption aria-hidden="true">Conceptos de requisitos ágiles,
 estimación y priorización aplicados a redes</figcaption>
@@ -259,60 +93,60 @@ tecnología concreta o todos los servicios enumerados estén ya
 aprobados.</p>
 <table>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 50%" />
-<col style="width: 27%" />
+<col class="inline-width-22" />
+<col class="inline-width-50" />
+<col class="inline-width-27" />
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">ID</th>
-<th style="text-align: left;">Historia de usuario</th>
-<th style="text-align: left;">Tipo</th>
+<th class="inline-text-align-left">ID</th>
+<th class="inline-text-align-left">Historia de usuario</th>
+<th class="inline-text-align-left">Tipo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">ASIR-01</td>
-<td style="text-align: left;">Como administrador de sistemas, quiero
+<td class="inline-text-align-left">ASIR-01</td>
+<td class="inline-text-align-left">Como administrador de sistemas, quiero
 disponer de un esquema de la topología y del direccionamiento para
 comprender y mantener la infraestructura.</td>
-<td style="text-align: left;">Funcional</td>
+<td class="inline-text-align-left">Funcional</td>
 </tr>
 <tr>
-<td style="text-align: left;">ASIR-02</td>
-<td style="text-align: left;">Como responsable de red, quiero separar
+<td class="inline-text-align-left">ASIR-02</td>
+<td class="inline-text-align-left">Como responsable de red, quiero separar
 los segmentos de usuarios y servicios mediante las medidas de
 segmentación acordadas para limitar comunicaciones no autorizadas.</td>
-<td style="text-align: left;">Funcional</td>
+<td class="inline-text-align-left">Funcional</td>
 </tr>
 <tr>
-<td style="text-align: left;">ASIR-03</td>
-<td style="text-align: left;">Como administrador, quiero verificar la
+<td class="inline-text-align-left">ASIR-03</td>
+<td class="inline-text-align-left">Como administrador, quiero verificar la
 conectividad entre los equipos y servicios incluidos en el alcance para
 confirmar que la red satisface los casos de uso definidos.</td>
-<td style="text-align: left;">Funcional</td>
+<td class="inline-text-align-left">Funcional</td>
 </tr>
 <tr>
-<td style="text-align: left;">ASIR-04</td>
-<td style="text-align: left;">Como responsable de seguridad, quiero que
+<td class="inline-text-align-left">ASIR-04</td>
+<td class="inline-text-align-left">Como responsable de seguridad, quiero que
 el acceso de administración a los dispositivos esté restringido a los
 perfiles autorizados para reducir el riesgo de cambios no
 aprobados.</td>
-<td style="text-align: left;">Funcional y de seguridad</td>
+<td class="inline-text-align-left">Funcional y de seguridad</td>
 </tr>
 <tr>
-<td style="text-align: left;">ASIR-05</td>
-<td style="text-align: left;">Como equipo de mantenimiento, quiero
+<td class="inline-text-align-left">ASIR-05</td>
+<td class="inline-text-align-left">Como equipo de mantenimiento, quiero
 recibir documentación de configuración, inventario y procedimientos para
 poder operar y recuperar la infraestructura.</td>
-<td style="text-align: left;">Funcional</td>
+<td class="inline-text-align-left">Funcional</td>
 </tr>
 <tr>
-<td style="text-align: left;">ASIR-06</td>
-<td style="text-align: left;">Como usuario de la infraestructura, quiero
+<td class="inline-text-align-left">ASIR-06</td>
+<td class="inline-text-align-left">Como usuario de la infraestructura, quiero
 que la red cumpla los objetivos de disponibilidad y rendimiento
 acordados para poder utilizar los servicios previstos.</td>
-<td style="text-align: left;">No funcional</td>
+<td class="inline-text-align-left">No funcional</td>
 </tr>
 </tbody>
 </table>
@@ -499,47 +333,47 @@ pequeño</strong>, que podrían recibir prioridad alta si no tienen
 dependencias pendientes:</p>
 <table>
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 47%" />
+<col class="inline-width-21" />
+<col class="inline-width-10" />
+<col class="inline-width-10" />
+<col class="inline-width-10" />
+<col class="inline-width-47" />
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Ejemplo de tarea</th>
-<th style="text-align: left;">Valor</th>
-<th style="text-align: left;">Esfuerzo</th>
-<th style="text-align: left;">Prioridad</th>
-<th style="text-align: left;">Motivo</th>
+<th class="inline-text-align-left">Ejemplo de tarea</th>
+<th class="inline-text-align-left">Valor</th>
+<th class="inline-text-align-left">Esfuerzo</th>
+<th class="inline-text-align-left">Prioridad</th>
+<th class="inline-text-align-left">Motivo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Actualizar el diagrama de red con los
+<td class="inline-text-align-left">Actualizar el diagrama de red con los
 equipos y conexiones ya conocidos.</td>
-<td style="text-align: left;">Alto</td>
-<td style="text-align: left;">Pequeño</td>
-<td style="text-align: left;">Alta</td>
-<td style="text-align: left;">Facilita que todo el equipo comprenda la
+<td class="inline-text-align-left">Alto</td>
+<td class="inline-text-align-left">Pequeño</td>
+<td class="inline-text-align-left">Alta</td>
+<td class="inline-text-align-left">Facilita que todo el equipo comprenda la
 infraestructura y ayuda a detectar errores de diseño.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Documentar el plan de direccionamiento IP
+<td class="inline-text-align-left">Documentar el plan de direccionamiento IP
 existente y validado.</td>
-<td style="text-align: left;">Alto</td>
-<td style="text-align: left;">Pequeño</td>
-<td style="text-align: left;">Alta</td>
-<td style="text-align: left;">Evita conflictos de direcciones y permite
+<td class="inline-text-align-left">Alto</td>
+<td class="inline-text-align-left">Pequeño</td>
+<td class="inline-text-align-left">Alta</td>
+<td class="inline-text-align-left">Evita conflictos de direcciones y permite
 configurar los equipos de forma coherente.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Comprobar y registrar la conectividad
+<td class="inline-text-align-left">Comprobar y registrar la conectividad
 entre dos equipos de una misma red.</td>
-<td style="text-align: left;">Alto</td>
-<td style="text-align: left;">Pequeño</td>
-<td style="text-align: left;">Alta</td>
-<td style="text-align: left;">Valida rápidamente una función básica y
+<td class="inline-text-align-left">Alto</td>
+<td class="inline-text-align-left">Pequeño</td>
+<td class="inline-text-align-left">Alta</td>
+<td class="inline-text-align-left">Valida rápidamente una función básica y
 proporciona evidencia útil para el diagnóstico.</td>
 </tr>
 </tbody>
