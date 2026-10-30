@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-ES" xml:lang="es-ES">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paco Aldarias" />
+  <title>Prácticas de Git y GitHub</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Prácticas de Git y GitHub</h1>
+<p class="subtitle">Módulo PI2 · ASIR2</p>
+<p class="author">Paco Aldarias</p>
+<p class="date">30 de octubre de 2026</p>
+</header>
+<p>Realiza las actividades en un repositorio propio para la unidad. No
+utilices datos reales ni guardes contraseñas, tokens, claves privadas u
+otra información confidencial. Conserva el mismo repositorio para las
+prácticas siguientes.</p>
+<h1 id="cuenta-de-github-education-y-primer-archivo">Cuenta de GitHub
+Education y primer archivo</h1>
+<h2 id="objetivo">Objetivo</h2>
+<p>Crear una cuenta de GitHub, solicitar la verificación de estudiante
+de GitHub Education y dejar un archivo de texto con tu nombre en un
+repositorio.</p>
+<h2 id="pasos">Pasos</h2>
+<ol type="1">
+<li><p>Crea una cuenta personal en <a
+href="https://github.com/">GitHub</a> o inicia sesión con la cuenta que
+ya tengas.</p></li>
+<li><p>Visita <a href="https://education.github.com/">GitHub
+Education</a> y solicita la verificación como estudiante. Sigue las
+instrucciones que aparezcan para acreditar tu situación académica. La
+aprobación depende de los criterios actuales de GitHub y puede tardar;
+no es necesario publicar documentación académica en un
+repositorio.</p></li>
+<li><p>Mientras se tramita la solicitud, crea en GitHub un repositorio
+para estas prácticas llamado <code>ud5-practica</code>. Elige si será
+público o privado según las indicaciones del profesor. Si lo haces
+público, no añadas datos personales adicionales ni información sensible.
+El profesor prefiere sea público.</p></li>
+<li><p>En el repositorio, crea un archivo de texto cuyo nombre incluya
+tu nombre y apellidos, en minúsculas y sin espacios ni tildes. Por
+ejemplo, <code>pacoaldarias.txt</code>.</p></li>
+<li><p>Escribe dentro del archivo tu nombre y apellidos, sin añadir
+contraseñas, correo personal, dirección ni otros datos. Guarda el cambio
+con el mensaje
+<code>docs: añadir archivo personal de la práctica</code>.</p></li>
+<li><p>Comprueba en GitHub que el archivo aparece en la rama
+<code>main</code>. Cuando se verifique tu condición de estudiante,
+revisa los beneficios disponibles en GitHub Education y activa Copilot
+si te corresponde.</p></li>
+<li><p>Clona el repositorio en tu equipo para continuar las
+actividades:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/TU-USUARIO/ud5-practica.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ud5-practica</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div>
+<p>Sustituye <code>TU-USUARIO</code> por tu nombre de usuario de GitHub.
+Si el repositorio es privado, inicia sesión con el método de
+autenticación configurado para GitHub.</p></li>
+</ol>
+<h2 id="entrega">Entrega</h2>
+<ul>
+<li>Enlace al repositorio de GitHub.</li>
+<li>Captura o evidencia de que el archivo
+<code>nombreapellido.txt</code> está en <code>main</code>.</li>
+<li>Estado de la solicitud de GitHub Education. No incluyas capturas con
+datos académicos personales o información sensible.</li>
+</ul>
+<h1 id="crear-una-rama-y-preparar-una-pull-request">Crear una rama y
+preparar una pull request</h1>
+<p>En tu copia local del repositorio:</p>
+<ol type="1">
+<li><p>Actualiza <code>main</code> y crea una rama para documentar un
+procedimiento:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> docs/procedimiento-backup</span></code></pre></div></li>
+<li><p>Crea <code>procedimiento-backup.md</code> con los pasos para
+comprobar una copia de seguridad de laboratorio. Incluye cómo verificar
+el resultado y evita escribir credenciales o rutas con datos
+sensibles.</p></li>
+<li><p>Comprueba los cambios y crea un commit:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add procedimiento-backup.md</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;docs: añadir procedimiento de backup&quot;</span></span></code></pre></div></li>
+<li><p>Publica la rama y abre una pull request desde
+<code>docs/procedimiento-backup</code> hacia <code>main</code>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin docs/procedimiento-backup</span></code></pre></div></li>
+<li><p>Describe el objetivo de la PR, resume los cambios y añade una
+lista de comprobaciones. Revisa los cambios antes de fusionar la
+PR.</p></li>
+</ol>
+<h2 id="entrega-1">Entrega</h2>
+<ul>
+<li>Enlace a la PR.</li>
+<li>Mensaje de commit claro.</li>
+<li>Procedimiento revisado y sin datos confidenciales.</li>
+</ul>
+<h1 id="simular-y-resolver-un-conflicto">Simular y resolver un
+conflicto</h1>
+<p>Haz esta actividad después de integrar la PR anterior. Trabaja
+únicamente en este repositorio de prácticas.</p>
+<ol type="1">
+<li><p>Actualiza <code>main</code> y crea la primera rama:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> conflicto-a</span></code></pre></div></li>
+<li><p>Crea <code>configuracion-laboratorio.txt</code> con una línea
+inicial, por ejemplo: <code>servidor_dns=192.0.2.10</code>. Guarda el
+archivo en un commit.</p></li>
+<li><p>Crea otra rama desde <code>main</code> que cambie esa misma
+línea:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add configuracion-laboratorio.txt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;docs: documentar DNS del laboratorio&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> conflicto-b</span></code></pre></div></li>
+<li><p>En <code>conflicto-b</code>, crea el mismo archivo con un valor
+de ejemplo distinto, como <code>servidor_dns=192.0.2.53</code>, y
+confirma el cambio.</p></li>
+<li><p>Fusiona <code>conflicto-a</code> en <code>main</code>; después
+intenta fusionar <code>conflicto-b</code>:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge conflicto-a</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge conflicto-b</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div></li>
+<li><p>Resuelve el conflicto editando el archivo y dejando una
+configuración coherente. Elimina las marcas
+<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y
+<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. Comprueba el contenido y
+finaliza el merge:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add configuracion-laboratorio.txt</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div></li>
+</ol>
+<h2 id="entrega-2">Entrega</h2>
+<ul>
+<li>Archivo final sin marcas de conflicto.</li>
+<li>Historial de commits con la integración.</li>
+<li>Explicación breve de cómo decidiste el valor que conservaste.</li>
+</ul>
+<h1 id="guardar-cambios-con-stash">Guardar cambios con stash</h1>
+<ol type="1">
+<li><p>En <code>main</code>, crea o modifica un archivo de notas y deja
+un cambio sin confirmar.</p></li>
+<li><p>Guarda el cambio en el <em>stash</em> con un mensaje y comprueba
+la lista:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash push <span class="at">-m</span> <span class="st">&quot;notas de laboratorio pendientes&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div></li>
+<li><p>Consulta el contenido guardado y recupéralo sin eliminar la
+entrada:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash show <span class="at">-p</span> stash@{0}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{0}</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div></li>
+<li><p>Cuando hayas verificado que recuperaste el trabajo correcto,
+elimina esa entrada:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash drop stash@{0}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div></li>
+</ol>
+<h2 id="entrega-3">Entrega</h2>
+<p>Indica qué diferencia hay entre <code>git stash apply</code> y
+<code>git stash pop</code> y en qué momento eliminaste la entrada.</p>
+<h1 id="comparar-reset-soft-y-mixed">Comparar reset soft y mixed</h1>
+<p>Realiza esta actividad en una rama temporal y con cambios de prueba.
+No uses <code>--hard</code>.</p>
+<ol type="1">
+<li><p>Crea una rama y dos commits de prueba:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> prueba-reset</span></code></pre></div>
+<p>Crea y confirma un archivo de texto sencillo; después modifica una
+línea y crea un segundo commit. Anota el resultado de
+<code>git log --oneline -3</code> y <code>git status</code>.</p></li>
+<li><p>Deshaz el último commit conservando los cambios preparados:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="at">--staged</span></span></code></pre></div></li>
+<li><p>Vuelve a confirmar el cambio y deshaz el commit con la opción
+mixta:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;test: recuperar cambio de prueba&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div></li>
+<li><p>Compara los resultados. El modo <code>--soft</code> deja el
+cambio en el área de preparación; el modo predeterminado
+(<code>--mixed</code>) lo conserva en el archivo, pero lo quita del área
+de preparación.</p></li>
+<li><p>Deja activa la rama <code>prueba-reset</code> para revisar los
+resultados y comprueba <code>git status</code>. No cambies de rama ni la
+elimines mientras haya cambios sin confirmar. Decide qué hacer con los
+archivos de prueba antes de limpiar el repositorio.</p></li>
+</ol>
+<h2 id="entrega-4">Entrega</h2>
+<p>Describe qué cambió en la referencia de la rama, el área de
+preparación y los archivos de trabajo en cada modo.</p>
+</body>
+</html>
