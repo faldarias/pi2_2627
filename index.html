@@ -4,137 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PI2 2627</title>
-    <style>
-      :root {
-        --bg: #f4f7fb;
-        --panel: #ffffff;
-        --primary: #1d4ed8;
-        --primary-dark: #1e3a8a;
-        --text: #1f2937;
-        --muted: #64748b;
-        --border: #dbe3f0;
-        --shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 100%);
-        color: var(--text);
-      }
-
-      .container {
-        max-width: 1100px;
-        margin: 48px auto;
-        padding: 0 20px;
-      }
-
-      .card {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        box-shadow: var(--shadow);
-        padding: 32px 28px;
-      }
-
-      h1 {
-        margin: 0 0 12px;
-        color: var(--primary-dark);
-        font-size: clamp(2rem, 3vw, 3rem);
-      }
-
-      .subtitle {
-        margin: 0 0 18px;
-        font-size: 1.3rem;
-        color: var(--text);
-      }
-
-      .meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px 24px;
-        color: var(--muted);
-        font-size: 1rem;
-        margin-bottom: 24px;
-      }
-
-      .meta strong {
-        color: var(--text);
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin: 20px 0 28px;
-      }
-
-      .links a,
-      .unidad a {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .links a:hover,
-      .unidad a:hover {
-        text-decoration: underline;
-      }
-
-      .section-title {
-        margin-top: 20px;
-        margin-bottom: 12px;
-        color: var(--primary-dark);
-        font-size: 1.5rem;
-      }
-
-      .unidad-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 14px;
-      }
-
-      .unidad {
-        background: #f8fbff;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 18px 16px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .unidad:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 18px rgba(29, 78, 216, 0.08);
-      }
-
-      .license {
-        margin-top: 28px;
-        padding-top: 18px;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.7;
-      }
-
-      .license strong {
-        color: var(--text);
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
   </head>
-  <body>
+  <body class="home-page">
     <div class="container">
       <div class="card">
+        <p class="eyebrow">Proyecto Intermodular II · ASIR</p>
         <h1>PI2 2627</h1>
         <p class="subtitle">Proyecto Intermodular II ASIR</p>
+        <p class="intro">Materiales y recursos del curso 2026–27. Elige una unidad para empezar.</p>
 
         <div class="meta">
           <span><strong>Autor:</strong> Paco Aldarias</span>
           <span><strong>Curso:</strong> 2026-27</span>
+          <span><strong>Fecha:</strong> 30-10-2026</span>
           <span><strong>Especialidad:</strong> ASIR2</span>
         </div>
 
@@ -150,6 +34,7 @@
           <li class="unidad"><a href="UD2/index.html">UD2 - Metodología de desarrollo</a></li>
           <li class="unidad"><a href="UD3/index.html">UD3 - Análisis de requisitos</a></li>
           <li class="unidad"><a href="UD4/index.html">UD4 - Guía del proyecto intermodular</a></li>
+          <li class="unidad"><a href="UD5/index.html">UD5 - Git y GitHub</a></li>
         </ul>
 
         <div class="license">
