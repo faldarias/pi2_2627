@@ -89,6 +89,10 @@ En tu copia local del repositorio:
    git push -u origin docs/procedimiento-backup
    ```
 
+Si falla crear un token y ponerlo a la url de repo remoto asi:
+
+git remote set-url origin https://<TU_TOKEN>@github.com/tu-usuario/tu-repositorio.git
+
 5. Describe el objetivo de la PR, resume los cambios y añade una lista de
    comprobaciones. Revisa los cambios antes de fusionar la PR.
 
