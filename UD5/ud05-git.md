@@ -319,5 +319,9 @@ comandos de administración o modificar sistemas. No pegues en el chat claves,
 contraseñas, datos personales ni información confidencial del centro o de una
 empresa.
 
+
+
 Las actividades prácticas están en el documento independiente
-[ud5-práctica.md](ud5-práctica.md) y su [versión PDF](ud5-práctica.pdf).
+[ud5-practica.md](ud5-practica.md) y su [versión PDF](ud5-practica.pdf).
+
+
