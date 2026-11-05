@@ -11,11 +11,12 @@
   <link rel="stylesheet" href="../css/units.css" />
 </head>
 <body>
+<p><a href="../index.html">Volver al índice principal</a></p>
 <header id="title-block-header">
 <h1 class="title">Git: ramificación, integración y colaboración</h1>
 <p class="subtitle">Módulo PI2 · ASIR2</p>
 <p class="author">Paco Aldarias</p>
-<p class="date">30 de octubre de 2026</p>
+<p class="date">5 de noviembre de 2026</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -106,7 +107,7 @@ para el proyecto</h2>
 <li>Actualiza <code>main</code> antes de empezar.</li>
 <li>Crea una rama descriptiva para una tarea.</li>
 <li>Realiza commits pequeños y publica la rama.</li>
-<li>Abre una PR, revisa y prueba los cambios.</li>
+<li>Abre una PR (Pull Request), revisa y prueba los cambios.</li>
 <li>Integra la PR y elimina la rama terminada.</li>
 </ol>
 <div class="sourceCode" id="cb2"><pre
@@ -117,6 +118,9 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add docs/diagrama-red.md</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;docs: documentar el diagrama de red&quot;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin docs/diagrama-red</span></code></pre></div>
+<p>Nota: El comando git pull --ff-only actualiza tu rama local con los
+cambios del repositorio remoto únicamente si se puede hacer un avance
+rápido (fast-forward).</p>
 <p>Nombres útiles de rama:</p>
 <ul>
 <li><code>feat/monitorizacion</code>: nueva funcionalidad.</li>
@@ -137,7 +141,7 @@ Puede ser útil con versiones planificadas, pero añade complejidad y no
 suele ser necesario para un proyecto pequeño de clase.</li>
 </ul>
 <p><strong>Criterio práctico:</strong> para un equipo ASIR pequeño, usa
-<code>main</code> más ramas cortas por tarea y PR. Protege
+<code>main</code> más ramas cortas por tarea y PR (pull request). Protege
 <code>main</code> para evitar cambios directos sin revisar.</p>
 <h1 data-number="3" id="estrategias-de-fusión"><span
 class="header-section-number">3</span> Estrategias de fusión</h1>
@@ -147,6 +151,10 @@ la rama de destino y comprueba el estado del repositorio:</p>
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span> docs/diagrama-red</span></code></pre></div>
+<p>El comando git merge --no-ff docs/diagrama-red fusiona la rama
+especificada (docs/diagrama-red) en tu rama main, forzando la creación
+de un commit de fusión (merge commit), incluso si la fusión se podría
+haber resuelto con un simple avance rápido (fast-forward).</p>
 <p>Elige la estrategia según el historial que necesite el equipo:</p>
 <ul>
 <li><strong>Merge commit:</strong> conserva los commits originales y
@@ -234,6 +242,9 @@ el mensaje del commit de merge. Si decides cancelar la fusión antes de
 completarla:</p>
 <div class="sourceCode" id="cb7"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--abort</span></span></code></pre></div>
+<p>El comando git rebase (rebasar o reubicación) toma los commits que
+has realizado en tu rama actual y los reaplica uno a uno sobre la punta
+de otra rama (por ejemplo, main).</p>
 <p>Si el conflicto ocurre durante un rebase, resuelve los archivos,
 márcalos con <code>git add</code> y continúa con
 <code>git rebase --continue</code>. Para cancelar ese rebase, utiliza

@@ -2,7 +2,7 @@
 title: "Git: ramificación, integración y colaboración"
 subtitle: "Módulo PI2 · ASIR2"
 author: "Paco Aldarias"
-date: "30 de octubre de 2026"
+date: "5 de noviembre de 2026"
 lang: es-ES
 ---
 
@@ -46,7 +46,7 @@ corta. Así es más fácil revisar, probar e integrar el trabajo.
 2. Actualiza `main` antes de empezar.
 3. Crea una rama descriptiva para una tarea.
 4. Realiza commits pequeños y publica la rama.
-5. Abre una PR, revisa y prueba los cambios.
+5. Abre una PR (Pull Request), revisa y prueba los cambios.
 6. Integra la PR y elimina la rama terminada.
 
 ```bash
@@ -58,6 +58,9 @@ git add docs/diagrama-red.md
 git commit -m "docs: documentar el diagrama de red"
 git push -u origin docs/diagrama-red
 ```
+
+Nota: El comando git pull --ff-only actualiza tu rama local con los cambios del repositorio 
+remoto únicamente si se puede hacer un avance rápido (fast-forward).
 
 Nombres útiles de rama:
 
@@ -77,7 +80,7 @@ Nombres útiles de rama:
   un proyecto pequeño de clase.
 
 **Criterio práctico:** para un equipo ASIR pequeño, usa `main` más ramas cortas
-por tarea y PR. Protege `main` para evitar cambios directos sin revisar.
+por tarea y PR (pull request). Protege `main` para evitar cambios directos sin revisar.
 
 # Estrategias de fusión
 
@@ -89,6 +92,8 @@ git switch main
 git pull --ff-only
 git merge --no-ff docs/diagrama-red
 ```
+El comando git merge --no-ff docs/diagrama-red fusiona la rama especificada (docs/diagrama-red) en tu rama main, 
+forzando la creación de un commit de fusión (merge commit), incluso si la fusión se podría haber resuelto con un simple avance rápido (fast-forward).
 
 Elige la estrategia según el historial que necesite el equipo:
 
@@ -175,10 +180,15 @@ de merge. Si decides cancelar la fusión antes de completarla:
 git merge --abort
 ```
 
+El comando git rebase (rebasar o reubicación) toma los commits que has realizado en tu rama actual 
+y los reaplica uno a uno sobre la punta de otra rama (por ejemplo, main).
+
 Si el conflicto ocurre durante un rebase, resuelve los archivos, márcalos con
 `git add` y continúa con `git rebase --continue`. Para cancelar ese rebase,
 utiliza `git rebase --abort`. Un rebase puede cambiar identificadores de
 commits: coordínalo antes de actualizar una rama compartida.
+
+
 
 # Reset y recuperación
 
