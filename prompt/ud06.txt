@@ -19,3 +19,7 @@ las fuentes consultadas y una declaración transparente de la IA utilizada
 para elaborar los apuntes. Actualiza UD6/ud6.md, UD6/ud6.pdf,
 UD6/index.html y este prompt.
 ---
+Proponme ejercicios prácticos sencillos sobre el uso de la ia 
+en un proyecto de asir. Los alumnos deberán publicarlo en el 
+foro de la ud6 para compartirlo. Introducelo en un documento 
+llamado ud6-practica. Debera estar en formato pdf y md.

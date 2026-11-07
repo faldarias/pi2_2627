@@ -123,8 +123,32 @@ respuesta generada por IA</a></li>
 <li><a href="#lista-de-comprobación-para-el-proyecto"
 id="toc-lista-de-comprobación-para-el-proyecto">8. Lista de comprobación
 para el proyecto</a></li>
+<li><a href="#ejercicios-prácticos-de-ia-para-un-proyecto-asir"
+id="toc-ejercicios-prácticos-de-ia-para-un-proyecto-asir">9. Ejercicios
+prácticos de IA para un proyecto ASIR</a>
+<ul>
+<li><a href="#ejercicio-1.-elegir-entre-una-ia-en-la-nube-y-una-local"
+id="toc-ejercicio-1.-elegir-entre-una-ia-en-la-nube-y-una-local">Ejercicio
+1. Elegir entre una IA en la nube y una local</a></li>
+<li><a href="#ejercicio-2.-consultar-documentación-con-ayuda-de-ia"
+id="toc-ejercicio-2.-consultar-documentación-con-ayuda-de-ia">Ejercicio
+2. Consultar documentación con ayuda de IA</a></li>
+<li><a href="#ejercicio-3.-diseñar-y-revisar-un-diagrama-de-red"
+id="toc-ejercicio-3.-diseñar-y-revisar-un-diagrama-de-red">Ejercicio 3.
+Diseñar y revisar un diagrama de red</a></li>
+<li><a href="#ejercicio-4.-crear-un-script-sencillo-de-comprobación"
+id="toc-ejercicio-4.-crear-un-script-sencillo-de-comprobación">Ejercicio
+4. Crear un script sencillo de comprobación</a></li>
+<li><a
+href="#ejercicio-5.-investigar-una-incidencia-con-registros-ficticios"
+id="toc-ejercicio-5.-investigar-una-incidencia-con-registros-ficticios">Ejercicio
+5. Investigar una incidencia con registros ficticios</a></li>
+<li><a href="#ejercicio-6.-documentar-el-uso-de-ia-en-github"
+id="toc-ejercicio-6.-documentar-el-uso-de-ia-en-github">Ejercicio 6.
+Documentar el uso de IA en GitHub</a></li>
+</ul></li>
 <li><a href="#bibliografía-y-fuentes-consultadas"
-id="toc-bibliografía-y-fuentes-consultadas">9. Bibliografía y fuentes
+id="toc-bibliografía-y-fuentes-consultadas">10. Bibliografía y fuentes
 consultadas</a>
 <ul>
 <li><a href="#material-docente" id="toc-material-docente">Material
@@ -597,7 +621,109 @@ visibilidad y los permisos adecuados.</label></li>
 instrucciones de la asignatura y puedo explicar cada decisión
 técnica.</label></li>
 </ul>
-<h2 id="bibliografía-y-fuentes-consultadas">9. Bibliografía y fuentes
+<h2 id="ejercicios-prácticos-de-ia-para-un-proyecto-asir">9. Ejercicios
+prácticos de IA para un proyecto ASIR</h2>
+<p>Realiza estos ejercicios con un proyecto de laboratorio o un caso
+ficticio. No introduzcas datos de una organización real en servicios
+externos, no ejecutes comandos generados por IA en producción y explica
+qué verificaste tú. En cada entrega, anota la herramienta utilizada, la
+fecha y cómo contrastaste el resultado.</p>
+<h3
+id="ejercicio-1.-elegir-entre-una-ia-en-la-nube-y-una-local">Ejercicio
+1. Elegir entre una IA en la nube y una local</h3>
+<ol type="1">
+<li>Elige una tarea no confidencial del proyecto, por ejemplo, preparar
+un borrador de inventario de máquinas virtuales.</li>
+<li>Compara una herramienta en la nube (ChatGPT o Gemini) con un modelo
+local ejecutado mediante Ollama o LM Studio.</li>
+<li>Completa una tabla con conexión, requisitos de hardware, privacidad,
+facilidad de uso y limitaciones.</li>
+<li>Justifica qué opción usarías para esa tarea y qué información no
+enviarías.</li>
+</ol>
+<p><strong>Entrega:</strong> tabla comparativa de una página y una
+conclusión breve. No afirmes que una opción es completamente privada sin
+comprobar su configuración.</p>
+<h3 id="ejercicio-2.-consultar-documentación-con-ayuda-de-ia">Ejercicio
+2. Consultar documentación con ayuda de IA</h3>
+<ol type="1">
+<li>Selecciona una fuente pública y oficial relacionada con tu proyecto:
+por ejemplo, documentación de DNS, DHCP o un sistema operativo.</li>
+<li>Pide a un asistente conversacional o a NotebookLM que resuma una
+sección o prepare cinco preguntas de repaso.</li>
+<li>Comprueba cada respuesta en el documento original y anota su página,
+apartado o enlace.</li>
+<li>Corrige cualquier respuesta imprecisa y añade la fuente a la
+bibliografía.</li>
+</ol>
+<p><strong>Entrega:</strong> resumen o cuestionario corregido, con al
+menos dos referencias comprobables. Usa únicamente documentos públicos o
+autorizados.</p>
+<h3 id="ejercicio-3.-diseñar-y-revisar-un-diagrama-de-red">Ejercicio 3.
+Diseñar y revisar un diagrama de red</h3>
+<ol type="1">
+<li>Escribe los requisitos de una red ficticia pequeña: una salida a
+Internet, dos subredes de laboratorio y servicios DNS y DHCP.</li>
+<li>Pide a una IA que proponga un diagrama o una descripción textual de
+la topología.</li>
+<li>Dibuja o adapta el diagrama con la herramienta que prefieras.</li>
+<li>Revisa manualmente que las subredes no se solapen, que las puertas
+de enlace y los servicios estén identificados y que las conexiones
+tengan sentido.</li>
+</ol>
+<p><strong>Entrega:</strong> diagrama final y una lista de al menos tres
+revisiones o correcciones realizadas por ti. No conectes el diseño a una
+red real.</p>
+<h3 id="ejercicio-4.-crear-un-script-sencillo-de-comprobación">Ejercicio
+4. Crear un script sencillo de comprobación</h3>
+<ol type="1">
+<li>Pide a una IA un script de Bash o PowerShell que compruebe la
+resolución DNS de un nombre de ejemplo y si un host de laboratorio
+responde.</li>
+<li>Solicita que explique cada línea y que no cambie la configuración ni
+elimine archivos.</li>
+<li>Revisa el script y adapta el nombre de host a un entorno local
+controlado.</li>
+<li>Ejecútalo en una máquina virtual o laboratorio y prueba tanto un
+resultado satisfactorio como uno de error.</li>
+<li>Si algo falla, proporciona al asistente únicamente el mensaje de
+error anonimizado y analiza las sugerencias.</li>
+</ol>
+<p><strong>Entrega:</strong> script, explicación, resultados de las dos
+pruebas y una breve nota de los cambios que revisaste. No ejecutes
+código que no entiendas.</p>
+<h3
+id="ejercicio-5.-investigar-una-incidencia-con-registros-ficticios">Ejercicio
+5. Investigar una incidencia con registros ficticios</h3>
+<ol type="1">
+<li>Prepara un fragmento ficticio de registro que represente un fallo de
+resolución DNS o una concesión DHCP incorrecta. No copies registros
+reales sin anonimizar.</li>
+<li>Pide a la IA tres causas posibles, ordenadas por probabilidad, y una
+comprobación segura para cada causa.</li>
+<li>Contrasta las comprobaciones con la documentación del servicio.</li>
+<li>Indica qué evidencia permitiría confirmar o descartar cada
+hipótesis.</li>
+</ol>
+<p><strong>Entrega:</strong> tabla de hipótesis, pruebas y resultados.
+Deja claro que las sugerencias iniciales de la IA no son un diagnóstico
+confirmado.</p>
+<h3 id="ejercicio-6.-documentar-el-uso-de-ia-en-github">Ejercicio 6.
+Documentar el uso de IA en GitHub</h3>
+<ol type="1">
+<li>Usa una IA para preparar un primer borrador de una sección del
+<code>README.md</code> de un proyecto de laboratorio.</li>
+<li>Comprueba instrucciones, requisitos, comandos y enlaces; corrige el
+borrador y cita las fuentes técnicas originales.</li>
+<li>Incluye una nota breve que indique la herramienta usada, para qué se
+utilizó y qué verificaste.</li>
+<li>Revisa con Git el diff y asegúrate de que no has añadido claves,
+tokens, datos personales ni configuraciones confidenciales.</li>
+</ol>
+<p><strong>Entrega:</strong> README revisado y declaración del uso de
+IA. No publiques el repositorio si contiene secretos; ante una
+credencial expuesta, rótala.</p>
+<h2 id="bibliografía-y-fuentes-consultadas">10. Bibliografía y fuentes
 consultadas</h2>
 <h3 id="material-docente">Material docente</h3>
 <ul>
@@ -644,6 +770,9 @@ profesorado y las fuentes originales antes de reutilizarse.</p>
 <p>Las interfaces, los nombres de funciones y las condiciones de los
 servicios pueden cambiar. Consulta la documentación oficial vigente y
 las normas de tu organización.</p>
+<h2 id="practica">Práctica para compartir en el foro</h2>
+<p><a href="ud6-practica.md">Consultar las actividades prácticas en Markdown</a></p>
+<p><a href="ud6-practica.pdf">Descargar las actividades prácticas en PDF</a></p>
 <p><a href="ud6.pdf">Descargar estos apuntes en PDF</a></p>
 <p><a href="../index.html">Volver al índice principal</a></p>
 </body>
