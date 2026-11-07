@@ -6,8 +6,6 @@ date: "7 de noviembre de 2026"
 lang: es
 ---
 
-[Volver al índice principal](../index.html)
-
 # Inteligencia artificial para proyectos de infraestructura ASIR
 
 La inteligencia artificial (IA) reúne técnicas que permiten a los sistemas realizar tareas como reconocer patrones, generar contenido, clasificar información o proponer respuestas. En un proyecto de Administración de Sistemas Informáticos en Red (ASIR), puede ayudar a investigar, diseñar, documentar y automatizar; no sustituye la comprensión técnica ni las pruebas.
@@ -199,7 +197,12 @@ Registra la herramienta y, si está disponible, el modelo o versión, la fecha, 
 
 ### Material docente
 
-- Aldarias Raya, F. (marzo de 2026). *Inteligencia Artifical* [material didáctico en PDF]. Tratamiento de la Información y Competencia Digital. Material de UD6, carpeta `anexos/TICD20-IA.pdf`.
+- Aldarias Raya, F. (marzo de 2026). *Inteligencia Artifical* [material didáctico en PDF]. Tratamiento de la Información y Competencia Digital. Material de UD6.
+
+- Samuel Soriano. Vibecoding educatiu amg intel.liogencia artitifial i la seua publicació. Julio del 2026.
+
+- VI Congreso de Software Libre. Comunitat Valenciana Mayo de 2025. Universidad de Alicante, conmemorando los 20 años de LliureX. Ponencia Lleando la IA a las aulas virtuale. Por Francisco Aldarias.
+  
 
 ### Documentación oficial y páginas de producto
 
@@ -214,9 +217,8 @@ Registra la herramienta y, si está disponible, el modelo o versión, la fecha, 
 
 ### Asistencia de IA utilizada en estos apuntes
 
-Para organizar, redactar y revisar este material se utilizó un asistente de IA integrado mediante Copilot SDK en Visual Studio Code (modelo y proveedor subyacente no identificados en el entorno), el 7 de noviembre de 2026. Se usó como apoyo de redacción; no como fuente de hechos. La bibliografía técnica se basa en el material docente y los enlaces enumerados arriba. El contenido debe revisarse con el profesorado y las fuentes originales antes de reutilizarse.
+Para organizar, redactar y revisar este material se utilizó un asistente de IA integrado mediante Copilot SDK en Visual Studio Code (modelo Copilot Pro para educación), el 7 de noviembre de 2026. Se usó como apoyo de redacción; no como fuente de hechos.
 
-Las interfaces, los nombres de funciones y las condiciones de los servicios pueden cambiar. Consulta la documentación oficial vigente y las normas de tu organización.
 
 [Descargar estos apuntes en PDF](ud6.pdf)
 
