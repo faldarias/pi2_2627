@@ -1,12 +1,10 @@
 ---
 title: "Prácticas sencillas de IA para proyectos ASIR"
-subtitle: "Unidad 6 · Actividades para compartir en el foro"
+subtitle: "Módulo PI2 · ASIR2. Unidad 6 · Actividades para compartir en el foro"
 author: "Paco Aldarias"
 date: "7 de noviembre de 2026"
 lang: es
 ---
-
-[Volver al índice de la UD6](index.html)
 
 # Prácticas sencillas de IA para proyectos ASIR
 
