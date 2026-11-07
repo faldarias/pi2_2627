@@ -199,9 +199,9 @@ Registra la herramienta y, si está disponible, el modelo o versión, la fecha, 
 
 - Aldarias Raya, F. (marzo de 2026). *Inteligencia Artifical* [material didáctico en PDF]. Tratamiento de la Información y Competencia Digital. Material de UD6.
 
-- Samuel Soriano. Vibecoding educatiu amg intel.ligencia artitifial i la seua publicació. Julio del 2026.
+- Samuel Soriano. Vibecoding educatiu amb intel.ligencia artificial i la seua publicació. Julio del 2026.
 
-- VI Congreso de Software Libre. Comunitat Valenciana Mayo de 2025. Universidad de Alicante, conmemorando los 20 años de LliureX. Ponencia Lleando la IA a las aulas virtuale. Por Francisco Aldarias.
+- Francisco Aldarias. Ponencia "Llevando la IA a las aulas virtuales".  VI Congreso de Software Libre. Comunitat Valenciana Mayo de 2025. Universidad de Alicante, conmemorando los 20 años de LliureX. 
   
 
 ### Documentación oficial y páginas de producto
