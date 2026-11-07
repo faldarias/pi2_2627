@@ -1,0 +1,21 @@
+Crea dentro de la carpeta ud6 unos apuntes sobre IA para 
+que les sirva de ayuda para la elaboración de proyectos de 
+ASIR de infraestructura. Explica los tipos de IA, las herramientas 
+y sus usos, qué es el vibecoding y sus etapas, desde la fase inicial 
+hasta la publicación en GitHub. Explica cómo integrar varias IA en 
+Visual Studio Code y cómo usar GitHub y la IA desde VS Code. Crea 
+los apuntes en UD6/ud6.md y su PDF UD6/ud6.pdf. Genera UD6/index.html 
+a partir del Markdown, con el estilo de las otras unidades y un enlace 
+al índice de la carpeta raíz.
+---
+Compara la IA en la nube con la IA local e incluye ejemplos de software.
+Explica la IA generativa, conversacional y agéntica, indicando que son 
+enfoques que pueden combinarse.
+Describe ChatGPT, GitHub Copilot, Gemini, NotebookLM, Ollama y LM Studio.
+Incluye reglas prácticas de uso responsable y privacidad.
+Explica cómo citar fuentes y declarar el uso de IA en la bibliografía.
+Utiliza el material de UD6/anexos como fuente y añade bibliografía con
+las fuentes consultadas y una declaración transparente de la IA utilizada
+para elaborar los apuntes. Actualiza UD6/ud6.md, UD6/ud6.pdf,
+UD6/index.html y este prompt.
+---

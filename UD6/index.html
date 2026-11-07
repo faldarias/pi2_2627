@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paco Aldarias" />
+  <title>Inteligencia artificial para proyectos de infraestructura ASIR</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/units.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Inteligencia artificial para proyectos de
+infraestructura ASIR</h1>
+<p class="subtitle">Unidad 6 · Proyecto Intermodular II</p>
+<p class="author">Paco Aldarias</p>
+<p class="date">7 de noviembre de 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#inteligencia-artificial-para-proyectos-de-infraestructura-asir"
+id="toc-inteligencia-artificial-para-proyectos-de-infraestructura-asir">Inteligencia
+artificial para proyectos de infraestructura ASIR</a>
+<ul>
+<li><a href="#tipos-de-inteligencia-artificial"
+id="toc-tipos-de-inteligencia-artificial">1. Tipos de inteligencia
+artificial</a>
+<ul>
+<li><a href="#según-su-capacidad" id="toc-según-su-capacidad">Según su
+capacidad</a></li>
+<li><a href="#según-cómo-aprende-o-resuelve-tareas"
+id="toc-según-cómo-aprende-o-resuelve-tareas">Según cómo aprende o
+resuelve tareas</a></li>
+<li><a href="#generativa-conversacional-y-agéntica"
+id="toc-generativa-conversacional-y-agéntica">Generativa, conversacional
+y agéntica</a></li>
+<li><a href="#ia-en-la-nube-y-ejecución-local"
+id="toc-ia-en-la-nube-y-ejecución-local">IA en la nube y ejecución
+local</a></li>
+</ul></li>
+<li><a href="#herramientas-de-ia-y-usos-en-asir"
+id="toc-herramientas-de-ia-y-usos-en-asir">2. Herramientas de IA y usos
+en ASIR</a>
+<ul>
+<li><a href="#ejemplos-de-tareas-adecuadas"
+id="toc-ejemplos-de-tareas-adecuadas">Ejemplos de tareas
+adecuadas</a></li>
+<li><a href="#límites-y-uso-responsable"
+id="toc-límites-y-uso-responsable">Límites y uso responsable</a></li>
+</ul></li>
+<li><a href="#qué-es-el-vibecoding" id="toc-qué-es-el-vibecoding">3. Qué
+es el <em>vibecoding</em></a></li>
+<li><a href="#etapas-de-la-idea-a-github"
+id="toc-etapas-de-la-idea-a-github">4. Etapas: de la idea a GitHub</a>
+<ul>
+<li><a href="#definir-el-problema-y-el-alcance"
+id="toc-definir-el-problema-y-el-alcance">1. Definir el problema y el
+alcance</a></li>
+<li><a href="#recopilar-requisitos-y-restricciones"
+id="toc-recopilar-requisitos-y-restricciones">2. Recopilar requisitos y
+restricciones</a></li>
+<li><a href="#diseñar-antes-de-generar"
+id="toc-diseñar-antes-de-generar">3. Diseñar antes de generar</a></li>
+<li><a href="#preparar-el-espacio-de-trabajo"
+id="toc-preparar-el-espacio-de-trabajo">4. Preparar el espacio de
+trabajo</a></li>
+<li><a href="#dar-contexto-e-instrucciones-concretas"
+id="toc-dar-contexto-e-instrucciones-concretas">5. Dar contexto e
+instrucciones concretas</a></li>
+<li><a href="#construir-en-incrementos-pequeños"
+id="toc-construir-en-incrementos-pequeños">6. Construir en incrementos
+pequeños</a></li>
+<li><a href="#validar-funcionalidad-y-seguridad"
+id="toc-validar-funcionalidad-y-seguridad">7. Validar funcionalidad y
+seguridad</a></li>
+<li><a href="#documentar-y-preparar-la-publicación"
+id="toc-documentar-y-preparar-la-publicación">8. Documentar y preparar
+la publicación</a></li>
+<li><a href="#publicar-y-mantener-en-github"
+id="toc-publicar-y-mantener-en-github">9. Publicar y mantener en
+GitHub</a></li>
+</ul></li>
+<li><a href="#integrar-varias-ia-en-visual-studio-code"
+id="toc-integrar-varias-ia-en-visual-studio-code">5. Integrar varias IA
+en Visual Studio Code</a></li>
+<li><a href="#github-y-la-ia-desde-vs-code"
+id="toc-github-y-la-ia-desde-vs-code">6. GitHub y la IA desde VS
+Code</a></li>
+<li><a href="#cómo-citar-las-fuentes-y-declarar-el-uso-de-ia"
+id="toc-cómo-citar-las-fuentes-y-declarar-el-uso-de-ia">7. Cómo citar
+las fuentes y declarar el uso de IA</a>
+<ul>
+<li><a href="#citas-en-el-texto" id="toc-citas-en-el-texto">Citas en el
+texto</a></li>
+<li><a href="#cómo-declarar-una-respuesta-generada-por-ia"
+id="toc-cómo-declarar-una-respuesta-generada-por-ia">Cómo declarar una
+respuesta generada por IA</a></li>
+</ul></li>
+<li><a href="#lista-de-comprobación-para-el-proyecto"
+id="toc-lista-de-comprobación-para-el-proyecto">8. Lista de comprobación
+para el proyecto</a></li>
+<li><a href="#bibliografía-y-fuentes-consultadas"
+id="toc-bibliografía-y-fuentes-consultadas">9. Bibliografía y fuentes
+consultadas</a>
+<ul>
+<li><a href="#material-docente" id="toc-material-docente">Material
+docente</a></li>
+<li><a href="#documentación-oficial-y-páginas-de-producto"
+id="toc-documentación-oficial-y-páginas-de-producto">Documentación
+oficial y páginas de producto</a></li>
+<li><a href="#asistencia-de-ia-utilizada-en-estos-apuntes"
+id="toc-asistencia-de-ia-utilizada-en-estos-apuntes">Asistencia de IA
+utilizada en estos apuntes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<p><a href="../index.html">Volver al índice principal</a></p>
+<h1
+id="inteligencia-artificial-para-proyectos-de-infraestructura-asir">Inteligencia
+artificial para proyectos de infraestructura ASIR</h1>
+<p>La inteligencia artificial (IA) reúne técnicas que permiten a los
+sistemas realizar tareas como reconocer patrones, generar contenido,
+clasificar información o proponer respuestas. En un proyecto de
+Administración de Sistemas Informáticos en Red (ASIR), puede ayudar a
+investigar, diseñar, documentar y automatizar; no sustituye la
+comprensión técnica ni las pruebas.</p>
+<blockquote>
+<p><strong>Idea clave:</strong> la IA propone; el equipo del proyecto
+revisa, prueba y asume la responsabilidad de lo que instala, configura y
+publica.</p>
+</blockquote>
+<h2 id="tipos-de-inteligencia-artificial">1. Tipos de inteligencia
+artificial</h2>
+<p>No existe una única clasificación: se puede hablar de IA según su
+capacidad, su método de aprendizaje o el tipo de tarea que realiza. Las
+categorías siguientes se solapan.</p>
+<h3 id="según-su-capacidad">Según su capacidad</h3>
+<ul>
+<li><strong>IA estrecha o especializada (ANI):</strong> está diseñada
+para tareas concretas, como traducir, recomendar contenido, detectar
+anomalías o generar código. Es el tipo de IA que usamos hoy.</li>
+<li><strong>IA general (AGI):</strong> sería capaz de aprender y
+resolver de forma flexible una gran variedad de tareas intelectuales,
+con una competencia comparable a la humana. No existe hoy como
+tecnología demostrada y disponible.</li>
+<li><strong>Superinteligencia artificial (ASI):</strong> hipotética IA
+que superaría ampliamente las capacidades humanas en numerosos campos.
+Es una idea teórica, no un producto actual.</li>
+</ul>
+<h3 id="según-cómo-aprende-o-resuelve-tareas">Según cómo aprende o
+resuelve tareas</h3>
+<ul>
+<li><strong>IA simbólica o basada en reglas:</strong> aplica reglas
+explícitas, lógica y conocimiento introducido por personas. Puede
+resultar comprensible y predecible, pero depende de que las reglas
+cubran los casos relevantes.</li>
+<li><strong>Aprendizaje automático (machine learning):</strong> aprende
+patrones a partir de ejemplos. Puede ser supervisado (con ejemplos
+etiquetados), no supervisado (busca estructuras sin etiquetas) o por
+refuerzo (aprende mediante acciones y recompensas).</li>
+<li><strong>Aprendizaje profundo (deep learning):</strong> utiliza redes
+neuronales con muchas capas para aprender patrones complejos, por
+ejemplo en imágenes, voz y lenguaje. Es una familia de técnicas de
+aprendizaje automático.</li>
+<li><strong>IA generativa:</strong> crea contenido nuevo —texto,
+imágenes, audio o código— a partir de una petición y del contexto. Los
+modelos de lenguaje grandes (LLM) son un ejemplo. Pueden producir
+respuestas convincentes pero incorrectas; no son una fuente de verdad
+por sí solos.</li>
+</ul>
+<h3 id="generativa-conversacional-y-agéntica">Generativa, conversacional
+y agéntica</h3>
+<p>Estas categorías describen aspectos distintos y pueden combinarse en
+un mismo producto:</p>
+<ul>
+<li><strong>IA generativa:</strong> crea contenido nuevo a partir de una
+instrucción: texto, imágenes, resúmenes o código. Por ejemplo, ChatGPT,
+Gemini y GitHub Copilot pueden generar contenido y código.</li>
+<li><strong>IA conversacional:</strong> permite dialogar mediante texto
+o voz, recordar el contexto de la conversación y responder preguntas.
+ChatGPT y Gemini son ejemplos; una conversación puede usar IA generativa
+para redactar cada respuesta.</li>
+<li><strong>IA agéntica (o basada en agentes):</strong> puede planificar
+una tarea en varios pasos y utilizar herramientas —por ejemplo, buscar
+archivos, modificar código o ejecutar pruebas— para intentar alcanzar un
+objetivo. Un agente de programación en VS Code es un ejemplo. Al
+concederle herramientas, también se le conceden capacidades de
+actuación: limita permisos, revisa las acciones y exige aprobación antes
+de operaciones delicadas.</li>
+<li><strong>IA de apoyo al estudio e investigación:</strong> analiza
+fuentes que aporta el usuario para ayudar a resumir, comparar o preparar
+preguntas. NotebookLM es un ejemplo; comprueba que las respuestas estén
+respaldadas por las fuentes originales.</li>
+</ul>
+<p>No son etiquetas excluyentes: una herramienta conversacional puede
+ser generativa y ofrecer funciones agénticas. El nombre comercial no
+garantiza que todas esas funciones estén activadas.</p>
+<h3 id="ia-en-la-nube-y-ejecución-local">IA en la nube y ejecución
+local</h3>
+<p>La diferencia principal es dónde se procesa la petición. El modelo,
+el dispositivo, la conexión y la configuración concreta determinan las
+capacidades y el tratamiento de los datos. Estos ejemplos y esta
+distinción se apoyan en los materiales de UD6/anexos (Aldarias Raya,
+2026).</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Modalidad</th>
+<th>Ejemplos de software</th>
+<th>Ventajas</th>
+<th>Aspectos que hay que valorar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>En la nube:</strong> se accede a un servicio remoto por
+Internet.</td>
+<td>ChatGPT, Gemini, NotebookLM y GitHub Copilot.</td>
+<td>No suele requerir descargar y gestionar el modelo; permite utilizar
+servicios actualizados desde distintos dispositivos.</td>
+<td>Requiere conexión y una cuenta; la petición puede salir del equipo.
+Revisa la política de privacidad, la configuración, las condiciones de
+la cuenta y las normas de la organización antes de enviar datos.</td>
+</tr>
+<tr>
+<td><strong>Local o en el propio equipo:</strong> un modelo se ejecuta
+en el ordenador o servidor gestionado por el usuario.</td>
+<td>Ollama y LM Studio permiten obtener y ejecutar modelos compatibles
+localmente.</td>
+<td>Permite trabajar sin enviar cada petición a un proveedor remoto y da
+más control sobre el entorno y los datos.</td>
+<td>Se necesitan recursos de hardware, espacio, actualizaciones y
+conocimientos de administración. La calidad y velocidad varían según el
+modelo y el equipo. La instalación local no garantiza por sí sola la
+seguridad: el equipo, los registros, las extensiones y los modelos
+también deben protegerse.</td>
+</tr>
+<tr>
+<td><strong>Híbrida:</strong> se combinan componentes locales y
+remotos.</td>
+<td>Un asistente local con acceso opcional a una API remota, según la
+configuración.</td>
+<td>Permite elegir qué tareas o datos procesa cada componente.</td>
+<td>Hay que entender qué información se envía, dónde se procesa y qué
+proveedor recibe cada petición.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regla práctica:</strong> no asumas que una herramienta es
+local o privada solo por instalar una aplicación. Comprueba qué modelo
+está activo, si se hacen llamadas a la nube y qué datos se guardan o
+transmiten.</p>
+<h2 id="herramientas-de-ia-y-usos-en-asir">2. Herramientas de IA y usos
+en ASIR</h2>
+<p>Las herramientas cambian con rapidez y sus funciones dependen de la
+versión, el plan, la configuración y las políticas de cada organización.
+Los siguientes ejemplos ilustran usos habituales; comprueba las
+condiciones actuales antes de utilizarlos.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tipo de herramienta</th>
+<th>Ejemplos</th>
+<th>Posibles usos en un proyecto ASIR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asistentes conversacionales y generativos</td>
+<td><strong>ChatGPT</strong>, <strong>Gemini</strong></td>
+<td>Aclarar conceptos, comparar alternativas, resumir documentos,
+preparar listas de requisitos y proponer borradores de documentación o
+scripts. Comprueba las respuestas con fuentes fiables.</td>
+</tr>
+<tr>
+<td>Asistente de programación</td>
+<td><strong>GitHub Copilot</strong> en VS Code</td>
+<td>Obtener autocompletado, explicaciones y propuestas de código o
+pruebas; sus funciones de chat y agente dependen de la extensión, el
+plan y la configuración. Revisa y prueba los cambios.</td>
+</tr>
+<tr>
+<td>Estudio e investigación con fuentes</td>
+<td><strong>NotebookLM</strong></td>
+<td>Consultar y resumir documentos aportados, preparar preguntas de
+repaso y localizar pasajes de apoyo. Confirma la respuesta en la fuente
+original y no cargues documentos confidenciales sin autorización.</td>
+</tr>
+<tr>
+<td>Modelos locales</td>
+<td><strong>Ollama</strong>, <strong>LM Studio</strong></td>
+<td>Descargar y ejecutar modelos compatibles en un equipo o servidor
+propio para experimentar, resumir o generar borradores sin enviar cada
+petición a un servicio remoto. Verifica los requisitos y que el programa
+no utilice servicios en la nube para esa tarea.</td>
+</tr>
+<tr>
+<td>Generación de imágenes y diagramas</td>
+<td>Generadores de imágenes y herramientas de diagramación con IA</td>
+<td>Crear una ilustración conceptual o un primer borrador de una
+arquitectura. Verificar que la topología y las etiquetas sean
+técnicamente correctas.</td>
+</tr>
+<tr>
+<td>Herramientas de búsqueda y síntesis</td>
+<td>Buscadores con respuestas asistidas por IA</td>
+<td>Localizar documentación y obtener un resumen inicial. Contrastar las
+respuestas con documentación oficial y fecha de publicación.</td>
+</tr>
+<tr>
+<td>Automatización y operaciones</td>
+<td>Funciones inteligentes incluidas en plataformas de monitorización,
+nube o gestión</td>
+<td>Resumir alertas o señalar patrones. Revisar siempre el diagnóstico
+antes de modificar sistemas.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>En una infraestructura ASIR</strong>, pueden servir para
+comparar una solución de monitorización, entender un error de
+configuración, preparar un script de laboratorio o resumir documentación
+técnica. No les confíes contraseñas, cambios en producción ni la
+decisión final sobre la arquitectura.</p>
+<h3 id="ejemplos-de-tareas-adecuadas">Ejemplos de tareas adecuadas</h3>
+<ul>
+<li>Pedir una explicación de las diferencias entre DNS recursivo y
+autoritativo, y verificarla en documentación fiable.</li>
+<li>Solicitar un borrador de inventario de servidores, una lista de
+requisitos o un esquema de secciones para la memoria técnica.</li>
+<li>Pedir que explique un script de Bash o PowerShell, o que sugiera
+casos de prueba para un script propio.</li>
+<li>Obtener un primer borrador de una configuración de laboratorio, para
+después validarlo en un entorno aislado.</li>
+<li>Resumir mensajes de error anonimizados y recibir hipótesis ordenadas
+para investigar.</li>
+</ul>
+<h3 id="límites-y-uso-responsable">Límites y uso responsable</h3>
+<ul>
+<li>La IA puede inventar parámetros, comandos, opciones de software o
+referencias. Comprueba los detalles en documentación oficial.</li>
+<li>No pegues contraseñas, claves SSH, tokens, datos personales,
+direcciones sensibles ni configuraciones confidenciales en servicios
+externos.</li>
+<li>Elimina o sustituye nombres de host, dominios internos, direcciones
+IP públicas y cualquier dato que identifique una organización antes de
+compartir registros.</li>
+<li>No ejecutes comandos sugeridos directamente en producción. Léelos,
+entiende sus efectos y pruébalos en una máquina virtual o
+laboratorio.</li>
+<li>Revisa las condiciones de uso, la privacidad, la edad mínima, la
+cuenta y las opciones de retención de datos del servicio. En un equipo
+local, protege igualmente los archivos, registros y modelos.</li>
+<li>Concede a extensiones y agentes los permisos mínimos necesarios. Usa
+un entorno aislado; revisa los comandos y cambios propuestos y pide
+confirmación antes de instalaciones, borrados, cambios de permisos o
+acciones sobre sistemas reales.</li>
+<li>Contrasta hechos, versiones, comandos, citas y licencias con fuentes
+originales. No inventes referencias ni presentes como leída una fuente
+que no has consultado.</li>
+<li>Revisa derechos de autor, licencias y normas del centro o de la
+empresa antes de reutilizar código o contenido generado.</li>
+<li>Declara el uso de IA según las instrucciones del profesorado y
+conserva evidencias del proceso, las pruebas y las decisiones técnicas
+propias.</li>
+</ul>
+<h2 id="qué-es-el-vibecoding">3. Qué es el <em>vibecoding</em></h2>
+<p><em>Vibecoding</em> (también escrito <em>vibe coding</em>) es una
+forma informal de crear software describiendo en lenguaje natural lo que
+se quiere y usando una IA para generar o modificar código mediante
+iteraciones. La persona dirige el trabajo con instrucciones y
+comentarios, mientras la IA propone cambios.</p>
+<p>No significa que el proyecto se construya sin diseño ni revisión. En
+infraestructura, un fragmento incorrecto puede interrumpir servicios,
+abrir un acceso o borrar datos. Por eso, el <em>vibecoding</em> debe
+tratarse como una ayuda de desarrollo, no como una autorización para
+delegar decisiones o ejecutar cambios a ciegas.</p>
+<h2 id="etapas-de-la-idea-a-github">4. Etapas: de la idea a GitHub</h2>
+<h3 id="definir-el-problema-y-el-alcance">1. Definir el problema y el
+alcance</h3>
+<p>Describe qué necesidad resuelve el proyecto, quién lo usará y qué
+queda fuera. Por ejemplo: “montar un laboratorio reproducible con DNS,
+DHCP y monitorización para una red de pruebas”. Evita empezar con una
+petición vaga como “crea toda mi infraestructura”.</p>
+<h3 id="recopilar-requisitos-y-restricciones">2. Recopilar requisitos y
+restricciones</h3>
+<p>Anota requisitos funcionales y no funcionales: servicios, usuarios,
+seguridad, disponibilidad, presupuesto, recursos, plazos y criterios de
+aceptación. Separa los datos confirmados de las suposiciones y no
+compartas secretos con el asistente.</p>
+<h3 id="diseñar-antes-de-generar">3. Diseñar antes de generar</h3>
+<p>Decide la arquitectura y el entorno de pruebas: máquinas virtuales,
+contenedores o nube; topología; direcciones reservadas para el
+laboratorio; dependencias; copias de seguridad y controles de acceso.
+Pide a la IA alternativas y riesgos, pero justifica tú la decisión
+final.</p>
+<h3 id="preparar-el-espacio-de-trabajo">4. Preparar el espacio de
+trabajo</h3>
+<p>Crea una carpeta y un repositorio Git. Añade un
+<code>README.md</code>, organiza los directorios y define cómo se
+probará el proyecto. Incluye un <code>.gitignore</code> adecuado para
+evitar publicar archivos temporales, secretos o estado local.</p>
+<h3 id="dar-contexto-e-instrucciones-concretas">5. Dar contexto e
+instrucciones concretas</h3>
+<p>Indica al asistente el objetivo, el sistema operativo, las versiones
+relevantes, las restricciones y el resultado esperado. Pide cambios
+pequeños, archivos concretos y una explicación de cómo validarlos. No
+incluyas credenciales ni datos reales.</p>
+<h3 id="construir-en-incrementos-pequeños">6. Construir en incrementos
+pequeños</h3>
+<p>Implementa una parte cada vez: primero una configuración mínima,
+después una función o servicio, y luego la siguiente integración. Tras
+cada paso, inspecciona el diff de Git, lee el código y ejecuta las
+pruebas en el laboratorio.</p>
+<h3 id="validar-funcionalidad-y-seguridad">7. Validar funcionalidad y
+seguridad</h3>
+<p>Comprueba sintaxis, funcionamiento, permisos, puertos expuestos,
+manejo de errores, registros y recuperación. Usa validadores propios del
+formato cuando existan (por ejemplo, <code>terraform validate</code>
+para Terraform) y realiza pruebas de conectividad y de aceptación. No
+des por válida una respuesta solo porque “parece funcionar”.</p>
+<h3 id="documentar-y-preparar-la-publicación">8. Documentar y preparar
+la publicación</h3>
+<p>Explica la arquitectura, los requisitos, la instalación, la
+configuración, las pruebas y la recuperación ante fallos. Sustituye
+secretos por variables de entorno o ejemplos ficticios. Revisa el
+historial y los archivos para confirmar que no se ha incluido ninguna
+clave.</p>
+<h3 id="publicar-y-mantener-en-github">9. Publicar y mantener en
+GitHub</h3>
+<p>Revisa el estado del repositorio y los cambios, crea commits con
+mensajes claros y publícalos en un repositorio de GitHub con visibilidad
+apropiada. Añade instrucciones de uso y licencia si corresponde. Si el
+trabajo continúa, usa ramas y revisiones mediante <em>pull
+requests</em>. Tras publicar, comprueba desde la web que los archivos y
+la documentación se ven correctamente.</p>
+<blockquote>
+<p><strong>Antes de publicar:</strong> busca tokens, contraseñas, claves
+privadas, archivos <code>.env</code>, copias de seguridad y datos
+personales. Si se publica una credencial por error, borrarla del último
+commit no basta: revócala y rótala.</p>
+</blockquote>
+<h2 id="integrar-varias-ia-en-visual-studio-code">5. Integrar varias IA
+en Visual Studio Code</h2>
+<p>Visual Studio Code (VS Code) puede reunir el editor, GitHub y
+asistentes de IA mediante extensiones. La integración exacta varía;
+algunas extensiones usan la cuenta de su proveedor, otras una
+suscripción, una clave configurada por el usuario o un modelo local.
+Instala extensiones de editores y proveedores en los que confíes y
+confirma sus condiciones de privacidad.</p>
+<ol type="1">
+<li><strong>Instala VS Code y Git.</strong> Comprueba que Git está
+disponible y abre la carpeta del proyecto como espacio de trabajo.</li>
+<li><strong>Instala el asistente de GitHub.</strong> Busca la extensión
+oficial de GitHub Copilot en la vista de extensiones, revisa el editor y
+los permisos, instálala e inicia sesión si tienes acceso. Sus
+prestaciones dependen del plan y la configuración.</li>
+<li><strong>Añade otros proveedores si los necesitas.</strong> Busca sus
+extensiones oficiales o mantenidas por el proveedor en el Marketplace.
+Sigue su documentación para iniciar sesión, configurar el modelo o
+conectar un servicio local.</li>
+<li><strong>Usa cada asistente para una tarea acotada.</strong> Por
+ejemplo, uno puede ayudarte a explicar un error y otro a revisar la
+documentación. Evita enviar el mismo código privado a varios servicios
+sin autorización.</li>
+<li><strong>Revisa las respuestas en el propio proyecto.</strong> Las
+sugerencias no son cambios verificados: inspecciona los archivos
+modificados, consulta el diff y ejecuta las pruebas.</li>
+<li><strong>Comprueba la confianza del espacio de trabajo.</strong> No
+habilites extensiones ni ejecutes tareas de una carpeta desconocida sin
+revisar sus permisos y configuración.</li>
+</ol>
+<p>Tener varias extensiones instaladas no implica que colaboren entre sí
+ni que compartan contexto automáticamente. Pueden duplicar sugerencias,
+requerir cuentas distintas o enviar datos a servicios diferentes.
+Empieza con una herramienta, evalúa su utilidad y añade otra solo si
+aporta valor.</p>
+<h2 id="github-y-la-ia-desde-vs-code">6. GitHub y la IA desde VS
+Code</h2>
+<p>Son piezas relacionadas, pero distintas:</p>
+<ul>
+<li><strong>Git</strong> registra versiones y cambios del proyecto en el
+equipo.</li>
+<li><strong>GitHub</strong> aloja repositorios Git y permite colaborar,
+revisar cambios y gestionar incidencias.</li>
+<li><strong>La extensión GitHub</strong> facilita iniciar sesión y
+trabajar con repositorios o funciones de GitHub desde VS Code.</li>
+<li><strong>GitHub Copilot</strong> es un asistente de IA integrado
+mediante extensiones; no es lo mismo que Git ni que GitHub.</li>
+</ul>
+<p>Flujo habitual: abre una carpeta, inicializa o clona el repositorio
+Git, crea y revisa cambios, confirma los cambios (<em>commit</em>),
+inicia sesión en GitHub y publica o sincroniza el repositorio
+(<em>push</em>). Desde el editor se puede usar un asistente para
+explicar o proponer código y, a la vez, utilizar el control de versiones
+para inspeccionar y guardar los cambios. Algunas funciones dependen de
+las extensiones y permisos instalados.</p>
+<p>La IA no publica de forma responsable por sí sola: antes de enviar
+cambios, verifica que el repositorio no contenga secretos, información
+sensible ni configuraciones inseguras.</p>
+<h2 id="cómo-citar-las-fuentes-y-declarar-el-uso-de-ia">7. Cómo citar
+las fuentes y declarar el uso de IA</h2>
+<p>La IA es una herramienta de apoyo, no una fuente que sustituya a la
+documentación original. Para justificar un dato técnico, busca y cita el
+manual oficial, el artículo o el material docente del que se ha
+comprobado. Si una respuesta de IA indica una fuente, abre esa fuente y
+verifica que respalda realmente la afirmación.</p>
+<h3 id="citas-en-el-texto">Citas en el texto</h3>
+<p>Usa el estilo que solicite el profesorado. Si no se especifica uno,
+una cita autor-fecha sencilla permite identificar la fuente y
+localizarla en la bibliografía:</p>
+<ul>
+<li>Parafraseo:
+<code>La IA local puede dar más control sobre dónde se procesan los datos, pero necesita recursos del equipo (Aldarias Raya, 2026, p. 3).</code></li>
+<li>Cita textual breve:
+<code>“la IA generativa crea contenido nuevo” (Aldarias Raya, 2026, p. 4).</code></li>
+<li>Una página web sin fecha indicada: <code>(GitHub, s. f.)</code>;
+incluye el título y el enlace en la bibliografía.</li>
+</ul>
+<p>Al citar literalmente, usa comillas y página si está disponible. Si
+resumes una idea, reescríbela con tus palabras sin cambiar su
+significado. Añade a la bibliografía toda fuente citada y evita atribuir
+a una fuente algo que no dice.</p>
+<h3 id="cómo-declarar-una-respuesta-generada-por-ia">Cómo declarar una
+respuesta generada por IA</h3>
+<p>Sigue primero las reglas del módulo. Si permiten incluir contenido
+generado, identifícalo en el texto o en una nota metodológica, por
+ejemplo:</p>
+<blockquote>
+<p>Se utilizó [herramienta y modelo, si se conoce] el [fecha] para
+proponer un esquema y revisar la redacción de este apartado. Las
+afirmaciones técnicas se contrastaron con las fuentes citadas. La
+selección, comprobación y responsabilidad del resultado corresponden al
+autor.</p>
+</blockquote>
+<p>Registra la herramienta y, si está disponible, el modelo o versión,
+la fecha, para qué se usó y qué partes del trabajo afectó. No incluyas
+prompts con información privada. Si el servicio permite compartir una
+conversación de forma segura y las normas lo requieren, añade el enlace;
+de lo contrario, describe el uso sin publicar datos sensibles. Las
+respuestas pueden cambiar y no siempre son recuperables, por eso no
+deben ser la única evidencia de un dato.</p>
+<h2 id="lista-de-comprobación-para-el-proyecto">8. Lista de comprobación
+para el proyecto</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />El problema, el alcance y los
+criterios de aceptación están escritos.</label></li>
+<li><label><input type="checkbox" />Las decisiones de arquitectura se
+entienden y están justificadas.</label></li>
+<li><label><input type="checkbox" />El código y las configuraciones
+sugeridas por IA se han revisado.</label></li>
+<li><label><input type="checkbox" />Las pruebas se ejecutaron en un
+laboratorio aislado y sus resultados están documentados.</label></li>
+<li><label><input type="checkbox" />No hay claves, datos personales ni
+información confidencial en los archivos o en el historial
+Git.</label></li>
+<li><label><input type="checkbox" />El <code>README.md</code> explica
+cómo preparar, probar y detener el proyecto.</label></li>
+<li><label><input type="checkbox" />El repositorio de GitHub tiene la
+visibilidad y los permisos adecuados.</label></li>
+<li><label><input type="checkbox" />He declarado el uso de IA según las
+instrucciones de la asignatura y puedo explicar cada decisión
+técnica.</label></li>
+</ul>
+<h2 id="bibliografía-y-fuentes-consultadas">9. Bibliografía y fuentes
+consultadas</h2>
+<h3 id="material-docente">Material docente</h3>
+<ul>
+<li>Aldarias Raya, F. (marzo de 2026). <em>Inteligencia Artifical</em>
+[material didáctico en PDF]. Tratamiento de la Información y Competencia
+Digital. Material de UD6, carpeta
+<code>anexos/TICD20-IA.pdf</code>.</li>
+</ul>
+<h3 id="documentación-oficial-y-páginas-de-producto">Documentación
+oficial y páginas de producto</h3>
+<ul>
+<li>GitHub. (s. f.). <a
+href="https://code.visualstudio.com/docs/copilot/overview">GitHub
+Copilot en VS Code</a>. Consultado el 7 de noviembre de 2026.</li>
+<li>GitHub. (s. f.). <a
+href="https://code.visualstudio.com/docs/sourcecontrol/overview">Control
+de código fuente en VS Code</a>. Consultado el 7 de noviembre de
+2026.</li>
+<li>GitHub. (s. f.). <a
+href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository">Crear
+un repositorio en GitHub</a>. Consultado el 7 de noviembre de 2026.</li>
+<li>Google. (s. f.). <a
+href="https://notebooklm.google.com/">NotebookLM</a>. Consultado el 7 de
+noviembre de 2026.</li>
+<li>Google. (s. f.). <a href="https://gemini.google.com/">Gemini</a>.
+Consultado el 7 de noviembre de 2026.</li>
+<li>LM Studio. (s. f.). <a href="https://lmstudio.ai/">Ejecutar modelos
+de lenguaje en LM Studio</a>. Consultado el 7 de noviembre de 2026.</li>
+<li>Ollama. (s. f.). <a href="https://ollama.com/">Modelos de IA en
+local y en la nube</a>. Consultado el 7 de noviembre de 2026.</li>
+<li>OpenAI. (s. f.). <a
+href="https://chatgpt.com/overview/">ChatGPT</a>. Consultado el 7 de
+noviembre de 2026.</li>
+</ul>
+<h3 id="asistencia-de-ia-utilizada-en-estos-apuntes">Asistencia de IA
+utilizada en estos apuntes</h3>
+<p>Para organizar, redactar y revisar este material se utilizó un
+asistente de IA integrado mediante Copilot SDK en Visual Studio Code
+(modelo y proveedor subyacente no identificados en el entorno), el 7 de
+noviembre de 2026. Se usó como apoyo de redacción; no como fuente de
+hechos. La bibliografía técnica se basa en el material docente y los
+enlaces enumerados arriba. El contenido debe revisarse con el
+profesorado y las fuentes originales antes de reutilizarse.</p>
+<p>Las interfaces, los nombres de funciones y las condiciones de los
+servicios pueden cambiar. Consulta la documentación oficial vigente y
+las normas de tu organización.</p>
+<p><a href="ud6.pdf">Descargar estos apuntes en PDF</a></p>
+<p><a href="../index.html">Volver al índice principal</a></p>
+</body>
+</html>
