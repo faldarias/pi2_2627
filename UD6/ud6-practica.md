@@ -25,9 +25,12 @@ Estas actividades sirven para explorar usos prácticos de la inteligencia artifi
 **Objetivo:** elegir una herramienta apropiada para ayudar a documentar el proyecto.
 
 1. Elige una tarea sencilla y no confidencial, por ejemplo, preparar un inventario ficticio de máquinas virtuales.
-2. Compara una herramienta en la nube, como ChatGPT o Gemini, con un modelo local ejecutado mediante Ollama o LM Studio.
+2. Compara una herramienta en la nube, como ChatGPT o Gemini, con un modelo local ejecutado mediante Ollama o LM Studio. 
 3. Compara conexión a Internet, requisitos del equipo, privacidad, facilidad de uso y limitaciones.
 4. Explica cuál elegirías para esa tarea y por qué.
+
+PD: No necesitas instalar los modelos locales, sólo 
+debes usar la IA para comparar las IAs.
 
 **Para compartir:** una tabla comparativa y una conclusión breve.
 
@@ -109,4 +112,3 @@ No es necesario publicar la conversación completa con la IA ni el prompt si con
 
 [Descargar esta práctica en PDF](ud6-practica.pdf)
 
-[Volver al índice de la UD6](index.html)
