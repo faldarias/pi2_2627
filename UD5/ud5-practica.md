@@ -231,4 +231,4 @@ Realiza esta actividad en una rama temporal y con cambios de prueba. No uses
 ## Entrega
 
 Describe qué cambió en la referencia de la rama, el área de preparación y los
-archivos de trabajo en cada modo.
+archivos de trabajo en cada modo
