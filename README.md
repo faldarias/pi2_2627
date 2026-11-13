@@ -4,6 +4,7 @@
 
 **Autor:** Paco Aldarias  
 **Curso:** 2026-27  
+**Fecha:** Noviembre 2026
 **Especialidad:** ASIR2
 
 - [Web del proyecto](https://faldarias.github.io/pi2_2627/)
@@ -30,11 +31,13 @@ página de unidad incluye un enlace para volver a la portada.
 | [UD2 - Metodologías de proyectos](UD2/index.html) | [Contenido en Markdown](UD2/ud2-scrum.md), [versión PDF](UD2/ud2-scrum.pdf), infografía, diapositivas y materiales del taller Scrum. |
 | [UD3 - Análisis de requisitos](UD3/index.html) | [Contenido en Markdown](UD3/ud3-analisis.md), [versión PDF](UD3/ud3-analisis.pdf), infografía y PDF de revisión. |
 | [UD4 - Guía del proyecto intermodular](UD4/index.html) | [Guía en Markdown](UD4/Guiapi2.md) y [versión PDF](UD4/Guiapi2.pdf). |
+| [UD5 - Git: ramificación, integración y colaboración](UD5/index.html) | [Contenido en Markdown](UD5/ud05-git.md), [versión PDF](UD5/ud05-git.pdf), [prácticas de Git y GitHub](UD5/ud5-practica.md) y [solución orientativa](UD5/ud5-practica-solucion.md). |
+| [UD6 - Inteligencia artificial para proyectos de infraestructura ASIR](UD6/index.html) | [Contenido en Markdown](UD6/ud6.md), [versión PDF](UD6/ud6.pdf) y [prácticas](UD6/ud6-practica.md). |
 
 ## Estructura
 
 - `index.html`: portada y acceso a las unidades.
-- `UD0/`–`UD4/`: páginas web, guías, documentos y recursos de cada unidad.
+- `UD0/`–`UD6/`: páginas web, guías, documentos y recursos de cada unidad.
 - `LICENSE`: licencia del repositorio.
 
 ## Licencia
