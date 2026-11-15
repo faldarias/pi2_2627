@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paco Aldarias" />
+  <title>UD7. Infraestructura de red: Lógicos y Físicos</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/units.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">UD7. Infraestructura de red: Lógicos y Físicos</h1>
+<p class="subtitle">Módulo: Proyecto Intermodular II. ASIR</p>
+<p class="author">Paco Aldarias</p>
+<p class="date">15 de noviembre de 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#unidad-7-infraestructura-de-red-lógicos-y-físicos"
+id="toc-unidad-7-infraestructura-de-red-lógicos-y-físicos">Unidad 7:
+Infraestructura de red: Lógicos y Físicos</a>
+<ul>
+<li><a href="#objetivos" id="toc-objetivos">Objetivos</a></li>
+<li><a href="#la-importancia-de-la-visualización"
+id="toc-la-importancia-de-la-visualización">1. La importancia de la
+visualización</a></li>
+<li><a href="#introducción-a-la-infraestructura-de-red"
+id="toc-introducción-a-la-infraestructura-de-red">2. Introducción a la
+infraestructura de red</a>
+<ul>
+<li><a href="#diferencia-clave" id="toc-diferencia-clave">Diferencia
+clave</a></li>
+</ul></li>
+<li><a href="#infraestructura-física-de-red"
+id="toc-infraestructura-física-de-red">3. Infraestructura física de
+red</a>
+<ul>
+<li><a href="#componentes" id="toc-componentes">Componentes</a></li>
+<li><a href="#topologías-físicas" id="toc-topologías-físicas">Topologías
+físicas</a></li>
+<li><a href="#importancia" id="toc-importancia">Importancia</a></li>
+</ul></li>
+<li><a href="#infraestructura-lógica-de-red"
+id="toc-infraestructura-lógica-de-red">4. Infraestructura lógica de
+red</a>
+<ul>
+<li><a href="#componentes-1" id="toc-componentes-1">Componentes</a></li>
+<li><a href="#topologías-lógicas" id="toc-topologías-lógicas">Topologías
+lógicas</a></li>
+</ul></li>
+<li><a href="#diagramas-de-red" id="toc-diagramas-de-red">5. Diagramas
+de red</a>
+<ul>
+<li><a href="#para-qué-sirven-los-diagramas-de-red"
+id="toc-para-qué-sirven-los-diagramas-de-red">¿Para qué sirven los
+diagramas de red?</a></li>
+<li><a href="#tipos-de-diagramas" id="toc-tipos-de-diagramas">Tipos de
+diagramas</a></li>
+</ul></li>
+<li><a href="#diagramas-físicos-para-asir"
+id="toc-diagramas-físicos-para-asir">6. Diagramas físicos para ASIR</a>
+<ul>
+<li><a href="#qué-mostrar" id="toc-qué-mostrar">Qué mostrar</a></li>
+<li><a href="#cómo-representarlo" id="toc-cómo-representarlo">Cómo
+representarlo</a></li>
+<li><a href="#ejemplo-básico" id="toc-ejemplo-básico">Ejemplo
+básico</a></li>
+<li><a href="#importancia-para-asir"
+id="toc-importancia-para-asir">Importancia para ASIR</a></li>
+</ul></li>
+<li><a href="#diagramas-lógicos-para-asir"
+id="toc-diagramas-lógicos-para-asir">7. Diagramas lógicos para ASIR</a>
+<ul>
+<li><a href="#qué-mostrar-1" id="toc-qué-mostrar-1">Qué mostrar</a></li>
+<li><a href="#cómo-representarlo-1" id="toc-cómo-representarlo-1">Cómo
+representarlo</a></li>
+<li><a href="#ejemplo-básico-1" id="toc-ejemplo-básico-1">Ejemplo
+básico</a></li>
+<li><a href="#importancia-para-asir-1"
+id="toc-importancia-para-asir-1">Importancia para ASIR</a></li>
+</ul></li>
+<li><a href="#diferencias-clave-entre-diagramas-físicos-y-lógicos"
+id="toc-diferencias-clave-entre-diagramas-físicos-y-lógicos">8.
+Diferencias clave entre diagramas físicos y lógicos</a>
+<ul>
+<li><a href="#cuándo-usar-cada-uno" id="toc-cuándo-usar-cada-uno">Cuándo
+usar cada uno</a></li>
+</ul></li>
+<li><a href="#herramientas-comunes" id="toc-herramientas-comunes">9.
+Herramientas Comunes</a></li>
+<li><a href="#caso-práctico-básico-opcional"
+id="toc-caso-práctico-básico-opcional">10. Caso práctico básico
+(opcional)</a>
+<ul>
+<li><a href="#diagrama-físico-1" id="toc-diagrama-físico-1">Diagrama
+físico</a></li>
+<li><a href="#diagrama-lógico-1" id="toc-diagrama-lógico-1">Diagrama
+lógico</a></li>
+</ul></li>
+<li><a href="#ejercicios" id="toc-ejercicios">Ejercicios</a></li>
+<li><a href="#conclusión" id="toc-conclusión">11. Conclusión</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="unidad-7-infraestructura-de-red-lógicos-y-físicos">Unidad 7:
+Infraestructura de red: Lógicos y Físicos</h1>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Aprender a visualizar y documentar la estructura técnica de una
+aplicación o sistema.</li>
+<li>Comprender la importancia y diferencias entre la infraestructura
+física y lógica de una red informática, y aprender a representar y
+diseñar ambos tipos mediante diagramas específicos para poder
+planificar, administrar y mantener redes de manera eficiente y segura en
+entornos profesionales como ASIR.</li>
+</ul>
+<hr />
+<h2 id="la-importancia-de-la-visualización">1. La importancia de la
+visualización</h2>
+<blockquote>
+<p><em>“Una imagen vale más que mil palabras”</em>. En el mundo de la
+tecnología, un buen diagrama vale más que mil líneas de código o
+documentación.</p>
+</blockquote>
+<p>Los diagramas técnicos son herramientas esenciales para:</p>
+<ul>
+<li><strong>Comunicar:</strong> Explicar diseños complejos a otros
+miembros del equipo, a los <em>stakeholders</em> o a futuros
+desarrolladores.</li>
+<li><strong>Planificar:</strong> Diseñar la estructura de un sistema
+antes de empezar a construirlo.</li>
+<li><strong>Analizar:</strong> Identificar posibles cuellos de botella,
+puntos de fallo o problemas de seguridad.</li>
+<li><strong>Documentar:</strong> Dejar un registro claro de cómo está
+construido un sistema.</li>
+</ul>
+<hr />
+<h2 id="introducción-a-la-infraestructura-de-red">2. Introducción a la
+infraestructura de red</h2>
+<p>La <strong>infraestructura de red</strong> es el conjunto de
+componentes físicos y lógicos que permiten la comunicación y el
+intercambio de datos entre dispositivos dentro de una red
+informática.</p>
+<ul>
+<li>Es fundamental para el funcionamiento de cualquier sistema
+informático.</li>
+<li>Nos permite compartir recursos, acceder a servicios y conectarnos a
+internet.</li>
+</ul>
+<h3 id="diferencia-clave">Diferencia clave</h3>
+<ul>
+<li><strong>Infraestructura física:</strong> Los elementos tangibles
+(hardware).</li>
+<li><strong>Infraestructura lógica:</strong> La configuración y
+protocolos que permiten la comunicación.</li>
+</ul>
+<hr />
+<h2 id="infraestructura-física-de-red">3. Infraestructura física de
+red</h2>
+<p>La infraestructura física incluye todos los elementos materiales que
+conforman la red.</p>
+<h3 id="componentes">Componentes</h3>
+<ul>
+<li><strong>Cables:</strong> UTP (par trenzado), fibra óptica,
+coaxial.</li>
+<li><strong>Dispositivos:</strong> Switches, routers, puntos de acceso,
+servidores, estaciones de trabajo.</li>
+<li><strong>Otros:</strong> Racks, paneles de parcheo,
+canalizaciones.</li>
+</ul>
+<h3 id="topologías-físicas">Topologías físicas</h3>
+<ul>
+<li><strong>Estrella:</strong> Todos los dispositivos conectados a un
+punto central (switch).</li>
+<li><strong>Bus:</strong> Todos los dispositivos conectados a un único
+cable.</li>
+<li><strong>Anillo:</strong> Cada dispositivo conectado al siguiente
+formando un círculo.</li>
+<li><strong>Malla:</strong> Dispositivos interconectados de forma
+redundante.</li>
+</ul>
+<h4 id="ejemplos-visuales-de-topologías">Ejemplos visuales de
+topologías</h4>
+<p><strong>Topología Estrella:</strong></p>
+<pre class="text"><code>      [PC1]
+        |
+     [Switch]
+      /    \
+  [PC2]    [PC3]</code></pre>
+<p><strong>Topología Bus:</strong></p>
+<pre class="text"><code>[PC1]---[PC2]---[PC3]---[PC4]</code></pre>
+<p><strong>Topología Anillo:</strong></p>
+<pre class="text"><code>[PC1]---[PC2]
+  |       |
+[PC4]---[PC3]</code></pre>
+<p><strong>Topología Malla:</strong> * Cada nodo conectado a varios
+otros para redundancia.</p>
+<h3 id="importancia">Importancia</h3>
+<ul>
+<li>Una buena infraestructura física asegura la calidad y estabilidad de
+la red.</li>
+<li>Es importante planificar la ubicación de los dispositivos y el
+cableado para evitar interferencias y facilitar el mantenimiento.</li>
+</ul>
+<hr />
+<h2 id="infraestructura-lógica-de-red">4. Infraestructura lógica de
+red</h2>
+<p>La infraestructura lógica es el diseño virtual que permite que los
+dispositivos se comuniquen.</p>
+<h3 id="componentes-1">Componentes</h3>
+<ul>
+<li><strong>Protocolos:</strong> Conjunto de reglas para la comunicación
+(TCP/IP, DHCP, DNS).</li>
+<li><strong>Direccionamiento IP:</strong> Asignación de direcciones para
+identificar dispositivos.</li>
+<li><strong>Subredes:</strong> División lógica para organizar y
+segmentar la red.</li>
+<li><strong>VLANs:</strong> Redes virtuales para segmentar tráfico
+dentro de la misma infraestructura física.</li>
+</ul>
+<h3 id="topologías-lógicas">Topologías lógicas</h3>
+<ul>
+<li>No necesariamente coinciden con la topología física.</li>
+<li><strong>Ejemplo:</strong> Una VLAN puede agrupar dispositivos
+físicamente dispersos.</li>
+</ul>
+<hr />
+<h2 id="diagramas-de-red">5. Diagramas de red</h2>
+<h3 id="para-qué-sirven-los-diagramas-de-red">¿Para qué sirven los
+diagramas de red?</h3>
+<ul>
+<li>Son representaciones visuales que muestran cómo está diseñada una
+red.</li>
+<li>Ayudan a entender, planificar, administrar y solucionar
+problemas.</li>
+<li>Facilitan la comunicación entre técnicos y clientes.</li>
+</ul>
+<h3 id="tipos-de-diagramas">Tipos de diagramas</h3>
+<h4 id="diagrama-físico">Diagrama físico</h4>
+<p>Muestra la ubicación real de los dispositivos y el cableado.</p>
+<pre class="text"><code>[Servidor1]---(UTP)---[Switch]---(Fibra)---[Router]---(ISP)
+                         |
+                       (UTP)
+                         |
+                       [PC1]</code></pre>
+<h4 id="diagrama-lógico">Diagrama lógico</h4>
+<p>Muestra cómo se comunican los dispositivos, incluyendo IPs, subredes
+y protocolos.</p>
+<pre class="text"><code>[PC1 192.168.1.10 VLAN10] \
+                           [Switch]---[Router 192.168.1.1]
+[PC2 192.168.2.10 VLAN20] /</code></pre>
+<hr />
+<h2 id="diagramas-físicos-para-asir">6. Diagramas físicos para ASIR</h2>
+<h3 id="qué-mostrar">Qué mostrar</h3>
+<ul>
+<li><strong>Dispositivos:</strong> Switches, routers, servidores,
+estaciones, puntos de acceso.</li>
+<li>Cableado y conexiones físicas.</li>
+<li>Ubicación física (salas, racks, pisos).</li>
+<li>Etiquetas de cables y puertos.</li>
+</ul>
+<h3 id="cómo-representarlo">Cómo representarlo</h3>
+<ul>
+<li>Símbolos estándar para cada dispositivo.</li>
+<li>Líneas que representan los cables físicos.</li>
+<li>Notas o leyendas para aclarar tipos de cables (UTP, fibra,
+etc.).</li>
+</ul>
+<h3 id="ejemplo-básico">Ejemplo básico</h3>
+<pre class="text"><code>      [Servidor1]
+           |
+         (UTP)
+           |
+        [Switch]--------------------[Router]---(Internet)
+         /    \
+      (UTP)  (UTP)
+       /        \
+   [PC1]        [PC2]</code></pre>
+<h3 id="importancia-para-asir">Importancia para ASIR</h3>
+<ul>
+<li>Permite conocer dónde está cada componente.</li>
+<li>Facilita el mantenimiento físico y las ampliaciones.</li>
+</ul>
+<hr />
+<h2 id="diagramas-lógicos-para-asir">7. Diagramas lógicos para ASIR</h2>
+<h3 id="qué-mostrar-1">Qué mostrar</h3>
+<ul>
+<li>Direcciones IP asignadas a cada dispositivo.</li>
+<li>Subredes y máscaras de red.</li>
+<li>VLANs y su segmentación.</li>
+<li>Rutas y protocolos de comunicación.</li>
+</ul>
+<h3 id="cómo-representarlo-1">Cómo representarlo</h3>
+<ul>
+<li>Representar dispositivos con sus nombres y direcciones IP.</li>
+<li>Indicar las VLANs y subredes con colores o etiquetas.</li>
+<li>Mostrar rutas entre subredes y conexiones lógicas.</li>
+</ul>
+<h3 id="ejemplo-básico-1">Ejemplo básico</h3>
+<pre class="text"><code>       VLAN10                             VLAN20
+   192.168.1.0/24                     192.168.2.0/24
+ [PC1 192.168.1.10]                 [PC2 192.168.2.10]
+         |                                  |
+         +------- VLAN 10 -- [Switch] -- VLAN 20 -------+
+                                |
+                             [Router]
+                     192.168.1.1 / 192.168.2.1</code></pre>
+<ul>
+<li>Aquí <code>PC1</code> y <code>PC2</code> están en VLANs distintas,
+aunque conectados al mismo switch.</li>
+<li>El router conecta ambas VLANs.</li>
+</ul>
+<h3 id="importancia-para-asir-1">Importancia para ASIR</h3>
+<ul>
+<li>Facilita la gestión del direccionamiento IP.</li>
+<li>Ayuda a planificar la seguridad y el rendimiento.</li>
+<li>Fundamental para configurar correctamente dispositivos y
+servicios.</li>
+</ul>
+<hr />
+<h2 id="diferencias-clave-entre-diagramas-físicos-y-lógicos">8.
+Diferencias clave entre diagramas físicos y lógicos</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;">Diagrama Físico</th>
+<th style="text-align: left;">Diagrama Lógico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>¿Qué muestra?</strong></td>
+<td style="text-align: left;">Ubicación real de equipos y cables</td>
+<td style="text-align: left;">Comunicación entre dispositivos, IPs,
+VLANs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Enfoque</strong></td>
+<td style="text-align: left;">Hardware y conexiones tangibles</td>
+<td style="text-align: left;">Configuración y flujo de datos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Uso principal</strong></td>
+<td style="text-align: left;">Instalación, mantenimiento físico</td>
+<td style="text-align: left;">Administración, planificación de red</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ejemplo</strong></td>
+<td style="text-align: left;">Cable UTP, ubicación del switch</td>
+<td style="text-align: left;">Subredes, rutas, VLANs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cuándo-usar-cada-uno">Cuándo usar cada uno</h3>
+<ul>
+<li><strong>Diagrama físico:</strong> Para instalación y reparación de
+cableado y equipos.</li>
+<li><strong>Diagrama lógico:</strong> Para configuración, seguridad,
+segmentación y gestión de red.</li>
+</ul>
+<hr />
+<h2 id="herramientas-comunes">9. Herramientas Comunes</h2>
+<ul>
+<li><strong>Draw.io (ahora diagrams.net):</strong> Gratuita, potente y
+se integra con herramientas como VS Code, Google Drive y GitHub. Es una
+opción excelente para todo tipo de diagramas.</li>
+<li><strong>Lucidchart:</strong> Una herramienta online muy popular con
+muchas plantillas y funcionalidades colaborativas. Tiene una versión
+gratuita limitada.</li>
+</ul>
+<hr />
+<h2 id="caso-práctico-básico-opcional">10. Caso práctico básico
+(opcional)</h2>
+<p>Supongamos que tenemos una pequeña empresa con: * Una sala de
+servidores con 2 servidores y un switch. * Dos oficinas con PCs
+conectadas a través del switch. * Un router para acceso a Internet.</p>
+<h3 id="diagrama-físico-1">Diagrama físico</h3>
+<p>Muestra la ubicación de servidores, switch y cableado:</p>
+<pre class="text"><code>[Servidor]---(UTP)---[Switch]---(UTP)---[PC1]
+                        | \
+                     (UTP) (Fibra)
+                        |     \
+                     [PC2]   [Router]---(Internet)</code></pre>
+<h3 id="diagrama-lógico-1">Diagrama lógico</h3>
+<p>Muestra subredes para las oficinas, con VLANs que segmentan el
+tráfico y direcciones IP asignadas a cada PC y servidor:</p>
+<ul>
+<li><strong>VLAN10:</strong> <code>192.168.1.0/24</code>
+<ul>
+<li><strong>Servidor:</strong> <code>192.168.1.2</code></li>
+<li><strong>PC1:</strong> <code>192.168.1.10</code></li>
+</ul></li>
+<li><strong>VLAN20:</strong> <code>192.168.2.0/24</code>
+<ul>
+<li><strong>PC2:</strong> <code>192.168.2.10</code></li>
+</ul></li>
+<li><strong>Router:</strong> Conecta ambas VLANs para comunicación y
+acceso a internet.</li>
+</ul>
+<h2 id="ejercicios">Ejercicios</h2>
+<p>Los enunciados y soluciones de los ejemplos están en el <a
+href="ud7-ejercicios.md">fichero de ejercicios</a>.</p>
+<hr />
+<h2 id="conclusión">11. Conclusión</h2>
+<ul>
+<li>La infraestructura de red consta de dos partes:
+<strong>física</strong> y <strong>lógica</strong>, ambas
+indispensables.</li>
+<li>Los diagramas físicos y lógicos son herramientas clave para
+planificar, administrar y mantener redes.</li>
+<li>En <strong>ASIR</strong> es fundamental dominar ambas para poder
+diseñar, instalar y gestionar redes eficientes y seguras.</li>
+</ul>
+<p><a href="../index.html">Volver al índice principal</a></p>
+</body>
+</html>
