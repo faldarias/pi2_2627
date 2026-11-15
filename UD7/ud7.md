@@ -270,7 +270,7 @@ Muestra subredes para las oficinas, con VLANs que segmentan el tráfico y direcc
 
 ## Ejercicios
 
-Los enunciados y soluciones de los ejemplos están en el [fichero de ejercicios](ud7-ejercicios.md).
+Los enunciados y soluciones de los ejemplos están en el [fichero de ejercicios pdf](ud7-ejercicios.pdf).
 
 ---
 
