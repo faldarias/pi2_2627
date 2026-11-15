@@ -87,6 +87,18 @@ debes usar la IA para comparar las IAs.
 
 **Para compartir:** el fragmento de README corregido y la declaración de uso de IA.
 
+## Actividad 7. Diseñar y comprobar un plan de copias de seguridad
+
+**Objetivo:** utilizar IA para preparar una propuesta de copias de seguridad y comprobar que permite recuperar los datos dentro de unos objetivos definidos.
+
+1. Inventa el escenario de una pequeña organización: qué servicio necesita proteger, qué datos contiene y cuánto tiempo puede estar interrumpido.
+2. Define dos objetivos: el **RPO** (cuántos datos como máximo se podrían perder) y el **RTO** (cuánto se tardaría en recuperar el servicio).
+3. Pide a una IA un plan que indique frecuencia, retención, ubicación de las copias y una prueba periódica de restauración. Puedes pedirle que valore la regla 3-2-1.
+4. Comprueba si la propuesta cumple el RPO y el RTO, si contempla una copia aislada de los fallos del sistema principal y si distingue las copias de seguridad de las instantáneas.
+5. Si haces una prueba práctica, usa solo archivos ficticios en una máquina virtual o laboratorio y restaura en una ubicación separada; no sobrescribas datos ni ejecutes comandos de borrado.
+
+**Para compartir:** el escenario ficticio, los objetivos RPO/RTO, una tabla con el plan propuesto y tus correcciones, y el resultado de la prueba de restauración o una explicación de cómo la realizarías.
+
 ## Publicación en el foro de la UD6
 
 Publica **una entrada por actividad** con este formato:
@@ -109,4 +121,3 @@ No es necesario publicar la conversación completa con la IA ni el prompt si con
 - La publicación es clara, respetuosa y no revela información sensible.
 
 [Descargar esta práctica en PDF](ud6-practica.pdf)
-

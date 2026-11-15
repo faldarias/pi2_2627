@@ -160,6 +160,28 @@ Flujo habitual: abre una carpeta, inicializa o clona el repositorio Git, crea y 
 
 La IA no publica de forma responsable por sí sola: antes de enviar cambios, verifica que el repositorio no contenga secretos, información sensible ni configuraciones inseguras.
 
+## 6. Activar la publicación web en GitHub 
+
+
+Para activar la publicación web en GitHub (conocido como GitHub Pages), sigue estos pasos sencillos desde la configuración de tu repositorio:
+
+1.Entra a tu repositorio:GitHub.com.
+Inicia sesión en GitHub, ve al repositorio de tu proyecto web y haz clic en la pestaña Settings (Configuración), situada en la barra superior de opciones del repositorio.
+
+2.Busca la sección de Pages:Menú lateral izquierdo.
+En el menú de la izquierda, desplázate hacia abajo hasta la sección Code and automation (Código y automatización) y haz clic en Pages.
+
+3.Configura la fuente de publicación:Build and deployment.
+En el apartado Build and deployment, busca la opción Branch (Rama).
+
+Selecciona la rama principal de tu proyecto (suele llamarse main o master).
+
+En la carpeta desplegable contigua, selecciona /root (si tus archivos están en la raíz) o /docs (si están en una carpeta específica).
+
+Haz clic en Save (Guardar).
+
+![Github Pagess](githubpages1.png)
+
 ## 7. Cómo citar las fuentes y declarar el uso de IA
 
 La IA es una herramienta de apoyo, no una fuente que sustituya a la documentación original. Para justificar un dato técnico, busca y cita el manual oficial, el artículo o el material docente del que se ha comprobado. Si una respuesta de IA indica una fuente, abre esa fuente y verifica que respalda realmente la afirmación.

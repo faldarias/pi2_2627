@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-ES" xml:lang="es-ES">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paco Aldarias" />
+  <title>Git: ramificación, integración y colaboración</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/units.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Git: ramificación, integración y colaboración</h1>
+<p class="subtitle">Módulo PI2 · ASIR2</p>
+<p class="author">Paco Aldarias</p>
+<p class="date">30 de octubre de 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#antes-de-empezar" id="toc-antes-de-empezar"><span
+class="toc-section-number">1</span> Antes de empezar</a></li>
+<li><a href="#estrategias-de-ramificación"
+id="toc-estrategias-de-ramificación"><span
+class="toc-section-number">2</span> Estrategias de ramificación</a>
+<ul>
+<li><a href="#github-flow-opción-recomendada-para-el-proyecto"
+id="toc-github-flow-opción-recomendada-para-el-proyecto"><span
+class="toc-section-number">2.1</span> GitHub Flow: opción recomendada
+para el proyecto</a></li>
+<li><a href="#otras-estrategias" id="toc-otras-estrategias"><span
+class="toc-section-number">2.2</span> Otras estrategias</a></li>
+</ul></li>
+<li><a href="#estrategias-de-fusión"
+id="toc-estrategias-de-fusión"><span class="toc-section-number">3</span>
+Estrategias de fusión</a></li>
+<li><a href="#pull-request" id="toc-pull-request"><span
+class="toc-section-number">4</span> Pull request</a>
+<ul>
+<li><a href="#flujo-de-trabajo" id="toc-flujo-de-trabajo"><span
+class="toc-section-number">4.1</span> Flujo de trabajo</a></li>
+<li><a href="#lista-de-revisión-para-proyectos-asir"
+id="toc-lista-de-revisión-para-proyectos-asir"><span
+class="toc-section-number">4.2</span> Lista de revisión para proyectos
+ASIR</a></li>
+</ul></li>
+<li><a href="#conflictos" id="toc-conflictos"><span
+class="toc-section-number">5</span> Conflictos</a>
+<ul>
+<li><a href="#resolver-un-conflicto-durante-un-merge"
+id="toc-resolver-un-conflicto-durante-un-merge"><span
+class="toc-section-number">5.1</span> Resolver un conflicto durante un
+merge</a></li>
+</ul></li>
+<li><a href="#reset-y-recuperación" id="toc-reset-y-recuperación"><span
+class="toc-section-number">6</span> Reset y recuperación</a></li>
+<li><a href="#stash-guardar-cambios-temporalmente"
+id="toc-stash-guardar-cambios-temporalmente"><span
+class="toc-section-number">7</span> Stash (guardar cambios
+temporalmente)</a></li>
+<li><a href="#consejos-de-trabajo" id="toc-consejos-de-trabajo"><span
+class="toc-section-number">8</span> Consejos de trabajo</a></li>
+<li><a href="#github-education-y-copilot-para-estudiantes"
+id="toc-github-education-y-copilot-para-estudiantes"><span
+class="toc-section-number">9</span> GitHub Education y Copilot para
+estudiantes</a></li>
+</ul>
+</nav>
+<p>Guía práctica para trabajar en equipo con Git y GitHub en proyectos
+de administración de sistemas: documentación, scripts, configuraciones y
+automatización.</p>
+<blockquote>
+<p><strong>Objetivo.</strong> Al terminar, podrás crear ramas de
+trabajo, integrar cambios, revisar propuestas, resolver conflictos y
+recuperar cambios locales con seguridad.</p>
+</blockquote>
+<h1 data-number="1" id="antes-de-empezar"><span
+class="header-section-number">1</span> Antes de empezar</h1>
+<p>Git guarda el historial de un proyecto mediante <em>commits</em>.
+Cada commit es una versión identificable; una rama permite desarrollar
+una línea de trabajo sin modificar directamente otra. GitHub aloja
+repositorios y añade herramientas de colaboración como <em>pull
+requests</em> (PR).</p>
+<p>Comprueba que tienes Git instalado y configura la identidad que
+aparecerá en tus commits:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Tu nombre&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;tu-correo@example.com&quot;</span></span></code></pre></div>
+<p>La identidad de Git no configura por sí sola el acceso a GitHub. Para
+descargar o publicar repositorios privados, autentícate con el método
+recomendado por GitHub (por ejemplo, Git Credential Manager o SSH). No
+incluyas contraseñas ni tokens en la URL del repositorio.</p>
+<h1 data-number="2" id="estrategias-de-ramificación"><span
+class="header-section-number">2</span> Estrategias de ramificación</h1>
+<p>Una rama debe representar un cambio concreto y tener una vida
+razonablemente corta. Así es más fácil revisar, probar e integrar el
+trabajo.</p>
+<h2 data-number="2.1"
+id="github-flow-opción-recomendada-para-el-proyecto"><span
+class="header-section-number">2.1</span> GitHub Flow: opción recomendada
+para el proyecto</h2>
+<ol type="1">
+<li>Mantén <code>main</code> como rama estable.</li>
+<li>Actualiza <code>main</code> antes de empezar.</li>
+<li>Crea una rama descriptiva para una tarea.</li>
+<li>Realiza commits pequeños y publica la rama.</li>
+<li>Abre una PR, revisa y prueba los cambios.</li>
+<li>Integra la PR y elimina la rama terminada.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> docs/diagrama-red</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Edita y prueba los archivos</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add docs/diagrama-red.md</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;docs: documentar el diagrama de red&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin docs/diagrama-red</span></code></pre></div>
+<p>Nombres útiles de rama:</p>
+<ul>
+<li><code>feat/monitorizacion</code>: nueva funcionalidad.</li>
+<li><code>fix/dns-resolucion</code>: corrección.</li>
+<li><code>docs/guia-backup</code>: documentación.</li>
+<li><code>chore/actualizar-dependencias</code>: mantenimiento.</li>
+</ul>
+<h2 data-number="2.2" id="otras-estrategias"><span
+class="header-section-number">2.2</span> Otras estrategias</h2>
+<ul>
+<li><strong>Trunk-based development:</strong> el equipo integra cambios
+pequeños con mucha frecuencia en una rama principal. Requiere pruebas
+automáticas y coordinación para mantenerla estable.</li>
+<li><strong>Git Flow:</strong> organiza el trabajo con ramas de larga
+duración como <code>develop</code> y ramas temporales
+<code>feature/</code>, <code>release/</code> y <code>hotfix/</code>.
+Puede ser útil con versiones planificadas, pero añade complejidad y no
+suele ser necesario para un proyecto pequeño de clase.</li>
+</ul>
+<p><strong>Criterio práctico:</strong> para un equipo ASIR pequeño, usa
+<code>main</code> más ramas cortas por tarea y PR. Protege
+<code>main</code> para evitar cambios directos sin revisar.</p>
+<h1 data-number="3" id="estrategias-de-fusión"><span
+class="header-section-number">3</span> Estrategias de fusión</h1>
+<p>Fusionar incorpora los cambios de una rama en otra. Actualiza primero
+la rama de destino y comprueba el estado del repositorio:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--ff-only</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--no-ff</span> docs/diagrama-red</span></code></pre></div>
+<p>Elige la estrategia según el historial que necesite el equipo:</p>
+<ul>
+<li><strong>Merge commit:</strong> conserva los commits originales y
+registra explícitamente la integración. Es útil cuando interesa ver el
+trabajo de la rama como una unidad.</li>
+<li><strong>Squash and merge:</strong> combina los cambios de la rama en
+un solo commit en <code>main</code>. Mantiene la rama principal más
+compacta; los commits intermedios no aparecen individualmente en
+ella.</li>
+<li><strong>Rebase:</strong> vuelve a aplicar los commits sobre la punta
+más reciente de la rama destino y deja un historial lineal. Evítalo en
+ramas compartidas o publicadas si obliga a reescribir commits que otras
+personas ya usan.</li>
+</ul>
+<p>Acuerda una estrategia para el repositorio y aplícala de forma
+consistente. Antes de fusionar, ejecuta las comprobaciones pertinentes:
+por ejemplo, validar la sintaxis de scripts, revisar archivos de
+configuración y probar el despliegue en un entorno seguro.</p>
+<h1 data-number="4" id="pull-request"><span
+class="header-section-number">4</span> Pull request</h1>
+<p>Una <strong>pull request</strong> propone integrar cambios y permite
+revisarlos antes de fusionarlos. No es solo un botón para mezclar ramas:
+documenta la intención, facilita la revisión y muestra las
+comprobaciones automáticas.</p>
+<h2 data-number="4.1" id="flujo-de-trabajo"><span
+class="header-section-number">4.1</span> Flujo de trabajo</h2>
+<ol type="1">
+<li>Publica tu rama con
+<code>git push -u origin nombre-de-rama</code>.</li>
+<li>En GitHub, crea una PR desde esa rama hacia <code>main</code>.</li>
+<li>Explica qué problema resuelve, qué has cambiado y cómo lo has
+probado.</li>
+<li>Solicita revisión a tus compañeros.</li>
+<li>Atiende los comentarios y publica nuevos commits en la misma
+rama.</li>
+<li>Espera a que las revisiones y comprobaciones requeridas
+terminen.</li>
+<li>Fusiona con la estrategia acordada y elimina la rama si ya no se
+necesita.</li>
+</ol>
+<h2 data-number="4.2" id="lista-de-revisión-para-proyectos-asir"><span
+class="header-section-number">4.2</span> Lista de revisión para
+proyectos ASIR</h2>
+<ul>
+<li>¿La descripción permite entender el objetivo y el alcance del
+cambio?</li>
+<li>¿Se han probado los scripts y las configuraciones en un entorno
+adecuado?</li>
+<li>¿Hay credenciales, claves privadas, tokens, datos personales o
+direcciones sensibles? No deben publicarse; si se expusieron, revócalos
+y sustitúyelos.</li>
+<li>¿Los cambios en firewall, DNS, DHCP, permisos, copias de seguridad o
+servicios están explicados y son deliberados?</li>
+<li>¿La documentación coincide con la configuración que se entrega?</li>
+</ul>
+<h1 data-number="5" id="conflictos"><span
+class="header-section-number">5</span> Conflictos</h1>
+<p>Un conflicto aparece cuando Git no puede combinar automáticamente
+cambios incompatibles, a menudo porque dos ramas modificaron las mismas
+líneas. No significa que el repositorio esté perdido: hay que decidir
+qué contenido debe quedar.</p>
+<h2 data-number="5.1" id="resolver-un-conflicto-durante-un-merge"><span
+class="header-section-number">5.1</span> Resolver un conflicto durante
+un merge</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Abre los archivos marcados como &quot;both modified&quot;</span></span></code></pre></div>
+<p>En el archivo encontrarás marcadores parecidos a estos:</p>
+<pre class="text"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+nameserver 192.0.2.10
+=======
+nameserver 192.0.2.53
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; cambio-dns</code></pre>
+<p>Edita el archivo para dejar la configuración correcta, elimina todos
+los marcadores y comprueba el resultado. No elijas una versión
+automáticamente sin entender el efecto, especialmente en archivos de red
+y seguridad.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add ruta/al/archivo</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit</span></code></pre></div>
+<p><code>git status</code> indica los pasos restantes y puede preparar
+el mensaje del commit de merge. Si decides cancelar la fusión antes de
+completarla:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="at">--abort</span></span></code></pre></div>
+<p>Si el conflicto ocurre durante un rebase, resuelve los archivos,
+márcalos con <code>git add</code> y continúa con
+<code>git rebase --continue</code>. Para cancelar ese rebase, utiliza
+<code>git rebase --abort</code>. Un rebase puede cambiar identificadores
+de commits: coordínalo antes de actualizar una rama compartida.</p>
+<h1 data-number="6" id="reset-y-recuperación"><span
+class="header-section-number">6</span> Reset y recuperación</h1>
+<p><code>git reset</code> mueve la referencia de la rama actual a otro
+commit. Según la opción elegida también modifica el área de preparación
+o los archivos de trabajo. Antes de recuperar o descartar nada,
+revisa:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="at">--staged</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span> <span class="at">--decorate</span> <span class="at">-5</span></span></code></pre></div>
+<table>
+<colgroup>
+<col class="inline-width-25" />
+<col class="inline-width-25" />
+<col class="inline-width-25" />
+<col class="inline-width-25" />
+</colgroup>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Mueve la rama</th>
+<th>Conserva cambios preparados</th>
+<th>Conserva cambios en archivos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--soft</code></td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><code>--mixed</code> (predeterminada)</td>
+<td>Sí</td>
+<td>No, los deja sin preparar</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><code>--hard</code></td>
+<td>Sí</td>
+<td>No</td>
+<td>No, sobrescribe los archivos afectados</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplos:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1   <span class="co"># Deshacer el último commit y conservarlo preparado</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1          <span class="co"># Quitar el último commit; conservar cambios sin preparar</span></span></code></pre></div>
+<p><strong>Precaución:</strong> <code>git reset --hard</code> descarta
+cambios locales y puede hacer perder trabajo. No lo ejecutes sin revisar
+el estado y confirmar que puedes descartar esos cambios. Evítalo en
+commits ya compartidos: el resto del equipo puede seguir basándose en el
+historial anterior.</p>
+<p>Si lo que quieres es restaurar un archivo concreto, identifica
+primero qué cambios vas a descartar:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff <span class="at">--</span> ruta/al/archivo</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--</span> ruta/al/archivo</span></code></pre></div>
+<p>Para quitar un archivo del área de preparación sin borrar sus
+cambios:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> restore <span class="at">--staged</span> ruta/al/archivo</span></code></pre></div>
+<p>En repositorios compartidos, prefiere
+<code>git revert &lt;commit&gt;</code> para deshacer un commit
+publicado: crea un nuevo commit inverso y no reescribe el historial.</p>
+<h1 data-number="7" id="stash-guardar-cambios-temporalmente"><span
+class="header-section-number">7</span> Stash (guardar cambios
+temporalmente)</h1>
+<p><code>git stash</code> guarda temporalmente cambios locales sin crear
+un commit. Sirve, por ejemplo, si necesitas cambiar de rama antes de
+terminar una tarea. No es un sistema de copias de seguridad: consulta y
+aplica el contenido con cuidado.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash push <span class="at">-m</span> <span class="st">&quot;configuración pendiente de probar&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash list</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash show <span class="at">-p</span> stash@{0}</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{0}</span></code></pre></div>
+<p><code>apply</code> conserva la entrada en la lista. Cuando confirmes
+que los cambios se han recuperado correctamente, puedes eliminarla:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash drop stash@{0}</span></code></pre></div>
+<p>También puedes usar <code>git stash pop</code> para aplicar y retirar
+la entrada de la lista en una sola operación. Si hay conflictos,
+resuélvelos antes de continuar. Por defecto, los archivos sin
+seguimiento no se guardan; inclúyelos explícitamente si hace falta:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash push <span class="at">-u</span> <span class="at">-m</span> <span class="st">&quot;incluye archivos nuevos&quot;</span></span></code></pre></div>
+<h1 data-number="8" id="consejos-de-trabajo"><span
+class="header-section-number">8</span> Consejos de trabajo</h1>
+<ul>
+<li>Comprueba <code>git status</code> antes y después de cada operación
+importante.</li>
+<li>Haz commits pequeños, coherentes y con mensajes que expliquen el
+cambio: <code>fix: validar el registro DNS</code> o
+<code>docs: añadir procedimiento de backup</code>.</li>
+<li>No incluyas contraseñas, tokens, claves SSH privadas, certificados
+privados, archivos <code>.env</code> con secretos ni copias de datos
+sensibles. Añade los patrones apropiados a <code>.gitignore</code>;
+ignorar un archivo después de haberlo versionado no elimina su
+historial.</li>
+<li>Si un secreto llegó al repositorio remoto, revócalo inmediatamente.
+Borrar el archivo en un commit posterior no invalida el secreto ni lo
+quita del historial.</li>
+<li>Usa <code>git diff</code> para revisar lo que vas a publicar y
+<code>git diff --staged</code> para comprobar exactamente lo
+preparado.</li>
+<li>Descarga cambios remotos antes de iniciar la integración. No uses
+<code>git push --force</code> en una rama compartida; si una reescritura
+es imprescindible, coordínala y usa <code>--force-with-lease</code>
+entendiendo su efecto.</li>
+<li>Prueba scripts con datos de prueba y en máquinas o redes de
+laboratorio. Revisa con especial cuidado comandos que cambien rutas,
+permisos, reglas de firewall, servicios o particiones.</li>
+<li>Documenta cómo reproducir el despliegue: requisitos, comandos,
+variables y comprobaciones. No documentes valores secretos.</li>
+</ul>
+<h1 data-number="9"
+id="github-education-y-copilot-para-estudiantes"><span
+class="header-section-number">9</span> GitHub Education y Copilot para
+estudiantes</h1>
+<p>Tener una cuenta gratuita de GitHub permite colaborar en repositorios
+públicos y privados. <strong>GitHub Education</strong> es un beneficio
+adicional: el alumnado que cumple los requisitos puede solicitar la
+verificación de estudiante y acceder a recursos educativos y ofertas del
+Student Developer Pack.</p>
+<ol type="1">
+<li>Crea o utiliza una cuenta personal en <a
+href="https://github.com/">GitHub</a>.</li>
+<li>Consulta <a href="https://education.github.com/">GitHub Education
+para estudiantes</a> y solicita la verificación desde el portal.</li>
+<li>Sigue las instrucciones actuales para acreditar que eres estudiante.
+La disponibilidad y las pruebas admitidas dependen de los criterios de
+GitHub; tener correo institucional, por sí solo, no garantiza la
+aprobación.</li>
+<li>Cuando la cuenta esté verificada, revisa los beneficios disponibles
+en el <a href="https://education.github.com/pack">Student Developer
+Pack</a> y en tu perfil de GitHub Education.</li>
+<li>GitHub indica que los estudiantes verificados pueden acceder
+gratuitamente a GitHub Copilot. Activa el beneficio con la cuenta
+verificada y comprueba en la configuración de Copilot qué plan,
+funciones y límites están disponibles: pueden cambiar.</li>
+</ol>
+<p>En VS Code, inicia sesión con la cuenta que tiene el beneficio y
+configura la extensión oficial de GitHub Copilot. Puedes pedir
+explicaciones de comandos, ayuda para entender un script o sugerencias
+de documentación. Copilot puede equivocarse: revisa y prueba sus
+respuestas, especialmente antes de ejecutar comandos de administración o
+modificar sistemas. No pegues en el chat claves, contraseñas, datos
+personales ni información confidencial del centro o de una empresa.</p>
+<p>Las actividades prácticas están en el documento independiente <a
+href="ud5-práctica.md">ud5-práctica.md</a> y su <a
+href="ud5-práctica.pdf">versión PDF</a>.</p>
+</body>
+</html>
