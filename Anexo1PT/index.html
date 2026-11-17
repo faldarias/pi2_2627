@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía de Cisco Packet Tracer</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/units.css" />
+  </head>
+  <body>
+    <nav aria-label="Navegación">
+      <a href="../index.html">← Volver al inicio</a>
+    </nav>
+
+    <header id="title-block-header">
+      <h1 class="title">Guía de Cisco Packet Tracer</h1>
+      <p class="subtitle">Descarga, instalación y comandos básicos</p>
+    </header>
+
+    <nav id="TOC" aria-label="Contenido">
+      <strong>En esta página</strong>
+      <ul>
+        <li><a href="#que-es-packet-tracer">¿Qué es Packet Tracer?</a></li>
+        <li><a href="#descarga">Descarga</a></li>
+        <li><a href="#instalacion-en-ubuntu">Instalación en Ubuntu</a></li>
+        <li><a href="#lineas-de-comandos">Acceso a las líneas de comandos</a></li>
+        <li><a href="#validacion">Problemas de validación</a></li>
+        <li><a href="#curso-basico">Curso básico</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="que-es-packet-tracer">
+        <h2>1. ¿Qué es Packet Tracer?</h2>
+        <p>
+          Cisco Packet Tracer es un simulador de redes. Para poder compartir y
+          abrir correctamente los archivos de prácticas, es importante utilizar
+          la misma versión: la versión 8.2.1 no abre los archivos creados con la
+          versión 8.2.2.
+        </p>
+      </section>
+
+      <section id="descarga">
+        <h2>2. Descarga</h2>
+        <p>
+          Cisco Packet Tracer 8.2.2 se puede descargar gratuitamente desde Cisco
+          Networking Academy. Inicia sesión en NetAcad y accede a
+          <strong>NetAcad Legacy &gt; Resources &gt; Packet Tracer</strong>.
+        </p>
+        <p>
+          <a href="https://legacy.netacad.com/portal/resources/packet-tracer">
+            Página de descarga de Packet Tracer
+          </a>
+        </p>
+      </section>
+
+      <section id="instalacion-en-ubuntu">
+        <h2>3. Instalación en Ubuntu</h2>
+        <p>Estas instrucciones corresponden a Ubuntu 24.04.2 LTS.</p>
+        <ol>
+          <li>
+            Descarga el instalador
+            <code>Packet_Tracer822_amd64_signed.deb</code> desde la
+            <a href="https://legacy.netacad.com/portal/resources/packet-tracer">
+              página de Packet Tracer
+            </a>.
+          </li>
+          <li>
+            Descarga la biblioteca
+            <code>libgl1-mesa-glx_23.0.4-0ubuntu1.22.04.1_amd64.deb</code>.
+            Consulta la
+            <a href="https://www.reddit.com/r/Ubuntu/comments/1e3nlar/missing_libgl1mesaglx_when_installing_packet/?tl=es-es">
+              referencia sobre la biblioteca
+            </a>.
+          </li>
+          <li>
+            Instala la biblioteca desde la terminal:
+            <pre><code>sudo dpkg -i libgl1-mesa-glx_23.0.4-0ubuntu1.22.04.1_amd64.deb</code></pre>
+          </li>
+          <li>
+            Instala Packet Tracer:
+            <pre><code>sudo dpkg -i Packet_Tracer822_amd64_signed.deb</code></pre>
+          </li>
+          <li>
+            Si quedan dependencias pendientes, ejecuta:
+            <pre><code>sudo apt --fix-broken install</code></pre>
+          </li>
+        </ol>
+      </section>
+
+      <section id="lineas-de-comandos">
+        <h2>4. Acceso a las líneas de comandos</h2>
+        <ul>
+          <li><strong>PC:</strong> abre <strong>PC &gt; Desktop &gt; Command Prompt &gt; Run</strong>.</li>
+          <li><strong>Router:</strong> abre <strong>Router &gt; CLI</strong>.</li>
+        </ul>
+
+        <h3>Comandos para PC</h3>
+        <table>
+          <thead>
+            <tr><th>Acción</th><th>Comando</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Consultar la configuración IP</td><td><code>ipconfig</code></td></tr>
+            <tr><td>Consultar la tabla de rutas</td><td><code>route</code></td></tr>
+            <tr><td>Consultar la ruta hasta un destino</td><td><code>traceroute</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Comandos para router</h3>
+        <table>
+          <thead>
+            <tr><th>Acción</th><th>Comando</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Consultar las interfaces y sus direcciones IP</td><td><code>show ip interface brief</code></td></tr>
+            <tr><td>Consultar las interfaces (forma abreviada)</td><td><code>sh ip int bri</code></td></tr>
+            <tr><td>Consultar la tabla de rutas</td><td><code>show ip route</code></td></tr>
+            <tr><td>Consultar la configuración actual</td><td><code>show running-config</code></td></tr>
+            <tr><td>Consultar la configuración actual (forma abreviada)</td><td><code>sh run</code></td></tr>
+            <tr><td>Consultar las listas de control de acceso (ACL)</td><td><code>show access-lists</code></td></tr>
+            <tr><td>Entrar en el modo privilegiado</td><td><code>enable</code></td></tr>
+            <tr><td>Entrar en el modo de configuración global</td><td><code>configure terminal</code></td></tr>
+            <tr><td>Entrar en una interfaz</td><td><code>interface &lt;id-int&gt;</code></td></tr>
+            <tr><td>Eliminar una lista ACL</td><td><code>no ip access-list &lt;numero&gt;</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="validacion">
+        <h2>5. Problemas de validación al abrir archivos</h2>
+        <p>
+          Al abrir un archivo de Packet Tracer, puede aparecer una solicitud de
+          validación. En algunos casos, aunque el inicio de sesión parezca
+          completarse, la aplicación sigue solicitándolo cada vez que se vuelve
+          a abrir el archivo.
+        </p>
+        <p>
+          La solución indicada es iniciar sesión desde la nueva plataforma de
+          NetAcad, en lugar de hacerlo desde NetAcad Legacy.
+        </p>
+        <p>
+          Más información:
+          <a href="https://github.com/aldarias/cyberops/blob/main/Modulo12-Actividad2-acl/04-Packet-Tracert.txt">
+            nota sobre el problema de validación
+          </a>.
+        </p>
+      </section>
+
+      <section id="curso-basico">
+        <h2>6. Curso básico</h2>
+        <p>
+          NetAcad ofrece un curso básico gratuito de Packet Tracer de
+          aproximadamente dos horas, con opción de descargar el programa:
+        </p>
+        <p>
+          <a href="https://www.netacad.com/es/courses/getting-started-cisco-packet-tracer?courseLang=es-XL">
+            Curso básico de Cisco Packet Tracer
+          </a>
+        </p>
+        <p>
+          Fuente adicional:
+          <a href="https://www.redeszone.net/tutoriales/redes-cable/programas-simular-red/">
+            programas para simular redes
+          </a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="../index.html">← Volver al inicio</a></p>
+    </footer>
+  </body>
+</html>
